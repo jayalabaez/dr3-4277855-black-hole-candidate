@@ -933,7 +933,7 @@ def module_A9(data, mass_results, sed_results, orbit_results, scenarios):
 
     # ─── FIGURE 1: 8-PANEL OVERVIEW ─────────────────────────────────────
     fig = plt.figure(figsize=(20, 24))
-    fig.suptitle(f'Gaia DR3 {SOURCE_ID} — 12.3 M$_\\odot$ Black Hole Candidate',
+    fig.suptitle(f'Gaia DR3 {SOURCE_ID} — High-Confidence Dormant BH Candidate',
                  fontsize=18, fontweight='bold', y=0.98)
     gs = gridspec.GridSpec(4, 2, hspace=0.35, wspace=0.30,
                            left=0.08, right=0.95, top=0.95, bottom=0.04)
@@ -1070,7 +1070,7 @@ def module_A9(data, mass_results, sed_results, orbit_results, scenarios):
     ax6.set_xscale('log')
     ax6.set_xlabel('Companion Mass (M$_\\odot$)', fontsize=12)
     ax6.set_ylabel('Density', fontsize=12)
-    ax6.set_title('(f) SO(10) Mass Spectrum Context', fontsize=13, fontweight='bold')
+    ax6.set_title('(f) Compact-Object Mass Context', fontsize=13, fontweight='bold')
     ax6.legend(fontsize=8, loc='upper right')
 
     # Panel 7: Evidence summary bar chart
