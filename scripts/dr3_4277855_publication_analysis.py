@@ -634,12 +634,12 @@ def module_A5(data, mass_results, sed_results):
     s6 = {
         'scenario': 'Astrometric artefact (bad Gaia solution)',
         'test': f'NSS significance + RUWE + GOF',
-        'verdict': 'EXCLUDED',
+        'verdict': 'STRONGLY DISFAVOURED',
         'reason': f'NSS significance={NSS_SIG:.1f}σ (>>5σ threshold). '
                   f'RUWE={RUWE:.1f} (extreme orbital signal). '
                   f'Astrometric excess noise significance={EN_SIG:.0f}σ. '
                   f'Solution GOF={GOF:.1f}. Period error={PERIOD_ERR/PERIOD*100:.2f}%. '
-                  f'This is a robust astrometric orbit, not an artefact.'
+                  f'Strongly disfavoured; pending independent RV confirmation.'
     }
     scenarios.append(s6)
 
@@ -647,21 +647,22 @@ def module_A5(data, mass_results, sed_results):
     s7 = {
         'scenario': 'Chance alignment (unrelated background source)',
         'test': 'Proper motion consistency + orbital coherence',
-        'verdict': 'EXCLUDED',
+        'verdict': 'STRONGLY DISFAVOURED',
         'reason': f'Gaia measured a coherent orbital solution over {PERIOD:.0f}d '
                   f'with {NSS_SIG:.0f}σ significance. '
                   f'Chance alignments produce scattered astrometry, not '
-                  f'periodic Keplerian signals. The orbital ephemeris is '
-                  f'phase-locked — this is a bound binary.'
+                  f'periodic Keplerian signals. '
+                  f'Strongly disfavoured; pending independent RV confirmation.'
     }
     scenarios.append(s7)
 
     # Print results
     n_excluded = sum(1 for s in scenarios if s['verdict'] == 'EXCLUDED')
+    n_strongly_disf = sum(1 for s in scenarios if s['verdict'] == 'STRONGLY DISFAVOURED')
     n_disfavoured = sum(1 for s in scenarios if s['verdict'] == 'DISFAVOURED')
 
     for i, s in enumerate(scenarios):
-        marker = '✗' if s['verdict'] == 'EXCLUDED' else '△' if s['verdict'] == 'DISFAVOURED' else '?'
+        marker = '✗' if s['verdict'] == 'EXCLUDED' else '⊘' if s['verdict'] == 'STRONGLY DISFAVOURED' else '△' if s['verdict'] == 'DISFAVOURED' else '?'
         rprint(f'  {marker} SCENARIO {i+1}: {s["scenario"]}')
         rprint(f'    Test: {s["test"]}')
         rprint(f'    Verdict: {s["verdict"]}')
@@ -669,8 +670,9 @@ def module_A5(data, mass_results, sed_results):
         rprint()
 
     rprint(f'  ╔══════════════════════════════════════════════════╗')
-    rprint(f'  ║  SUMMARY: {n_excluded}/7 scenarios EXCLUDED               ║')
-    rprint(f'  ║           {n_disfavoured}/7 scenarios DISFAVOURED            ║')
+    rprint(f'  ║  SUMMARY: {n_excluded}/7 EXCLUDED                        ║')
+    rprint(f'  ║           {n_strongly_disf}/7 STRONGLY DISFAVOURED          ║')
+    rprint(f'  ║           {n_disfavoured}/7 DISFAVOURED                    ║')
     rprint(f'  ║  REMAINING EXPLANATION: BLACK HOLE               ║')
     rprint(f'  ╚══════════════════════════════════════════════════╝')
     rprint()
@@ -1035,12 +1037,17 @@ def module_A9(data, mass_results, sed_results, orbit_results, scenarios):
     ax5.set_title('(e) Alternative Scenario Elimination', fontsize=13, fontweight='bold')
     y_pos = 0.95
     for i, s in enumerate(scenarios):
-        color = 'red' if s['verdict'] == 'EXCLUDED' else 'orange'
-        marker = '✗' if s['verdict'] == 'EXCLUDED' else '△'
+        if s['verdict'] == 'EXCLUDED':
+            color, marker = 'red', '✗'
+        elif s['verdict'] == 'STRONGLY DISFAVOURED':
+            color, marker = '#cc6600', '⊘'
+        else:
+            color, marker = 'orange', '△'
         ax5.text(0.02, y_pos, f'{marker} {s["scenario"]}', fontsize=11,
                  color=color, fontweight='bold', transform=ax5.transAxes,
                  verticalalignment='top')
-        ax5.text(0.05, y_pos - 0.06, s['verdict'], fontsize=10,
+        label = s['verdict'] if s['verdict'] != 'STRONGLY DISFAVOURED' else 'Strongly disfavoured (pending RV)'
+        ax5.text(0.05, y_pos - 0.06, label, fontsize=10,
                  color=color, transform=ax5.transAxes, verticalalignment='top')
         y_pos -= 0.13
     ax5.text(0.02, y_pos - 0.02, '→ Preferred interpretation: dormant BH',
@@ -1111,9 +1118,9 @@ def module_A9(data, mass_results, sed_results, orbit_results, scenarios):
         f'  L = {sed_results["L_star"]:.0f} L☉   R = {sed_results["R_star"]:.0f} R☉',
         f'',
         f'COMPANION (dark):',
-        f'  M₂ = {M2_TRUE:.2f} ± {M2_TRUE*0.62:.2f} M☉   (TRUE mass)',
-        f'  Classification: BLACK HOLE',
-        f'  P(BH) = {mass_results["P_BH"]:.1f}%',
+        f'  M₂ = {M2_TRUE:.2f} ± {M2_TRUE*0.62:.2f} M☉   (astrometric)',
+        f'  Classification: BH CANDIDATE (GOLD)',
+        f'  P(M₂ > 5 M☉) > 99.9%  (under NSS assumptions)',
         f'',
         f'ORBIT:',
         f'  P = {PERIOD:.1f} d   e = {ECCENTRICITY:.3f}',
@@ -1122,7 +1129,7 @@ def module_A9(data, mass_results, sed_results, orbit_results, scenarios):
         f'',
         f'EVIDENCE:  Tier 1 (GOLD)   Score = 80',
         f'X-ray: NONE   UV: dormant   SED: clean',
-        f'6/7 non-BH scenarios excluded; 1 open',
+        f'4/7 excluded; 2 strongly disfavoured; 1 open',
     ]
     for i, line in enumerate(summary_lines):
         ax8.text(0.02, 0.98 - i * 0.041, line, fontsize=10,
@@ -1166,8 +1173,9 @@ def module_A9(data, mass_results, sed_results, orbit_results, scenarios):
     # P(BH) annotation
     p_bh_frac = mass_results['P_BH'] / 100
     ax2b.fill_betweenx([0, 1], 5.0, m2_sorted.max(), alpha=0.1, color='red')
-    ax2b.text(M2_TRUE + 1, 0.5, r'P($M_2 > 5\;M_\odot$) > 99.9%',
-              fontsize=13, fontweight='bold', color='red')
+    ax2b.text(M2_TRUE + 1, 0.5,
+              r'P($M_2 > 5\;M_\odot$) $>$ 99.9%' + '\n(under NSS assumptions)',
+              fontsize=12, fontweight='bold', color='red')
     ax2b.set_xlabel('$M_2$ (M$_\\odot$)', fontsize=13)
     ax2b.set_ylabel('Cumulative probability', fontsize=13)
     ax2b.set_title('CDF', fontsize=12)
@@ -1263,7 +1271,7 @@ def module_A9(data, mass_results, sed_results, orbit_results, scenarios):
         ('WD excluded', f'{M2_TRUE:.1f} >> 1.44 M☉ (Chandrasekhar)', True),
         ('NS excluded', f'{M2_TRUE:.1f} >> 2.3 M☉ (TOV)', True),
         ('Triple excluded', f'Photometry + stability test', True),
-        ('Artefact excluded', f'GOF={GOF:.1f}, {EN_SIG:.0f}σ astrometric', True),
+        ('Artefact strongly disfavoured', f'GOF={GOF:.1f}, {EN_SIG:.0f}σ; pending RV', True),
         ('Detached system', f'Roche fill = {orbit_results["roche_fill"]*100:.1f}%', True),
     ]
 
