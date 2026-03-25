@@ -244,9 +244,10 @@ remains essential (Section~\ref{sec:followup}).
 \subsection{Orbital dynamics}
 \label{sec:methods:orbit}
 
-Because the Gaia NSS solution provides a full astrometric orbit
-(model \texttt{Orbital}), the companion mass $M_2$ is determined
-directly from the orbital elements and parallax --- not from a
+Given the full astrometric orbit from the Gaia NSS pipeline
+(model \texttt{Orbital}), the derived companion mass $M_2$
+follows once the orbital solution, parallax, and adopted
+primary-mass estimate are combined --- rather than from a
 spectroscopic mass function.  The total system mass is obtained via
 Kepler's third law:
 \begin{equation}
@@ -495,8 +496,7 @@ values.  The normal chemical composition of the RGB primary
 (consistent with no peculiar enrichment) suggests minimal mass
 transfer from the progenitor prior to collapse, favouring a
 direct-collapse or failed-supernova formation channel
-\\citep{Langer2020}.  We briefly discuss the broader theoretical
-context of the BH mass spectrum in Appendix~\\ref{sec:so10}.
+\citep{Langer2020}.
 
 \subsection{Follow-up strategy}
 \label{sec:followup}
@@ -666,7 +666,8 @@ Period $P$             & 424.403 d           & 1.159    & Gaia NSS \\
 Eccentricity $e$       & 0.3427              & 0.0194   & Gaia NSS \\
 NSS significance       & 75.4$\sigma$        & ---      & Gaia NSS \\
 GOF                    & 18.3                & ---      & Gaia NSS \\
-$M_2$ (derived mass)   & 12.31 $\Msun$       & 7.52     & Gaia NSS \\
+$M_2$ (catalogue)      & 12.31 $\Msun$       & 7.52$^a$ & Gaia \texttt{binary\_masses} \\
+$M_2$ (MC posterior)   & $12.32^{+1.73}_{-1.47}$ $\Msun$ & 90\% CI: [10.0, 15.4] & This work \\
 \midrule
 \multicolumn{4}{c}{\textit{Stellar parameters (GSP-Phot)}} \\
 $T_{\rm eff}$          & 5922 K              & ---      & Gaia DR3 \\
@@ -692,6 +693,8 @@ $a$ (semi-major axis)  & 2.64 AU             & ---      & Kepler III \\
 $K_1$ (predicted)      & $\sim$\,65 $\kms$   & ---      & Dynamics \\
 $P({\rm BH})$          & $>$99.9\%           & ---      & MC posterior \\
 \bottomrule
+\multicolumn{4}{l}{$^a$ Formal uncertainty from the Gaia \texttt{binary\_masses} catalogue;}\\
+\multicolumn{4}{l}{\phantom{$^a$} see Section~\ref{sec:methods:nss} for discussion of its interpretation.}\\
 \end{tabular}
 \end{table*}
 
@@ -769,7 +772,7 @@ Status              & Confirmed & Confirmed & Confirmed & Candidate \\
 system.  Eight panels showing: (a) companion mass posterior,
 (b) orbital geometry, (c) spectral energy distribution,
 (d) luminous companion exclusion, (e) alternative scenario
-elimination, (f) SO(10) mass spectrum context, (g) multi-evidence
+assessment, (f) mass spectrum context, (g) multi-evidence
 summary, and (h) system summary card.}
 \label{fig:overview}
 \end{figure*}
@@ -806,26 +809,8 @@ confirmation, which requires independent spectroscopic follow-up.}
 \end{figure*}
 
 % ====================================================================
-%  APPENDIX
+%  APPENDIX (reserved for future use)
 % ====================================================================
-
-\appendix
-
-\section{SO(10) GUT context}
-\label{sec:so10}
-
-Within the framework of SO(10) grand unified theory, the compact
-object mass spectrum carries information about the symmetry-breaking
-chain SO(10) $\to$ SU(5) $\times$ U(1)$_X$ $\to$ SU(3)$_C$
-$\times$ SU(2)$_L$ $\times$ U(1)$_Y$.  The right-handed neutrino
-$\nu_R$, unique to the 16-dimensional spinor representation of
-SO(10), drives the seesaw mechanism for neutrino masses and
-influences supernova explosion physics via neutrino cooling.  A
-$12.3\,\Msun$ BH in the standard stellar-mass range constrains the
-BH mass function power-law index ($\alpha \sim 1.8$--$2.5$) and,
-combined with the 614 candidates in the GRAVITAS OmniScan v13
-catalogue, builds statistical power to test SO(10) predictions of
-the compact-object mass spectrum.
 
 \label{lastpage}
 \end{document}

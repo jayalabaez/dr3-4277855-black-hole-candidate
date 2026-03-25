@@ -1043,7 +1043,7 @@ def module_A9(data, mass_results, sed_results, orbit_results, scenarios):
         ax5.text(0.05, y_pos - 0.06, s['verdict'], fontsize=10,
                  color=color, transform=ax5.transAxes, verticalalignment='top')
         y_pos -= 0.13
-    ax5.text(0.02, y_pos - 0.02, '→ Only remaining: BLACK HOLE',
+    ax5.text(0.02, y_pos - 0.02, '→ Preferred interpretation: dormant BH',
              fontsize=13, fontweight='bold', color='green',
              transform=ax5.transAxes, verticalalignment='top')
 
@@ -1122,7 +1122,7 @@ def module_A9(data, mass_results, sed_results, orbit_results, scenarios):
         f'',
         f'EVIDENCE:  Tier 1 (GOLD)   Score = 80',
         f'X-ray: NONE   UV: dormant   SED: clean',
-        f'All 7 non-BH scenarios: EXCLUDED',
+        f'6/7 non-BH scenarios excluded; 1 open',
     ]
     for i, line in enumerate(summary_lines):
         ax8.text(0.02, 0.98 - i * 0.041, line, fontsize=10,
@@ -1166,8 +1166,8 @@ def module_A9(data, mass_results, sed_results, orbit_results, scenarios):
     # P(BH) annotation
     p_bh_frac = mass_results['P_BH'] / 100
     ax2b.fill_betweenx([0, 1], 5.0, m2_sorted.max(), alpha=0.1, color='red')
-    ax2b.text(M2_TRUE + 1, 0.5, f'P(BH) = {mass_results["P_BH"]:.1f}%',
-              fontsize=14, fontweight='bold', color='red')
+    ax2b.text(M2_TRUE + 1, 0.5, r'P($M_2 > 5\;M_\odot$) > 99.9%',
+              fontsize=13, fontweight='bold', color='red')
     ax2b.set_xlabel('$M_2$ (M$_\\odot$)', fontsize=13)
     ax2b.set_ylabel('Cumulative probability', fontsize=13)
     ax2b.set_title('CDF', fontsize=12)
@@ -1245,10 +1245,10 @@ def module_A9(data, mass_results, sed_results, orbit_results, scenarios):
     plt.close(fig3)
     rprint(f'  Saved: {fig3_path}')
 
-    # ─── FIGURE 4: CONFIRMATION CHECKLIST VISUAL ────────────────────────
+    # ─── FIGURE 4: DIAGNOSTIC SUMMARY VISUAL ────────────────────────
     fig4, ax4 = plt.subplots(figsize=(10, 8))
     ax4.axis('off')
-    ax4.set_title(f'Gaia DR3 {SOURCE_ID}\nBlack Hole Confirmation Checklist',
+    ax4.set_title(f'Gaia DR3 {SOURCE_ID}\nDiagnostic Summary for BH Candidacy',
                   fontsize=16, fontweight='bold', pad=20)
 
     checks = [
@@ -1281,7 +1281,7 @@ def module_A9(data, mass_results, sed_results, orbit_results, scenarios):
 
     # Final verdict
     n_passed = sum(1 for _, _, p in checks if p)
-    ax4.text(0.5, 0.02, f'{n_passed}/{len(checks)} checks PASSED → BLACK HOLE CANDIDATE (GOLD)',
+    ax4.text(0.5, 0.02, f'{n_passed}/{len(checks)} indicators favourable — GOLD-tier BH candidate',
              fontsize=14, fontweight='bold', color='#2ecc71', ha='center',
              transform=ax4.transAxes,
              bbox=dict(boxstyle='round,pad=0.5', facecolor='#eafaf1', edgecolor='#2ecc71'))
