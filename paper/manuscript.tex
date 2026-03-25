@@ -20,8 +20,8 @@
 \newcommand{\kms}{{\rm km\,s}^{-1}}
 \newcommand{\fmass}{f(M)}
 
-\title[Gaia DR3 4277855016732107520: A High-Confidence Dormant BH Candidate]
-{Gaia DR3 4277855016732107520: A High-Confidence Dormant Black Hole\\
+\title[Gaia DR3 4277855016732107520: A Strong Dormant BH Candidate]
+{Gaia DR3 4277855016732107520: A Strong Dormant Black Hole\\
  Candidate from Astrometric Orbital Solution with an RGB Primary}
 
 \author[J. Ayala-Baez]{
@@ -141,7 +141,15 @@ $G_{\rm RP} = 10.66$ ($G_{\rm BP} - G_{\rm RP} = 0.993$).
 The renormalised unit-weight error RUWE$\,= 9.31$ is extremely
 elevated, as expected for an unresolved binary with large
 photo-centre motion.  The astrometric excess noise significance is
-$3753\sigma$, among the highest in the NSS catalogue.
+$3753\sigma$, among the highest in the NSS catalogue.  While
+exceptionally high excess-noise values can in principle flag
+poorly resolved sources or pipeline failures, the combination
+of a coherent Keplerian orbital solution at $75\sigma$
+significance, internally consistent period and eccentricity, and
+a well-behaved goodness-of-fit ($18.3$) together indicate that
+the excess noise reflects genuine photo-centre motion of a
+luminous primary orbiting a massive companion rather than an
+instrumental artefact.
 
 The NSS orbital solution yields:
 period $P = 424.403 \pm 1.159$\,d,
@@ -252,7 +260,14 @@ The primary mass is estimated from the Gaia GSP-Phot parameters
 GSP\nobreakdash-Phot effective temperatures for RGB stars carry known
 systematic uncertainties of $\sim$100--200\,K
 \citep{Andrae2023}, which propagate into the primary-mass
-estimate.  These values place the star on the RGB, consistent
+estimate.  Crucially, no independent spectroscopic
+classification currently exists for this source (SIMBAD lists no
+spectral type; Section~\ref{sec:data:simbad}), so the RGB
+identification rests entirely on the pipeline photometric
+parameters.  We therefore treat the primary's evolutionary state
+as a \emph{working assumption} rather than a spectroscopically
+confirmed fact.  Under this assumption, the atmospheric
+parameters place the star on the RGB, consistent
 with an evolved star of $M_1 = 1.34 \pm 0.40\,\Msun$ (adopting a
 30~per~cent fractional uncertainty to account for age, metallicity,
 and systematic uncertainties).
@@ -290,10 +305,15 @@ consistency check rather than a full spectral fit.  Synthetic
 atmosphere models (e.g.\ PHOENIX, ATLAS9/MARCS;
 \citealt{Husser2013,Castelli2003}) would provide a more rigorous
 assessment of the primary's SED shape and improve sensitivity to
-faint secondary contributions, particularly in the UV.  However,
-for a companion whose expected luminosity exceeds the primary by a
-factor $>$\\,100 in every band, a blackbody suffices to demonstrate
-that no luminous companion of the required mass is present.
+faint secondary contributions, particularly in the UV where a
+stripped helium star or hot subdwarf could contribute detectable
+flux even when overwhelmed in the optical.  We strongly encourage
+such modelling in future work.  However, for a companion whose
+expected luminosity exceeds the primary by a factor $>$\,100 in
+every optical/IR band, the blackbody check suffices to
+demonstrate that no main-sequence companion of the required mass
+is present.  It does not, by itself, exclude a hot, underluminous
+companion visible only in the UV.
 
 \subsection{Monte Carlo mass posterior}
 \label{sec:methods:mc}
@@ -336,10 +356,14 @@ Table~\ref{tab:observed} summarises the observed and derived
 properties.  The orbital solution is among the most significant
 in the DR3 NSS catalogue ($75.4\sigma$), and the extreme
 astrometric excess noise significance ($3753\sigma$) is consistent
-with the reality of the orbital photo-centre motion.  While such
-extreme values are expected for a bright, massive companion, they
-also warrant extra scrutiny; independent RV confirmation is
-therefore essential.
+with genuine orbital photo-centre motion.  We note that such
+extreme excess-noise values can in principle arise from poorly
+resolved blends or pipeline failures; however, the coherent
+Keplerian fit, the well-constrained period precision
+(0.27~per~cent), and the goodness-of-fit ($18.3$) jointly argue
+against an instrumental origin.  Independent RV confirmation is
+nevertheless essential before the companion mass can be regarded
+as secure.
 
 The semi-major axis $a = 2.64$\,AU places the companion well
 outside the primary's Roche lobe ($R_L = 0.56$\,AU; filling
@@ -432,8 +456,15 @@ is detected.  \textbf{Excluded.}
 \paragraph{Stripped helium star.}
 A $12.3\,\Msun$ stripped He star would have
 $T_{\rm eff} > 50\,000$\,K and $L \sim 10^4\,\Lsun$, producing
-strong UV and X-ray emission.  GALEX shows NUV detection only
-(marginal), and no X-ray source is detected in ROSAT/XMM.  This
+strong UV and X-ray emission.  At the source distance of
+657\,pc and with $A_V = 0.54$\,mag ($A_{\rm NUV} \approx
+2.2$\,mag), such a companion would have an apparent NUV
+magnitude of $\sim$\,9 --- roughly 8.5\,mag brighter than the
+observed GALEX NUV\,$= 17.52$, corresponding to a flux excess
+of $\sim$\,2700$\times$.  The faint observed NUV is therefore
+inconsistent with a luminous stripped He star, though a cooler
+or lower-luminosity subdwarf cannot be fully excluded.
+No X-ray source is detected in ROSAT/XMM.  This
 scenario is \textbf{highly disfavoured} but not formally excluded
 without UV spectroscopy.
 
@@ -522,6 +553,14 @@ The target is located at RA = 18.28$^h$, Dec = $+3.5\degr$
 (Ophiuchus), accessible from both hemispheres, and is an evening
 target in the northern summer.
 
+We stress that radial-velocity follow-up is the single most
+important observational step for this system.  Given the large
+predicted semi-amplitude ($K_1 \approx 65\,\kms$) and the
+bright apparent magnitude ($G = 11.25$), even a single high-resolution
+spectrum could meaningfully test the Gaia astrometric solution;
+a complete RV orbit would either confirm or rule out the BH
+interpretation independently of the pipeline assumptions.
+
 \subsection{Limitations and required confirmation}
 
 We emphasise that several limitations prevent this system from being
@@ -541,9 +580,12 @@ classified as a confirmed black hole at present:
   and semi-amplitude, the companion mass remains contingent on the
   Gaia solution.
 \item \textbf{SIMBAD provides no spectral classification.}  The
-  primary characterisation rests on Gaia GSP-Phot parameters,
+  primary characterisation and its classification as an RGB star
+  rest entirely on Gaia GSP-Phot parameters,
   which have known systematic uncertainties at the 100--200\,K
-  level for RGB stars.
+  level for RGB stars.  Until an independent spectrum confirms
+  the evolutionary state and chemical abundances of the primary,
+  this classification should be treated as an assumption.
 \item \textbf{The stripped He star scenario remains formally open},
   requiring UV spectroscopy (e.g.\ HST/COS) for definitive
   exclusion.
@@ -593,7 +635,7 @@ Gaia DR3 4277855016732107520, an astrometric binary with a full
   confirmation feasible with modest ground-based resources.
 \end{enumerate}
 
-Gaia DR3 4277855016732107520 is a high-confidence dormant black hole
+Gaia DR3 4277855016732107520 is a strong dormant black hole
 candidate that merits urgent spectroscopic follow-up.  With a
 companion mass of
 $M_2 = 12.32^{+1.73}_{-1.47}\,\Msun$ from the astrometric orbit,
