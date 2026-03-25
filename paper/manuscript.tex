@@ -20,9 +20,9 @@
 \newcommand{\kms}{{\rm km\,s}^{-1}}
 \newcommand{\fmass}{f(M)}
 
-\title[Gaia DR3 4277855016732107520: A 12.3\,$\Msun$ Black Hole Candidate]
-{Gaia DR3 4277855016732107520: A 12.3\,$\Msun$ Black Hole Candidate\\
- from Astrometric Orbital Solution with RGB Primary}
+\title[Gaia DR3 4277855016732107520: A High-Confidence Dormant BH Candidate]
+{Gaia DR3 4277855016732107520: A High-Confidence Dormant Black Hole\\
+ Candidate from Astrometric Orbital Solution with an RGB Primary}
 
 \author[J. Ayala-Baez]{
   Joel Ayala-Baez$^{1}$\thanks{E-mail: jayalabaez@gmail.com}\\
@@ -41,36 +41,41 @@
 
 % ====================================================================
 \begin{abstract}
-We present a comprehensive analysis of Gaia DR3 source
+We present a multi-wavelength analysis of Gaia DR3 source
 4277855016732107520, an astrometric binary in the Gaia Data Release~3
-non-single-star catalogue whose full three-dimensional orbital
-solution yields a \emph{true} (not minimum) companion mass of
-$M_2 = 12.31 \pm 7.52\,\Msun$.  The system comprises a red giant
-branch (RGB) primary ($M_1 = 1.34 \pm 0.40\,\Msun$,
+non-single-star (NSS) catalogue with a full three-dimensional orbital
+solution.  Under the assumptions inherent in the Gaia NSS pipeline,
+the companion mass is
+$M_2 = 12.32^{+1.73}_{-1.47}\,\Msun$ (median; 68~per~cent credible
+interval from $5 \times 10^5$ Monte~Carlo draws), with a
+90~per~cent CI of $[10.0, 15.4]\,\Msun$.  The system comprises a
+red giant branch (RGB) primary ($M_1 = 1.34 \pm 0.40\,\Msun$,
 $T_{\rm eff} = 5922$\,K, $\log g = 2.93$) orbiting the unseen
 companion with period $P = 424.4 \pm 1.2$\,d,
 eccentricity $e = 0.343 \pm 0.019$, and semi-major axis
 $a = 2.64$\,AU at a distance of $656.7$\,pc.
-The orbital solution has non-single-star (NSS) significance of
-$75.4\sigma$ and astrometric excess noise significance of
-$3753\sigma$, establishing the binary nature beyond doubt.  A
-Monte~Carlo posterior from 500\,000 draws gives
-$P({\rm BH}) = 100$~per~cent with 90~per~cent credible interval
-$M_2 \in [10.0, 15.4]\,\Msun$.  No luminous companion is detected:
-a $12.3\,\Msun$ main-sequence star would contribute
+The orbital solution has NSS significance of $75.4\sigma$ and
+astrometric excess noise significance of $3753\sigma$, establishing
+a robust detection of orbital photo-centre motion.  Under the
+adopted modelling assumptions, the entire Monte~Carlo posterior lies
+above the canonical black hole (BH) mass threshold of
+$5\,\Msun$.  No luminous companion is detected: a
+$12.3\,\Msun$ main-sequence star would contribute
 $\sim$\,30\,000~per~cent of the primary flux.  ROSAT and
-XMM-Newton non-detections confirm the companion is dormant.  We
-systematically eliminate seven non-black-hole scenarios --- main
-sequence, white dwarf, neutron star, hierarchical triple, stripped
-helium star, astrometric artefact, and chance alignment --- of which
-six are firmly excluded and one (stripped He star) is highly
-disfavoured.  The predicted radial-velocity semi-amplitude
-$K_1 \approx 65\,\kms$ is readily detectable from the ground.  We
-place the candidate in the context of the confirmed Gaia~BH1, BH2,
-and BH3 systems, the SO(10) grand unified theory mass spectrum, and
-discuss the optimal follow-up strategy with 2--4\,m class
-telescopes.  All analysis scripts, data, and machine-readable
-results are publicly available.
+XMM-Newton non-detections are consistent with a dormant companion.
+We evaluate seven non-BH scenarios --- main sequence, white dwarf,
+neutron star, hierarchical triple, stripped helium star, astrometric
+artefact, and chance alignment --- of which six are firmly excluded
+and one (stripped He star) remains disfavoured but not formally
+ruled out without UV spectroscopy.  The predicted radial-velocity
+semi-amplitude $K_1 \approx 65\,\kms$ makes independent
+spectroscopic confirmation straightforward with existing 2--4\,m
+class facilities.  We place the candidate in the context of the
+confirmed Gaia~BH1, BH2, and BH3 systems and discuss the optimal
+follow-up strategy.  Independent multi-epoch radial-velocity
+confirmation is required before this candidate can be considered a
+bona fide black hole detection.  All analysis scripts, data, and
+machine-readable results are publicly available.
 \end{abstract}
 
 \begin{keywords}
@@ -94,8 +99,9 @@ luminous companion.
 Gaia Data Release~3 \citep[DR3;][]{GaiaCollaboration2023} has
 transformed the search for dormant BHs.  The non-single-star (NSS)
 catalogue \citep{GaiaNSS2023} provides orbital solutions for
-$\sim$\,180\,000 binaries, including astrometric orbits that yield
-\emph{true} companion masses rather than the minimum masses
+$\sim$\,180\,000 binaries, including astrometric orbits that ---
+under the modelling assumptions of the pipeline --- yield direct
+companion mass estimates rather than the minimum masses
 available from spectroscopic (SB1) solutions alone.  This critical
 advantage eliminates the inclination degeneracy that limits
 radial-velocity surveys.
@@ -116,8 +122,9 @@ In this paper we focus on one of these --- Gaia DR3
 4277855016732107520 --- a GOLD-tier candidate ranked among the
 highest-priority targets for ground-based follow-up.  The system is
 a wide binary ($P = 424$\,d) comprising an RGB primary
-($M_1 = 1.34\,\Msun$) and a dark companion whose true mass from
-the full astrometric orbit is $M_2 = 12.3\,\Msun$.  Located at
+($M_1 = 1.34\,\Msun$) and a dark companion whose mass from
+the full astrometric orbit is $M_2 \simeq 12.3\,\Msun$ (under Gaia
+NSS modelling assumptions).  Located at
 $657$\,pc in Ophiuchus ($l = 32.1\degr$, $b = 9.3\degr$), the
 system benefits from moderate extinction, excellent parallax
 precision (10~per~cent), and accessibility from both hemispheres.
@@ -157,9 +164,11 @@ eccentricity $e = 0.3427 \pm 0.0194$,
 and solution significance $75.4\sigma$ (far exceeding the
 threshold of~5 required for catalogue inclusion).
 Crucially, because this is an \texttt{Orbital} solution (full
-astrometric orbit), the companion mass $M_2 = 12.31\,\Msun$ is a
-\emph{true mass}, not a minimum value subject to the $\sin i$
-degeneracy.
+astrometric orbit), the companion mass
+$M_2 = 12.31\,\Msun$ reported in the Gaia
+\texttt{binary\_masses} table is derived under specific modelling
+assumptions (see Section~\ref{sec:methods:nss}), rather than being
+a minimum value subject to the $\sin i$ degeneracy.
 
 The Gaia DR3 GSP-Phot pipeline provides stellar parameters:
 $T_{\rm eff} = 5922$\,K and $\log g = 2.93$, placing the primary
@@ -199,6 +208,38 @@ characterisation.
 % ====================================================================
 \section{Methods}
 \label{sec:methods}
+
+\subsection{Gaia NSS mass derivation chain}
+\label{sec:methods:nss}
+
+The companion mass $M_2$ reported for this source originates from
+two distinct Gaia DR3 tables.  The \texttt{gaiadr3.nss\_two\_body\_orbit}
+table provides the astrometric orbital elements (period, eccentricity,
+angular semi-major axis, inclination, etc.) fitted to the along-scan
+residuals.  The \texttt{gaiadr3.binary\_masses} table then uses these
+elements together with the parallax and an external primary-mass
+estimate to derive $M_2$ via Kepler's third law.  Importantly, the
+primary mass entering the \texttt{binary\_masses} derivation is itself
+model-dependent: it relies on the Gaia GSP-Phot atmospheric parameters
+($T_{\rm eff}$, $\log g$, metallicity) and isochrone-based mass
+estimation.  Thus, while the \texttt{Orbital} solution eliminates the
+$\sin i$ degeneracy inherent to spectroscopic (SB1) orbits --- a
+critical advantage --- the resulting $M_2$ is not a purely empirical
+``true mass'' but depends on the modelling assumptions of the NSS
+pipeline, the parallax, and the adopted primary mass.  We therefore
+quote the catalogue value $M_2 = 12.31\,\Msun$ as a {\em derived
+mass under Gaia modelling assumptions} and propagate the relevant
+uncertainties independently via Monte~Carlo
+(Section~\ref{sec:methods:mc}).
+
+Recent follow-up work by \citet{ElBadry2024} has shown that a subset
+of extreme-mass-ratio candidates in the Gaia NSS catalogue are
+spurious when tested against independent radial velocities, typically
+due to incorrectly resolved astrometric solutions.  We note that the
+present source has {\em not} been flagged by any published
+vetting study, but caution that the same failure modes could in
+principle apply.  Independent spectroscopic confirmation therefore
+remains essential (Section~\ref{sec:followup}).
 
 \subsection{Orbital dynamics}
 \label{sec:methods:orbit}
@@ -255,6 +296,16 @@ blackbody model at $T_{\rm eff} = 5922$\,K.  Residuals below
 5~per~cent in all bands confirm that the photometry is consistent
 with a single RGB star plus a dark (non-luminous) companion.
 
+We note that a single-temperature blackbody is a first-order
+consistency check rather than a full spectral fit.  Synthetic
+atmosphere models (e.g.\ PHOENIX, ATLAS9/MARCS;
+\citealt{Husser2013,Castelli2003}) would provide a more rigorous
+assessment of the primary's SED shape and improve sensitivity to
+faint secondary contributions, particularly in the UV.  However,
+for a companion whose expected luminosity exceeds the primary by a
+factor $>$\\,100 in every band, a blackbody suffices to demonstrate
+that no luminous companion of the required mass is present.
+
 \subsection{Monte Carlo mass posterior}
 \label{sec:methods:mc}
 
@@ -267,10 +318,13 @@ mass, propagating uncertainties in:
   $1.34\,\Msun$ with $\sigma = 0.40\,\Msun$.
 \item Model systematic: 10~per~cent Gaussian.
 \end{enumerate}
-Because $M_2$ is a true mass (not minimum), no inclination
-marginalisation is needed --- a significant advantage over SB1
-analyses.  The fraction of draws with $M_2 > 5\,\Msun$ gives the
-posterior probability $P({\rm BH})$.
+Because $M_2$ is derived from the full astrometric orbit (not a
+minimum mass), no inclination marginalisation is needed --- a
+significant advantage over SB1 analyses.  However, the
+resulting mass depends on the assumptions and priors entering
+the Gaia NSS pipeline (Section~\ref{sec:methods:nss}).  The
+fraction of draws with $M_2 > 5\,\Msun$ gives the posterior
+probability $P({\rm BH})$.
 
 \subsection{Companion-light exclusion}
 \label{sec:methods:companion}
@@ -340,15 +394,17 @@ The Monte~Carlo posterior (Fig.~\ref{fig:posterior}) yields:
 \item Median companion mass: $\tilde{M}_2 = 12.32\,\Msun$
 \item 68~per~cent CI: $[10.85, 14.05]\,\Msun$
 \item 90~per~cent CI: $[9.99, 15.38]\,\Msun$
-\item $P({\rm BH}) = 100.0$~per~cent ($M_2 > 5\,\Msun$)
+\item Under adopted assumptions, the entire posterior lies above
+  $5\,\Msun$
 \item $P(M_2 > 10\,\Msun) = 94.9$~per~cent
 \end{itemize}
 
 A sensitivity analysis over primary mass (Table~\ref{tab:sensitivity})
-shows that $P({\rm BH}) = 100$~per~cent for all tested $M_1$ values
-from $0.80$ to $2.50\,\Msun$.  The BH nature of the companion is
-insensitive to the primary mass prior, owing to the very high
-true mass from the orbital solution.
+shows that the posterior remains entirely above $5\,\Msun$ for all
+tested $M_1$ values from $0.80$ to $2.50\,\Msun$.  The BH
+interpretation is robust to the choice of primary mass prior,
+owing to the large companion mass inferred from the orbital
+solution.
 
 % ====================================================================
 \section{Alternative Scenarios}
@@ -404,9 +460,10 @@ produce scattered astrometry, not phase-locked periodic motion.
 \medskip\noindent
 \textbf{Summary:} Six of seven alternative scenarios are firmly
 excluded on dynamical, photometric, and astrometric grounds.  The
-stripped helium star scenario is highly disfavoured.  A black hole
-of $\sim$\,$12.3\,\Msun$ remains the strongly preferred, and
-effectively the only viable, explanation.
+stripped helium star scenario is highly disfavoured but cannot be
+formally ruled out without UV spectroscopy
+(Section~\ref{sec:followup}).  A black hole of
+$\sim$\,$12.3\,\Msun$ remains the strongly preferred explanation.
 
 % ====================================================================
 \section{Discussion}
@@ -419,8 +476,8 @@ confirmed Gaia dormant BH systems.  At $M_2 = 12.3\,\Msun$, it
 would rank as the second most massive after Gaia~BH3
 ($33\,\Msun$).  Critically, it benefits from a full 3D astrometric
 orbit, eliminating the $\sin i$ ambiguity that affects purely
-spectroscopic candidates, and its mass is a \emph{true} value, not
-a lower limit.
+spectroscopic candidates; under the Gaia NSS modelling assumptions,
+the derived mass is a direct estimate rather than a lower limit.
 
 The long period ($P = 424$\,d) and moderate eccentricity
 ($e = 0.34$) place it in a similar orbital regime to Gaia~BH1
@@ -431,30 +488,15 @@ or no mass transfer.
 \subsection{Binary evolution and BH formation}
 
 The BH progenitor was a massive star with zero-age main-sequence
-mass $M_{\rm ZAMS} \gtrsim 25\,\Msun$, based on the remnant mass
-\citep{Fryer2012}.  The wide orbit ($a = 2.64$\,AU) survived the
+mass $M_{\\rm ZAMS} \\gtrsim 25\\,\\Msun$, based on the remnant mass
+\\citep{Fryer2012}.  The wide orbit ($a = 2.64$\\,AU) survived the
 supernova event, constraining the natal kick velocity to moderate
 values.  The normal chemical composition of the RGB primary
 (consistent with no peculiar enrichment) suggests minimal mass
 transfer from the progenitor prior to collapse, favouring a
 direct-collapse or failed-supernova formation channel
-\citep{Langer2020}.
-
-\subsection{SO(10) GUT context}
-\label{sec:so10}
-
-Within the framework of SO(10) grand unified theory, the compact
-object mass spectrum carries information about the symmetry-breaking
-chain SO(10) $\to$ SU(5) $\times$ U(1)$_X$ $\to$ SU(3)$_C$
-$\times$ SU(2)$_L$ $\times$ U(1)$_Y$.  The right-handed neutrino
-$\nu_R$, unique to the 16-dimensional spinor representation of
-SO(10), drives the seesaw mechanism for neutrino masses and
-influences supernova explosion physics via neutrino cooling.  A
-$12.3\,\Msun$ BH in the standard stellar-mass range constrains the
-BH mass function power-law index ($\alpha \sim 1.8$--$2.5$) and,
-combined with the 614 candidates in the GRAVITAS OmniScan v13
-catalogue, builds statistical power to test SO(10) predictions of
-the compact-object mass spectrum.
+\\citep{Langer2020}.  We briefly discuss the broader theoretical
+context of the BH mass spectrum in Appendix~\\ref{sec:so10}.
 
 \subsection{Follow-up strategy}
 \label{sec:followup}
@@ -481,19 +523,37 @@ The target is located at RA = 18.28$^h$, Dec = $+3.5\degr$
 (Ophiuchus), accessible from both hemispheres, and is an evening
 target in the northern summer.
 
-\subsection{Limitations}
+\subsection{Limitations and required confirmation}
 
-We emphasise the following limitations:
+We emphasise the following limitations, which prevent this candidate
+from being classified as a confirmed BH at the present time:
 \begin{itemize}
-\item \textbf{No independent RV confirmation exists.}  The orbital
-  solution relies entirely on the Gaia NSS pipeline.
+\item \textbf{Gaia NSS pipeline assumptions.}  The companion mass
+  depends on the NSS orbital model, the parallax, and the
+  adopted primary mass (Section~\ref{sec:methods:nss}).
+  \citet{ElBadry2024} have shown that a fraction of extreme-mass-ratio
+  Gaia NSS solutions are spurious when tested against independent
+  radial velocities.  Although this source has not been flagged by
+  any published vetting study, the same failure modes could in
+  principle apply.
+\item \textbf{No independent multi-epoch RV orbit exists.}  The
+  orbital solution relies entirely on the Gaia astrometric pipeline.
+  Until an independent RV orbit confirms the period, eccentricity,
+  and semi-amplitude, the companion mass remains contingent on the
+  Gaia solution.
 \item \textbf{SIMBAD provides no spectral classification.}  The
-  primary characterisation rests on Gaia GSP-Phot parameters.
+  primary characterisation rests on Gaia GSP-Phot parameters,
+  which have known systematic uncertainties at the 100--200\,K
+  level for RGB stars.
 \item \textbf{The stripped He star scenario remains formally open},
-  requiring UV spectroscopy for definitive exclusion.
-\item \textbf{The parallax uncertainty of 10~per~cent} propagates
-  into the mass estimate.  Gaia DR4 will tighten this
-  substantially.
+  requiring UV spectroscopy (e.g.\ HST/COS) for definitive
+  exclusion.
+\item \textbf{Parallax uncertainty of $\\sim$10~per~cent} propagates
+  into the semi-major axis and thence into $M_2$.  Gaia DR4 will
+  tighten this substantially.
+\item \textbf{Single-temperature SED check.}  Our blackbody
+  comparison establishes consistency with a single luminous source
+  but does not substitute for a full atmospheric model fit.
 \end{itemize}
 
 % ====================================================================
@@ -505,14 +565,15 @@ Gaia DR3 4277855016732107520, an astrometric binary with a full
 3D orbital solution.  Our principal findings are:
 
 \begin{enumerate}
-\item The true companion mass from the astrometric orbit is
-  $M_2 = 12.31 \pm 7.52\,\Msun$ (median $12.32\,\Msun$,
+\item The companion mass from our Monte~Carlo posterior is
+  $M_2 = 12.32^{+1.73}_{-1.47}\,\Msun$ (median;
   90~per~cent CI: $[10.0, 15.4]\,\Msun$), well above the BH
-  threshold of $5\,\Msun$.
+  threshold of $5\,\Msun$ under the adopted modelling
+  assumptions.
 
-\item The Monte~Carlo posterior gives
-  $P({\rm BH}) = 100.0$~per~cent, invariant under all tested
-  primary-mass priors ($0.8$--$2.5\,\Msun$).
+\item Under the adopted priors, the Monte~Carlo posterior gives
+  $P({\rm BH}) > 99.9$~per~cent across all tested
+  primary-mass configurations ($0.8$--$2.5\,\Msun$).
 
 \item No luminous companion is detected: a MS star of the required
   mass would exceed the photometric detection threshold by a factor
@@ -525,8 +586,8 @@ Gaia DR3 4277855016732107520, an astrometric binary with a full
 \item ROSAT and XMM non-detections confirm a dormant, non-accreting
   system.
 
-\item The 13-point confirmation checklist yields 13/13 PASS,
-  establishing GOLD-tier BH candidacy.
+\item The 13-point diagnostic summary yields 13/13 favourable
+  indicators, supporting GOLD-tier BH candidacy.
 
 \item The predicted $K_1 \approx 65\,\kms$ makes spectroscopic
   confirmation straightforward with existing ground-based
@@ -534,10 +595,13 @@ Gaia DR3 4277855016732107520, an astrometric binary with a full
 \end{enumerate}
 
 Gaia DR3 4277855016732107520 is a high-confidence dormant black hole
-candidate that merits urgent spectroscopic follow-up.  Its true mass
-of $\sim$\,$12.3\,\Msun$ from a full astrometric orbit, combined
-with the complete elimination of viable non-BH scenarios, makes it
-one of the strongest unconfirmed candidates in the Gaia era.
+candidate that merits urgent spectroscopic follow-up.  With a
+companion mass of
+$M_2 = 12.32^{+1.73}_{-1.47}\,\Msun$ from the astrometric orbit,
+combined with the exclusion of six of seven non-BH scenarios, it
+represents one of the strongest unconfirmed candidates in the Gaia
+era.  Independent multi-epoch radial-velocity monitoring is the
+critical next step toward confirmation.
 
 % ====================================================================
 \section*{Acknowledgements}
@@ -602,7 +666,7 @@ Period $P$             & 424.403 d           & 1.159    & Gaia NSS \\
 Eccentricity $e$       & 0.3427              & 0.0194   & Gaia NSS \\
 NSS significance       & 75.4$\sigma$        & ---      & Gaia NSS \\
 GOF                    & 18.3                & ---      & Gaia NSS \\
-$M_2$ (true mass)      & 12.31 $\Msun$       & 7.52     & Gaia NSS \\
+$M_2$ (derived mass)   & 12.31 $\Msun$       & 7.52     & Gaia NSS \\
 \midrule
 \multicolumn{4}{c}{\textit{Stellar parameters (GSP-Phot)}} \\
 $T_{\rm eff}$          & 5922 K              & ---      & Gaia DR3 \\
@@ -626,7 +690,7 @@ $R_\star$              & 4.5 $\Rsun$         & ---      & Derived \\
 $M_1$ (primary mass)   & 1.34 $\Msun$        & 0.40     & GSP-Phot \\
 $a$ (semi-major axis)  & 2.64 AU             & ---      & Kepler III \\
 $K_1$ (predicted)      & $\sim$\,65 $\kms$   & ---      & Dynamics \\
-$P({\rm BH})$          & 100.0\%             & ---      & MC posterior \\
+$P({\rm BH})$          & $>$99.9\%           & ---      & MC posterior \\
 \bottomrule
 \end{tabular}
 \end{table*}
@@ -654,19 +718,20 @@ Chance align.   & Excluded     & Coherent Keplerian orbit \\
 \centering
 \caption{Sensitivity of M$_2$ and $P({\rm BH})$ to the primary mass
 prior.  All runs use $5 \times 10^5$ Monte~Carlo draws.  Because the
-companion mass is a \emph{true mass} from the astrometric orbit,
-$P({\rm BH})$ is 100~per~cent across all tested configurations.}
+companion mass is derived from the astrometric orbit under Gaia NSS
+modelling assumptions (Section~\ref{sec:methods:nss}), the posterior
+remains entirely above $5\,\Msun$ across all tested configurations.}
 \label{tab:sensitivity}
 \begin{tabular}{lccc}
 \toprule
 $M_1$ prior ($\Msun$) & $M_2$ ($\Msun$) & $P({\rm BH})$ (\%) &
 Note \\
 \midrule
-0.80 & 12.85 & 100.0 & Low-mass RGB \\
-1.00 & 12.65 & 100.0 & Sub-solar \\
-1.34 (fiducial) & 12.31 & 100.0 & GSP-Phot estimate \\
-1.80 & 11.85 & 100.0 & Super-solar \\
-2.50 & 11.15 & 100.0 & High-mass RGB \\
+0.80 & 12.85 & $>$99.9 & Low-mass RGB \\
+1.00 & 12.65 & $>$99.9 & Sub-solar \\
+1.34 (fiducial) & 12.31 & $>$99.9 & GSP-Phot estimate \\
+1.80 & 11.85 & $>$99.9 & Super-solar \\
+2.50 & 11.15 & $>$99.9 & High-mass RGB \\
 \bottomrule
 \end{tabular}
 \end{table*}
@@ -686,7 +751,7 @@ $e$                 & 0.45    & 0.52    & 0.73     & 0.343   \\
 Primary type        & G-dwarf & RGB     & Giant    & RGB     \\
 $M_1$ ($\Msun$)     & 0.93    & 1.07    & 0.76     & 1.34    \\
 $M_2$ ($\Msun$)     & 9.62    & 8.94    & 32.70    & 12.31   \\
-Mass type           & True    & True    & True     & True    \\
+Mass type           & Derived & Derived & Derived & Derived \\
 $d$ (pc)            & 480     & 1160    & 590      & 657     \\
 $G$ (mag)           & 13.8    & 12.3    & 11.6     & 11.25   \\
 Status              & Confirmed & Confirmed & Confirmed & Candidate \\
@@ -714,9 +779,9 @@ summary, and (h) system summary card.}
 \caption{\textit{Left:} Full posterior distribution of the companion
 mass $M_2$ from 500\,000 Monte~Carlo draws.  The shaded regions mark
 the 68~per~cent (dark) and 90~per~cent (light) credible intervals.
-\textit{Right:} Cumulative distribution function.  The entire
-posterior lies above the BH threshold ($5\,\Msun$), yielding
-$P({\rm BH}) = 100.0$~per~cent.}
+\textit{Right:} Cumulative distribution function.  Under the adopted
+modelling assumptions, the entire posterior lies above the canonical
+BH threshold of $5\,\Msun$.}
 \label{fig:posterior}
 \end{figure*}
 
@@ -732,12 +797,35 @@ $K_1 \approx 65\,\kms$.}
 
 \begin{figure*}
 \includegraphics[width=0.85\textwidth]{figures/fig4_confirmation_checklist.png}
-\caption{Black hole confirmation checklist.  All 13 diagnostic tests
-yield PASS (green check marks), establishing GOLD-tier BH candidacy.
-The 13/13 score distinguishes this candidate from systems with open
-diagnostic items.}
+\caption{Diagnostic summary for BH candidacy.  All 13 diagnostic
+indicators are favourable (green check marks), supporting GOLD-tier
+candidacy status.  These indicators represent necessary conditions
+for a BH interpretation; they do not by themselves constitute
+confirmation, which requires independent spectroscopic follow-up.}
 \label{fig:companion}
 \end{figure*}
+
+% ====================================================================
+%  APPENDIX
+% ====================================================================
+
+\appendix
+
+\section{SO(10) GUT context}
+\label{sec:so10}
+
+Within the framework of SO(10) grand unified theory, the compact
+object mass spectrum carries information about the symmetry-breaking
+chain SO(10) $\to$ SU(5) $\times$ U(1)$_X$ $\to$ SU(3)$_C$
+$\times$ SU(2)$_L$ $\times$ U(1)$_Y$.  The right-handed neutrino
+$\nu_R$, unique to the 16-dimensional spinor representation of
+SO(10), drives the seesaw mechanism for neutrino masses and
+influences supernova explosion physics via neutrino cooling.  A
+$12.3\,\Msun$ BH in the standard stellar-mass range constrains the
+BH mass function power-law index ($\alpha \sim 1.8$--$2.5$) and,
+combined with the 614 candidates in the GRAVITAS OmniScan v13
+catalogue, builds statistical power to test SO(10) predictions of
+the compact-object mass spectrum.
 
 \label{lastpage}
 \end{document}
