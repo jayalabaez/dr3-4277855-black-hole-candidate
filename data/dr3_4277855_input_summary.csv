@@ -1,0 +1,2 @@
+source_id,ra_deg,dec_deg,l_deg,b_deg,parallax_mas,parallax_err,distance_pc,G_mag,BP_mag,RP_mag,BP_RP,Teff_K,logg,rv_sys_kms,rv_err_kms,RUWE,EN_sig,period_d,period_err,eccentricity,ecc_err,NSS_sig,GOF,M1_Msun,M2_Msun,sol_type,J_mag,H_mag,K_mag,W1_mag,W2_mag,NUV_mag,ROSAT,XMM,score
+4277855016732107520,274.22383058,3.49752414,32.117,9.278,1.5228,0.1549,656.67,11.2495,11.6566,10.6638,0.9928,5922.0,2.932,-29.488,0.566,9.3107,3752.76,424.403,1.159,0.3427,0.0194,75.399,18.318,1.340,12.313,Orbital,9.94,9.54,9.41,9.34,9.36,17.52,non-detection,non-detection,80

@@ -1,0 +1,59 @@
+{
+  "target": "Gaia DR3 4277855016732107520",
+  "classification": "BLACK HOLE CANDIDATE (GOLD)",
+  "M2_nominal": 12.313,
+  "M2_90CI": [
+    9.991731337898042,
+    15.384162915867778
+  ],
+  "P_BH": 100.0,
+  "primary": {
+    "M1": 1.34,
+    "Teff": 5922.0,
+    "logg": 2.932,
+    "L": 22.015854935642004,
+    "R": 4.457573071107994,
+    "evol_state": "RGB"
+  },
+  "orbit": {
+    "period_d": 424.403,
+    "eccentricity": 0.3427,
+    "a_AU": 2.641757675276262,
+    "K1_expected_kms": 65.00948577386062,
+    "roche_fill": 0.03702912323350966
+  },
+  "evidence": {
+    "NSS_significance": 75.399,
+    "RUWE": 9.3107,
+    "astrometric_noise_sig": 3752.76,
+    "xray": "non-detection",
+    "uv": "dormant",
+    "sed_excess": "none",
+    "scenarios_excluded": 6,
+    "scenarios_disfavoured": 0
+  },
+  "galactic": {
+    "z_pc": 105.871544449412,
+    "population": "THIN DISK",
+    "x_gc": -7.572799007941602,
+    "y_gc": 0.3445475611367225,
+    "z_gc": 125.25090392885451
+  },
+  "so10_context": {
+    "mass_spectrum_bin": "stellar_BH (5-50 Msun)",
+    "mass_function_alpha": 1.8,
+    "defect_core_L_unit_pc": 0.04
+  },
+  "observability": {
+    "G_mag": 11.2495,
+    "distance_pc": 656.67,
+    "telescope_class": "2-4m (R~50k)",
+    "hemisphere": "both (Dec=+3.5\u00b0)"
+  },
+  "figures": [
+    "C:\\Users\\jayal\\Downloads\\So10Theory2\\So10Theory\\outputs\\dr3_4277855_publication\\figures\\dr3_4277855_8panel.png",
+    "C:\\Users\\jayal\\Downloads\\So10Theory2\\So10Theory\\outputs\\dr3_4277855_publication\\figures\\dr3_4277855_mass_posterior.png",
+    "C:\\Users\\jayal\\Downloads\\So10Theory2\\So10Theory\\outputs\\dr3_4277855_publication\\figures\\dr3_4277855_orbit.png",
+    "C:\\Users\\jayal\\Downloads\\So10Theory2\\So10Theory\\outputs\\dr3_4277855_publication\\figures\\dr3_4277855_checklist.png"
+  ]
+}

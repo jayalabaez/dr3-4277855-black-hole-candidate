@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+type: article
+title: "Gaia DR3 4277855016732107520: A 12.3 Solar-Mass Black Hole Candidate from Astrometric Orbital Solution with RGB Primary"
+authors:
+  - family-names: "Ayala-Baez"
+    given-names: "Joel"
+    email: "jayalabaez@gmail.com"
+date-released: "2026-03-25"
+repository-code: "https://github.com/jayalabaez/dr3-4277855-black-hole-candidate"
+keywords:
+  - black holes
+  - Gaia DR3
+  - astrometric binaries
+  - stellar-mass black holes
+  - dormant black holes
+  - red giant branch
+  - SO(10) grand unified theory
+license: MIT
