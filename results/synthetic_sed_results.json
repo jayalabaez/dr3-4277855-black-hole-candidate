@@ -1,0 +1,136 @@
+{
+  "primary_teff_fit": {
+    "best_teff": 4500,
+    "range_lo": 4500,
+    "range_hi": 4500,
+    "gsp_phot_teff": 5922,
+    "difference_K": -1422,
+    "max_band_residual_pct": 48285.7
+  },
+  "companion_exclusion_synth": {
+    "M2": 12.3,
+    "T_companion_K": 25399,
+    "flux_ratios_phot": {
+      "G_BP": 246.8,
+      "G": 99.9,
+      "G_RP": 49.1,
+      "J": 17.9,
+      "H": 12.4,
+      "K": 9.8,
+      "W1": 7.5,
+      "W2": 6.6
+    },
+    "flux_ratios_logg": {
+      "G_BP": 118.3,
+      "G": 47.9,
+      "G_RP": 23.5,
+      "J": 8.6,
+      "H": 6.0,
+      "K": 4.7,
+      "W1": 3.6,
+      "W2": 3.2
+    }
+  },
+  "stripped_he_scan": [
+    {
+      "M_He": 1.0,
+      "Teff": 30000,
+      "log_L": 1.5,
+      "R_Rsun": 0.208,
+      "NUV_deficit_x": 325.0,
+      "max_optical_ratio": 0.8066,
+      "photometrically_hidden": false
+    },
+    {
+      "M_He": 1.5,
+      "Teff": 35000,
+      "log_L": 1.94,
+      "R_Rsun": 0.254,
+      "NUV_deficit_x": 685.0,
+      "max_optical_ratio": 1.5112,
+      "photometrically_hidden": false
+    },
+    {
+      "M_He": 2.0,
+      "Teff": 40000,
+      "log_L": 2.25,
+      "R_Rsun": 0.278,
+      "NUV_deficit_x": 1084.0,
+      "max_optical_ratio": 2.1991,
+      "photometrically_hidden": false
+    },
+    {
+      "M_He": 3.0,
+      "Teff": 45000,
+      "log_L": 2.69,
+      "R_Rsun": 0.365,
+      "NUV_deficit_x": 2334.0,
+      "max_optical_ratio": 4.445,
+      "photometrically_hidden": false
+    },
+    {
+      "M_He": 4.0,
+      "Teff": 50000,
+      "log_L": 3.01,
+      "R_Rsun": 0.424,
+      "NUV_deficit_x": 3799.0,
+      "max_optical_ratio": 6.8844,
+      "photometrically_hidden": false
+    },
+    {
+      "M_He": 5.0,
+      "Teff": 55000,
+      "log_L": 3.25,
+      "R_Rsun": 0.463,
+      "NUV_deficit_x": 5335.0,
+      "max_optical_ratio": 9.2911,
+      "photometrically_hidden": false
+    },
+    {
+      "M_He": 6.0,
+      "Teff": 58000,
+      "log_L": 3.45,
+      "R_Rsun": 0.523,
+      "NUV_deficit_x": 7428.0,
+      "max_optical_ratio": 12.678,
+      "photometrically_hidden": false
+    },
+    {
+      "M_He": 8.0,
+      "Teff": 64000,
+      "log_L": 3.76,
+      "R_Rsun": 0.615,
+      "NUV_deficit_x": 12037.0,
+      "max_optical_ratio": 19.8509,
+      "photometrically_hidden": false
+    },
+    {
+      "M_He": 10.0,
+      "Teff": 70000,
+      "log_L": 4.0,
+      "R_Rsun": 0.68,
+      "NUV_deficit_x": 16862.0,
+      "max_optical_ratio": 27.0433,
+      "photometrically_hidden": false
+    },
+    {
+      "M_He": 12.3,
+      "Teff": 74600,
+      "log_L": 4.22,
+      "R_Rsun": 0.775,
+      "NUV_deficit_x": 24119.0,
+      "max_optical_ratio": 37.9869,
+      "photometrically_hidden": false
+    },
+    {
+      "M_He": 15.0,
+      "Teff": 80000,
+      "log_L": 4.44,
+      "R_Rsun": 0.864,
+      "NUV_deficit_x": 33161.0,
+      "max_optical_ratio": 51.2757,
+      "photometrically_hidden": false
+    }
+  ],
+  "max_hidden_he_mass": 0
+}

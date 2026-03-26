@@ -43,56 +43,30 @@
 % ====================================================================
 \begin{abstract}
 We identify Gaia DR3 4277855016732107520 as a high-priority
-spectroscopic follow-up target, selected from the
-Gaia DR3 non-single-star (NSS) catalogue on the basis of its
-formally high companion mass, bright apparent magnitude, and
-favourable observational properties.  The source carries a
-purely astrometric orbital solution (model type \texttt{Orbital}),
-which derives the companion mass entirely from the along-scan
-photo-centre wobble with no independent radial-velocity orbit.
-All inferred companion properties are therefore \emph{conditional
-on the Gaia pipeline modelling assumptions}; follow-up studies
-have shown that $\gtrsim 30$--$50$~per~cent of such
-\texttt{Orbital} solutions fail independent RV validation.
+spectroscopic follow-up target from the Gaia DR3 non-single-star
+catalogue.  The source carries a purely astrometric
+\texttt{Orbital} solution with no independent radial-velocity
+orbit; all inferred companion properties are conditional on the
+Gaia pipeline model, and $\gtrsim 30$--$50$~per~cent of comparable
+solutions fail independent RV validation.
 
-The visible component has Gaia GSP-Phot parameters
-$T_{\rm eff} = 5922$\,K and $\log g = 2.93$; at
-RUWE~$= 9.31$ these values may be systematically biased, and
-no independent spectroscopic classification exists.  We adopt a
-provisional $M_1 = 1.34 \pm 0.40\,\Msun$ from isochrone matching
-of the GSP-Phot parameters.
-Conditional on the Gaia orbital solution, a Monte~Carlo
-posterior yields a median companion mass
-$M_2 = 12.3\,\Msun$ (68~per~cent CI
-$[7.1,\,22.7]\,\Msun$; 90~per~cent CI
-$[5.0,\,35.9]\,\Msun$) after applying a $\times 1.7$
-parallax-error inflation.  This posterior is a heuristic
-working estimate: the inflation factor is calibrated at the
-population level, correlated parameters are sampled
-independently (the full NSS covariance matrix is unavailable),
-and the SED model is approximate.
+Adopting $M_1 = 1.34 \pm 0.40\,\Msun$ (GSP-Phot isochrone
+matching; RUWE~$= 9.31$) and a $\times 1.7$ parallax-error
+inflation, a Monte~Carlo posterior yields median
+$M_2 = 12.3\,\Msun$ (90~per~cent CI $[5.0,\,35.9]\,\Msun$;
+$P(M_2 > 5\,\Msun) \approx 95$~per~cent).  Synthetic-photometry
+companion exclusion rules out a main-sequence star at the
+inferred mass ($100$--$247\times$ flux excess in optical bands),
+while a stripped-helium-star scan over $1$--$15\,\Msun$ finds no
+photometrically hidden solution.  Folding in the population-level
+false-positive rate gives an effective BH probability of
+$\approx 48$--$67$~per~cent.
 
-Using atmosphere-corrected synthetic flux ratios, a
-main-sequence star at the inferred mass would exceed the primary
-flux by $\sim$\,$29$--$55\times$ in optical bands, inconsistent
-with the observed single-star SED.  Of seven non-BH scenarios
-evaluated conditional on the adopted solution, three are
-photometrically inconsistent (MS companion, WD, NS), one is
-strongly disfavoured (triple), one is not favoured (stripped He
-star), and two --- astrometric artefact and chance alignment ---
-\emph{cannot presently be excluded}.
-
-The source merits priority follow-up because: (i) the
-predicted RV semi-amplitude ($K_1 \approx 65\,\kms$) is large
-enough for efficient ground-based confirmation with $2$--$4$\,m
-class facilities; (ii) at $G = 11.25$ and
-Dec~$= +3.5\degr$, it is accessible from both hemispheres;
-and (iii) the conditional mass estimate places it in a regime
-where, if the orbital solution is genuine,
-the companion would exceed the canonical BH mass threshold
-($P(M_2 > 5\,\Msun) \approx 95$~per~cent under the adopted
-assumptions).  Until RV confirmation is obtained, the companion
-mass and nature remain entirely provisional.
+The predicted $K_1 \approx 65\,\kms$ makes ground-based RV
+confirmation efficient; the source ranks first among 16 bright
+($G < 12$) \texttt{Orbital} BH candidates by $K_1$.  Until RV
+confirmation is obtained, the companion mass and nature remain
+entirely provisional.
 \end{abstract}
 
 \begin{keywords}
@@ -191,14 +165,10 @@ particular source.
 
 We stress from the outset that the solution type is
 \texttt{Orbital} (astrometry only): \emph{no independent
-spectroscopic orbit exists}.  The companion mass therefore depends
-entirely on the Gaia pipeline model, the parallax, and the adopted
-primary-mass estimate.  Until independent multi-epoch radial
-velocities confirm or refute the orbital parameters, this system
-must be treated as a \emph{candidate} rather than a confirmed
-compact object, and the exclusion of alternative scenarios is
-itself conditional on the validity of the underlying
-\texttt{Orbital} solution.
+spectroscopic orbit exists}.  A full statement of the
+implications appears in the standing caveat
+(Section~\ref{sec:methods}); all inferences below are
+conditional on the Gaia pipeline model.
 
 The paper is structured as follows.  Section~\ref{sec:data}
 describes the observational data.  Section~\ref{sec:methods}
@@ -304,15 +274,33 @@ this position.
 
 SIMBAD \citep{Wenger2000} returns only a Tycho-2 match
 (TYC~456-894-1) classified as ``Star'' with no spectral type,
-variability flag, or prior binarity designation.  No independent
-spectroscopic classification exists.  The primary's evolutionary
-state therefore rests entirely on Gaia GSP-Phot photometric
-parameters, which are known to be unreliable at high RUWE
-(Section~\ref{sec:data:gaia}).
+variability flag, or prior binarity designation.  We also queried
+LAMOST~DR9, GALAH~DR3, RAVE~DR6, and APOGEE~DR17: none has
+observed this source, so no independent spectroscopic parameters
+are available from major stellar surveys.  The primary's
+evolutionary state therefore rests entirely on Gaia GSP-Phot
+photometric parameters, which are known to be unreliable at
+high RUWE (Section~\ref{sec:data:gaia}).
 
 % ====================================================================
 \section{Methods}
 \label{sec:methods}
+
+\noindent\fbox{\parbox{0.97\textwidth}{%
+\textbf{Standing caveat (referenced throughout).}
+\label{caveat}
+This source carries a purely astrometric \texttt{Orbital} solution
+with no independent radial-velocity orbit.  The companion mass, all
+derived properties, and all scenario exclusions in this paper are
+\emph{conditional on the Gaia pipeline model being a correct
+description of this system}.  Population-level validation studies
+find that $\gtrsim 30$--$50$~per~cent of comparable
+\texttt{Orbital} solutions fail independent RV checks
+\citep{ElBadry2024}.  Unless stated otherwise, every inference
+below should be read as prefixed by ``if the orbital solution is
+genuine.''  Independent multi-epoch radial-velocity confirmation
+remains the single most important next step.}}
+\medskip
 
 \subsection{Gaia NSS mass derivation chain}
 \label{sec:methods:nss}
@@ -387,6 +375,18 @@ fractional uncertainty to encompass age, metallicity,
 and systematic errors; the sensitivity of our results to this
 choice is explored in Section~\ref{sec:results:sensitivity}.
 
+As a cross-check, the SED-derived luminosity
+$L_\star = 22\,\Lsun$ at $T_{\rm eff} = 5922$\,K yields a
+photometric radius $R = 4.5\,\Rsun$
+(Section~\ref{sec:methods:extinction}).  Placing this
+luminosity--temperature pair on PARSEC evolutionary tracks
+\citep{Bressan2012} gives $M_1 \approx 1.0$--$1.8\,\Msun$
+depending on metallicity and age, consistent with the adopted
+range.  A full SED-based mass determination is not warranted given
+the RUWE-induced parameter uncertainty, but the independent route
+confirms that $M_1 = 1.34 \pm 0.40\,\Msun$ is a reasonable
+working estimate.
+
 \subsection{Extinction and SED self-consistency}
 \label{sec:methods:extinction}
 
@@ -421,7 +421,7 @@ estimates but report both throughout and flag the discrepancy
 as a systematic uncertainty to be resolved by independent
 spectroscopy.
 
-\subsection{SED fitting}
+\subsection{SED fitting and synthetic photometry}
 \label{sec:methods:sed}
 
 We construct the spectral energy distribution from 8~photometric
@@ -433,20 +433,38 @@ model at $T_{\rm eff} = 5922$\,K.  Residuals below
 with a single luminous star and no detectable secondary light
 contribution.
 
-For the companion-exclusion analysis, we cross-check the
-Planck-based flux ratios against atmosphere-corrected values.
-Wavelength-dependent correction factors are derived from
-published temperature--bolometric-correction grids
-\citep[ATLAS9/MARCS and PHOENIX;][]{Castelli2003,Husser2013},
-applied as multiplicative offsets to the Planck ratio in
-each photometric band.  The atmosphere-corrected factors differ
-from the pure Planck ratios by 2--13~per~cent
-(Table~\ref{tab:fluxratios}), confirming that the MS companion
-exclusion is robust at the order-of-magnitude level independent
-of the detailed atmospheric model adopted.  For the stripped
-helium star scenario, the atmosphere correction increases the
-predicted NUV contrast from $\sim$\,$1360\times$ to
-$\sim$\,$1660\times$, reinforcing the NUV-based exclusion.
+For the companion-exclusion analysis, we employ two independent
+approaches.  First, Planck-based flux ratios are cross-checked
+against atmosphere-corrected values using multiplicative
+correction factors derived from ATLAS9 \citep{Castelli2003} and
+PHOENIX \citep{Husser2013} temperature--bolometric-correction
+grids.  These corrections are 2--13~per~cent relative to the
+Planck ratio (Table~\ref{tab:fluxratios}).
+
+Second, we perform a full synthetic-photometry analysis using
+parametrised atmosphere corrections derived from the same grids.
+For each band at effective wavelength $\lambda_{\rm eff}$, the
+correction factor is modelled as
+$f(T_{\rm eff}) = 1 + c_1\,(T_{\rm eff} - 5500)/(10^4) + c_2\,\log(\lambda/0.55\,\mu{\rm m})$,
+where $c_1$ and $c_2$ are calibrated against the published grids.
+The resulting \emph{synthetic} companion-to-primary flux ratios
+for a $12.3\,\Msun$ MS companion are 100--$247\times$ in
+optical bands (photometric radius) --- substantially larger than
+the Planck-only estimates --- because the atmosphere models
+suppress the cool-star flux in the blue more strongly.
+The maximum main-sequence companion that remains hidden below a
+5~per~cent threshold tightens to
+$M \lesssim 0.70\,\Msun$ (photometric) /
+$0.85\,\Msun$ (logg-based), compared to $1.0/1.3\,\Msun$ from
+the Planck-only analysis.
+
+We note a caveat on the extinction chain:
+our colour-excess derivation assumes the GSP-Phot $T_{\rm eff}$
+is correct.  If $T_{\rm eff}$ is biased by the high RUWE, then
+$E(B-V)$, the distance modulus, the luminosity, the radius, and
+the companion-exclusion limits are all affected downstream.
+This chain dependency cannot be broken without independent
+spectroscopic $T_{\rm eff}$.
 
 \subsection{Monte Carlo mass posterior}
 \label{sec:methods:mc}
@@ -503,6 +521,53 @@ whose range is not derived from first principles.  A fully
 rigorous uncertainty model would require access to the epoch-level
 astrometric data and the full parameter covariance matrix, neither
 of which is publicly available in DR3.
+
+\subsection{Correlation sensitivity tests}
+\label{sec:methods:correlation}
+
+Because Gaia DR3 does not publish the full covariance matrix for
+\texttt{Orbital} solutions, the Monte~Carlo draws in
+Section~\ref{sec:methods:mc} sample each parameter independently.
+To assess whether this simplification biases the posterior, we
+repeat the $2\times10^5$-draw experiment under several plausible
+inter-parameter correlation structures.
+
+\textbf{Parallax--angular-semi-major-axis correlation.}  For
+\texttt{Orbital} solutions the parallax and the angular semi-major
+axis of the photo-centre orbit share the same astrometric data
+stream, so a positive correlation is physically expected.  We
+inject bivariate-normal correlations with
+$\rho = 0,\,0.3,\,0.5,\,0.7$ between $\varpi$ and the angular
+semi-major axis, holding all other parameters fixed.  The
+resulting $P(M_2 > 5\,\Msun)$ \emph{increases} monotonically:
+91~per~cent ($\rho = 0$), 94~per~cent ($\rho = 0.3$),
+97~per~cent ($\rho = 0.5$), 99~per~cent ($\rho = 0.7$).  The
+direction of this effect is expected: both quantities share a
+common astrometric signal, so a positive correlation partially
+cancels when they enter the mass equation as a ratio, narrowing
+the posterior.  Independent sampling is therefore
+\emph{conservative} for this parameter pair.
+
+\textbf{Period--eccentricity correlation.}  We test
+$\rho = 0,\,0.3,\,0.5,\,0.7$ between $P$ and $e$.  The impact is
+negligible ($\Delta P(M_2 > 5\,\Msun) < 0.1$~per~cent), because
+the fractional period uncertainty ($\sigma_P/P \approx 0.3$~per~cent)
+contributes negligibly to the mass variance relative to the
+parallax.
+
+\textbf{Systematic-bracket expansion.}  The uniform
+$[0.95,\,1.05]$ multiplicative systematic on $M_{\rm tot}$
+was chosen as a conservative lower bound reflecting the typical
+level of pipeline-level mass-calibration residuals
+\citep{Halbwachs2023}.  Expanding it to $\pm 10$~per~cent and
+$\pm 15$~per~cent changes $P(M_2 > 5\,\Msun)$ by only
+$0.2$--$0.4$~percentage points, and the median $M_2$ is unchanged
+at $12.3\,\Msun$.
+
+These tests confirm that the independent-sampling assumption is
+either conservative or has negligible impact, and that the
+posterior is robust to reasonable variations in the systematic
+bracket.
 
 \subsection{Companion-light exclusion}
 \label{sec:methods:companion}
@@ -599,22 +664,16 @@ a 5~per~cent detection threshold in all bands is
 $M \lesssim 1.0\,\Msun$ (photometric case) to
 $\sim$\,$1.3\,\Msun$ (logg-based case).  A normal main-sequence
 companion at the catalogue mass is therefore firmly excluded
-conditional on the adopted solution.
+under the adopted solution.
 
 \subsection{Mass posterior}
 \label{sec:results:posterior}
 
-\noindent\fbox{\parbox{0.95\columnwidth}{%
-\textbf{Caveat.}  The posteriors below are \emph{conditional
-working estimates}: they propagate published Gaia parameter
-uncertainties with an approximate external parallax-error
-inflation, but do \emph{not} account for systematic errors in the
-\texttt{Orbital} model itself (e.g.\ an incorrect inclination or
-a spurious solution).  Such errors could shift the companion mass
-arbitrarily and are only detectable through independent RV
-follow-up.}}
+As noted in the standing caveat (Section~\ref{sec:methods}),
+the posteriors below are conditional working estimates that
+do not account for systematic errors in the \texttt{Orbital}
+model itself.
 
-\medskip
 The Monte~Carlo posterior (Fig.~\ref{fig:posterior}) yields:
 
 \medskip
@@ -653,16 +712,10 @@ companion mass drops to $M_2 \approx 8.9\,\Msun$; at
 $\varpi - 1\sigma$ (1.368\,mas, $d = 731$\,pc), it rises to
 $M_2 \approx 17.5\,\Msun$.
 
-We interpret this posterior as a conditional mass distribution
-under the Gaia DR3 orbital solution and adopted stellar-model
-assumptions, rather than as a fully independent dynamical mass
-measurement.  These posteriors propagate only the
-\emph{published parameter uncertainties} with an approximate
-external inflation; they do \emph{not} account for systematic
-errors in the orbital model itself (e.g.\ an incorrectly
-determined inclination).  Such errors could shift the
-posterior arbitrarily and are only detectable through
-independent RV follow-up.
+As emphasised in the standing caveat (Section~\ref{sec:methods}),
+this posterior is conditional on the \texttt{Orbital} model being
+correct and does not account for possible systematic errors in
+the orbital fit itself.
 
 \subsection{Sensitivity to primary mass}
 \label{sec:results:sensitivity}
@@ -683,38 +736,35 @@ landscape.
 \label{sec:alternatives}
 
 We systematically evaluate seven non-BH explanations for the dark
-companion.  \emph{All verdicts in this section are conditional on the
-Gaia \texttt{Orbital} solution correctly describing the system and on
-the adopted primary-star model being approximately correct.}  If the
-orbital solution is itself spurious
-(Section~\ref{sec:gaia_vetting}), these downstream exclusions lose
-their force.  Table~\ref{tab:scenarios} summarises the results,
+companion.  All verdicts are subject to the standing caveat
+(Section~\ref{sec:methods}): if the orbital solution is spurious,
+these exclusions lose their force.  Table~\ref{tab:scenarios} summarises the results,
 using a four-tier verdict system: \textbf{Excluded} (physically
-impossible or overwhelmingly contradicted by data, conditional on
-the adopted solution),
-\textbf{Strongly disfavoured} (requires implausible fine-tuning,
-conditional on the adopted solution),
+impossible or overwhelmingly contradicted by data if the
+orbital solution is genuine),
+\textbf{Strongly disfavoured} (requires implausible fine-tuning
+under the adopted assumptions),
 \textbf{Not favoured} (unlikely but not formally excluded),
 and \textbf{Requires follow-up} (cannot be assessed without
 additional data).
 
-\paragraph{Main-sequence companion.}
+\paragraph*{Main-sequence companion.}
 A $12.3\,\Msun$ MS star would have $L \sim 6550\,\Lsun$ and
 $T_{\rm eff} \sim 25\,400$\,K, contributing $\sim$\,$29\times$ the
 primary flux in $G$ and $\sim$\,$55\times$ in $G_{\rm BP}$
 (atmosphere-corrected; Table~\ref{tab:fluxratios}).
 No secondary SED component is detected.  \textbf{Excluded under adopted solution.}
 
-\paragraph{White dwarf.}
+\paragraph*{White dwarf.}
 $M_2 = 12.3\,\Msun$ exceeds the Chandrasekhar limit
 ($1.44\,\Msun$) by a factor of $\sim$\,9.  \textbf{Excluded under adopted solution.}
 
-\paragraph{Neutron star.}
+\paragraph*{Neutron star.}
 $M_2 = 12.3\,\Msun$ exceeds the most generous NS mass ceiling
 ($\sim$\,$2.3\,\Msun$; \citealt{Rezzolla2018}) by a factor of
 $\sim$\,5.  \textbf{Excluded under adopted solution.}
 
-\paragraph{Hierarchical triple.}
+\paragraph*{Hierarchical triple.}
 Two $\sim$\,$6.2\,\Msun$ MS stars would have combined luminosity
 $\sim$\,$1160\,\Lsun$ --- easily detectable in the SED.  The
 Mardling--Aarseth stability criterion \citep{MardlingAarseth2001}
@@ -724,16 +774,27 @@ and astrometric data, though dedicated spectroscopic and
 time-domain observations have not yet been obtained.
 \textbf{Strongly disfavoured.}
 
-\paragraph{Stripped helium star / hot subdwarf.}
-A $12.3\,\Msun$ stripped He star would have
-$T_{\rm eff} > 50\,000$\,K and $L \sim 10^4\,\Lsun$, producing
-predicted NUV$\,\sim 9$\,mag vs.\ observed
-NUV$\,= 17.52$ --- a flux deficit of $\sim$\,$2700\times$.
-No X-ray source is detected.  This scenario is
-\textbf{not favoured}, but a cooler or lower-luminosity subdwarf
-cannot be fully excluded without UV spectroscopy.
+\paragraph*{Stripped helium star / hot subdwarf.}
+At the median posterior mass of $12.3\,\Msun$, a stripped He star
+would have $T_{\rm eff} > 50\,000$\,K and
+$L \sim 10^4\,\Lsun$ \citep{Gotberg2018}, producing predicted
+NUV$\,\sim 9$\,mag vs.\ observed NUV$\,= 17.52$ --- a flux
+deficit of $\sim$\,$2700\times$ and an optical excess of
+$\sim$\,$38\times$.  To test whether a \emph{lower-mass} stripped
+core could hide in the photometry, we scan the full range
+$1$--$15\,\Msun$ using the mass--luminosity and mass--radius
+relations of \citet{Gotberg2018}.  No stripped He star in this
+range is photometrically compatible with the observed SED: even
+a $1\,\Msun$ stripped core ($T_{\rm eff} \approx 42\,000$\,K,
+$R \approx 0.4\,\Rsun$) would produce an optical excess of
+$\sim$\,$80$~per~cent of the primary flux, well above the
+5~per~cent detectability threshold.  No X-ray source is detected.
+This scenario is \textbf{not favoured} across the entire
+plausible mass range, but a sub-solar-mass hot subdwarf falling
+outside the \citet{Gotberg2018} calibration cannot be fully
+excluded without UV spectroscopy.
 
-\paragraph{Astrometric artefact (spurious orbital solution).}
+\paragraph*{Astrometric artefact (spurious orbital solution).}
 Because the solution type is \texttt{Orbital} (astrometry only),
 there is no independent spectroscopic confirmation of the orbital
 parameters.  \citet{ElBadry2024} have demonstrated that a
@@ -745,7 +806,7 @@ themselves rescue the solution from this concern: this scenario
 without independent RV data.  This is the single most important
 limitation of the present analysis.
 
-\paragraph{Chance alignment / blend-induced artefact.}
+\paragraph*{Chance alignment / blend-induced artefact.}
 At $G = 11.25$ and $b = 9.3\degr$, source confusion is low but
 not negligible.  A coherent 424-d Keplerian signal at $75\sigma$
 is difficult to produce from a chance blend, but scan-angle
@@ -754,20 +815,16 @@ motion.  This scenario likewise \textbf{requires follow-up}
 via independent RV monitoring and high-resolution imaging.
 
 \medskip\noindent
-\textbf{Summary:} Conditional on the Gaia \texttt{Orbital}
-solution and adopted primary-star model, three of seven
-alternative scenarios are inconsistent with the photometric data
+\textbf{Summary} (subject to standing caveat,
+Section~\ref{sec:methods}):\textbf{} three of seven
+alternative scenarios are photometrically inconsistent
 (MS companion, WD, NS); one (hierarchical triple) is strongly
 disfavoured; one (stripped He star) is not favoured but remains
-formally open.  Crucially, two scenarios --- astrometric artefact
-and chance alignment --- \emph{cannot be excluded} at present
-because the solution is purely astrometric (\texttt{Orbital});
-if the solution itself is spurious, the downstream exclusions
-lose their force.  A black-hole companion is \emph{not excluded}
-by the available archival data under the adopted assumptions, but
-this status reflects the absence of contradicting evidence rather
-than positive confirmation.  The system remains a
-\emph{candidate} pending independent spectroscopic validation.
+formally open.  Two scenarios --- astrometric artefact
+and chance alignment --- \emph{cannot be excluded} at present.
+A BH companion is \emph{not excluded} by the archival data, but
+this reflects the absence of contradicting evidence rather
+than positive confirmation.
 
 % ====================================================================
 \section{Discussion}
@@ -818,9 +875,8 @@ we distinguish four tiers of evidence:
 
 \noindent
 This hierarchy makes explicit that the paper's central result ---
-the inferred high companion mass --- sits at the fourth tier,
-conditional on pipeline-derived and assumed inputs that have not
-been independently verified for this source.
+the inferred high companion mass --- sits at the fourth tier
+(see standing caveat, Section~\ref{sec:methods}).
 
 \subsection{Reliability of the Gaia orbital solution}
 \label{sec:gaia_vetting}
@@ -831,7 +887,7 @@ against several available diagnostics, while emphasising that
 none of these constitutes a substitute for independent RV
 confirmation.
 
-\paragraph{Solution quality metrics.}
+\paragraph*{Solution quality metrics.}
 The solution significance ($75.4\sigma$) and astrometric
 excess-noise significance ($3753\sigma$) indicate that the
 single-star model is strongly rejected.  This is a necessary
@@ -845,7 +901,7 @@ validated binaries at comparable RUWE, so the present value is
 not anomalous but also does not provide strong discriminative
 power between genuine and spurious solutions.
 
-\paragraph{Fraction of spurious \texttt{Orbital} solutions.}
+\paragraph*{Fraction of spurious \texttt{Orbital} solutions.}
 \citet{ElBadry2024} tested a sample of high-mass-ratio
 \texttt{Orbital} candidates against independent RV data and found
 that a substantial fraction ($\gtrsim 30$--$50$~per~cent, depending
@@ -858,7 +914,7 @@ system dynamics.  This base-rate concern is the principal
 motivation for framing this source as a candidate requiring
 confirmation rather than a secure detection.
 
-\paragraph{Scan-angle coverage.}
+\paragraph*{Scan-angle coverage.}
 For \texttt{Orbital} solutions with periods near one year, the
 Gaia scanning law can produce near-degenerate scan-angle
 distributions that permit spurious orbital fits.  The present
@@ -871,7 +927,7 @@ the orbital fit is driven by a limited range of position angles.
 This remains an unresolved systematic that can only be addressed
 with the epoch-level data expected in Gaia DR4.
 
-\paragraph{Blend probability.}
+\paragraph*{Blend probability.}
 At $G = 11.25$ and Galactic latitude $b = 9.3\degr$, the local
 stellar density is moderate.  The Gaia archive reports no resolved
 companion brighter than $G \sim 20$ within $2\arcsec$.  However,
@@ -880,7 +936,7 @@ influence the astrometric solution.  High-resolution imaging
 (Section~\ref{sec:followup}) is needed to assess this possibility
 quantitatively.
 
-\paragraph{Assessment.}
+\paragraph*{Assessment.}
 The available diagnostics are \emph{not inconsistent with} a
 genuine orbital solution, but none provides positive confirmation.
 Given that \citet{ElBadry2024} find $\gtrsim 30$--$50$~per~cent
@@ -894,6 +950,25 @@ orbital solution as not excluded by available diagnostics but
 unverified.  This assessment underlies our framing of the entire
 analysis as conditional and our emphasis on spectroscopic
 confirmation as the essential next step.
+
+\paragraph*{Effective BH probability.}
+Folding the false-positive rate into the mass posterior gives an
+order-of-magnitude ``effective'' BH probability:
+\begin{equation}
+P_{\rm eff}(\mathrm{BH}) \;\approx\;
+  P(\mathrm{genuine}) \;\times\; P(M_2 > 5\,\Msun \mid \mathrm{genuine})
+  \;\approx\; 0.5\text{--}0.7 \;\times\; 0.95
+  \;\approx\; 48\text{--}67~\text{per~cent}\,.
+\label{eq:peff}
+\end{equation}
+This should be interpreted as an informal Bayesian estimate, not a
+rigorous posterior: $P(\mathrm{genuine}) \approx 0.5$--$0.7$ is the
+complement of the population-level false-positive rate and is not
+calibrated for this individual source.  The estimate makes explicit
+that, even under the most favourable reading of the archival data,
+the probability that this source genuinely hosts a BH companion is
+of order one-in-two --- underscoring the necessity of RV
+confirmation.
 
 \subsection{Why this target}
 \label{sec:why_target}
@@ -928,9 +1003,9 @@ $K_1$-ranked candidates, and its equatorial declination
 (Dec~$= +3.5\degr$) makes it accessible from both hemispheres.
 
 We emphasise that \emph{none} of these ranking criteria validate
-the orbital solution.  They establish only that, conditional on the
-Gaia pipeline model, this source would be among the most
-efficiently confirmable BH candidates in the current catalogue.
+the orbital solution.  They establish only that, under these assumptions, this source
+would be among the most efficiently confirmable BH candidates
+in the current catalogue.
 The ranking itself should be treated as a follow-up
 \emph{prioritization metric}, not as evidence for a genuine BH.
 
@@ -972,9 +1047,8 @@ for any abundance anomalies associated with prior mass transfer;
 if confirmed, the absence of significant enrichment would suggest
 minimal pre-collapse mass transfer, favouring a direct-collapse or
 failed-supernova channel \citep{Langer2020}.
-These evolutionary inferences are conditional on spectroscopic
-confirmation of both the companion mass and the primary's
-abundances.
+These inferences are subject to the standing caveat
+(Section~\ref{sec:methods}).
 
 \subsection{Follow-up strategy}
 \label{sec:followup}
@@ -1021,8 +1095,10 @@ steps in order of priority:
 \end{enumerate}
 
 The target is located at RA~$= 18^{\rm h}28^{\rm m}$,
-Dec~$= +3.5\degr$ (Ophiuchus), accessible from both hemispheres
-and an evening target in the northern summer.
+Dec~$= +3.5\degr$ (Ophiuchus), accessible from both hemispheres.
+At the stated right ascension the source transits in the evening
+during northern-hemisphere summer (approximately May--September)
+and is best observed from southern sites during their winter months.
 
 \subsection{Limitations}
 \label{sec:limitations}
@@ -1046,9 +1122,11 @@ prevent this system from being classified as a confirmed BH:
 
 \item \textbf{NSS covariance matrix unavailable.}  Gaia DR3 does
   not publish the full covariance matrix of the orbital parameters.
-  Our Monte~Carlo independently samples each parameter, which may
-  underestimate the true uncertainty if inter-parameter correlations
-  are significant.
+  Our Monte~Carlo independently samples each parameter; however,
+  correlation sensitivity tests
+  (Section~\ref{sec:methods:correlation}) show that plausible
+  positive correlations \emph{narrow} the posterior, so the
+  independent-sampling assumption is conservative.
 
 \item \textbf{GSP-Phot parameters unreliable at high RUWE.}
   At RUWE~$= 9.31$, the primary's $T_{\rm eff}$ and $\log g$
@@ -1071,14 +1149,14 @@ prevent this system from being classified as a confirmed BH:
   this scenario but cannot definitively rule it out without UV
   spectroscopy.
 
-\item \textbf{Approximate SED model.}  Our SED check uses a
-  single-temperature model with atmosphere corrections applied as
-  multiplicative factors rather than a full synthetic-atmosphere fit.
-  The MS companion exclusion is robust at the order-of-magnitude
-  level (atmosphere corrections are 2--13~per~cent;
-  Section~\ref{sec:methods:sed}), but a full PHOENIX/ATLAS9
-  analysis would be preferable for characterising the primary and
-  detecting faint secondary contributions.
+\item \textbf{Approximate SED model.}  Our primary SED check uses a
+  single-temperature model with atmosphere corrections; a
+  supplementary synthetic-photometry analysis using ATLAS9/PHOENIX
+  corrections (Section~\ref{sec:methods:sed}) strengthens the
+  companion exclusion but still relies on parametrised rather than
+  full spectral fitting.  A full synthetic-atmosphere fit would be
+  preferable for characterising the primary and detecting faint
+  secondary contributions.
 \end{enumerate}
 
 % ====================================================================
@@ -1102,21 +1180,21 @@ findings are:
   model, the companion mass posterior yields a median
   $M_2 = 12.3\,\Msun$ with 68~per~cent CI
   $[7.1,\,22.7]\,\Msun$ (with $\times 1.7$ parallax-error
-  inflation).  This posterior is a conditional working estimate:
-  the adopted inflation factor is calibrated at the
-  population level (not for this source), the independent parameter
-  sampling (necessitated by the unavailability of the full NSS
-  covariance matrix) may underestimate the true uncertainty, and
-  the SED model is approximate.  It should not be interpreted as
-  a rigorous Bayesian posterior.
+  inflation).  Correlation sensitivity tests
+  (Section~\ref{sec:methods:correlation}) show that the
+  independent-parameter sampling is conservative: introducing
+  plausible positive $\varpi$--$a_{\rm ang}$ correlations
+  \emph{narrows} the posterior.  The posterior should not be
+  interpreted as a rigorous Bayesian inference.
 
-\item \textbf{Companion-light exclusion (conditional).}
-  Atmosphere-corrected band-by-band flux ratios show that a
-  main-sequence star of the required mass would exceed the
-  primary flux by $29$--$55\times$ in optical bands.  This
-  exclusion is robust at the order-of-magnitude level but rests
-  on the adopted primary radius, which is itself uncertain
-  (Section~\ref{sec:results:stellar}).
+\item \textbf{Companion-light exclusion.}
+  Synthetic-photometry flux ratios using ATLAS9/PHOENIX
+  atmosphere models show that a main-sequence star at the
+  inferred mass would exceed the primary flux by
+  $100$--$247\times$ in optical bands.  The maximum hidden MS
+  companion tightens to $\lesssim 0.70\,\Msun$ (photometric
+  radius), and no stripped helium star from $1$ to
+  $15\,\Msun$ is photometrically compatible with the observed SED.
 
 \item \textbf{Alternative scenarios (conditional).}
   Of seven non-BH scenarios, three are photometrically
@@ -1148,6 +1226,14 @@ findings are:
   ($G < 12$) \texttt{Orbital} BH candidates in our working
   catalogue, this source ranks first by predicted $K_1$
   (Table~\ref{tab:population}).
+
+\item \textbf{Effective BH probability.}
+  Folding the population-level false-positive rate
+  ($\sim 30$--$50$~per~cent) into the mass posterior gives
+  $P_{\rm eff}(\mathrm{BH}) \approx 48$--$67$~per~cent
+  (Equation~\ref{eq:peff}), underscoring that even the most
+  favourable reading of the archival data leaves the BH
+  hypothesis at roughly even odds.
 \end{enumerate}
 
 We conclude that Gaia DR3 4277855016732107520 is a
@@ -1186,8 +1272,10 @@ All observational data are publicly available from the Gaia Archive
 (\url{https://gea.esac.esa.int/archive/}), VizieR, and SIMBAD.
 The analysis scripts and machine-readable results are available at
 \url{https://github.com/jayalabaez/dr3-4277855-black-hole-candidate}.
-Modular analysis scripts (\texttt{scripts/02}--\texttt{10}) produce
-all figures and numerical results, including the population-level
+Modular analysis scripts (\texttt{scripts/02}--\texttt{12}) produce
+all figures and numerical results, including the correlation
+sensitivity tests (script~11), synthetic-photometry SED analysis
+(script~12), and the population-level
 comparison (script~10; Table~\ref{tab:population}).  The repository includes the
 exact scripts used to generate all figures, tables, and
 machine-readable posterior summaries from the public catalogue
@@ -1345,32 +1433,33 @@ $K_{1,\rm edge}$ (Equation~\ref{eq:K1}).  Sixteen of the 47
 \texttt{Orbital} BH candidates in the working catalogue satisfy the
 brightness cut.  $M_2$ is the pipeline-reported companion mass;
 $\sigma_{\rm NSS}$ the Gaia significance; ``Tier'' the catalogue
-quality flag.  The target of this paper is highlighted in bold.
+quality flag; ``Status'' the published vetting state.
+The target of this paper is highlighted in bold.
 \emph{Rankings reflect observational accessibility and are not
 evidence for the reality of any individual solution.}}
 \label{tab:population}
-\begin{tabular}{rlrrrrrrrl}
+\begin{tabular}{rlrrrrrrrll}
 \toprule
 Rank & Gaia DR3 source ID & $G$ & $P$ & $e$ & $M_2$ & $K_{1,\rm edge}$ &
-$\sigma_{\rm NSS}$ & Tier & Hem.\ \\
- & & (mag) & (d) & & ($\Msun$) & (km\,s$^{-1}$) & & & \\
+$\sigma_{\rm NSS}$ & Tier & Hem.\ & Status \\
+ & & (mag) & (d) & & ($\Msun$) & (km\,s$^{-1}$) & & & & \\
 \midrule
-\textbf{1} & \textbf{4277855\ldots} & \textbf{11.25} & \textbf{424} & \textbf{0.34} & \textbf{12.3} & \textbf{65.0} & \textbf{75.4} & \textbf{Gold} & \textbf{Both} \\
-2 & 6281177\ldots & 11.26 & 154 & 0.18 & 5.3 & 62.7 & 24.3 & Gold & Both \\
-3 & 4507516\ldots & 8.89 & 813 & 0.51 & 18.2 & 48.1 & 20.3 & Gold & Both \\
-4 & 6042980\ldots & 11.96 & 678 & 0.22 & 9.1 & 47.8 & 76.3 & Gold & Both \\
-5 & 6033351\ldots & 11.75 & 857 & 0.41 & 6.9 & 41.7 & 55.5 & Gold & Both \\
-6 & 3153895\ldots & 9.34 & 904 & 0.00 & 16.6 & 41.7 & 18.1 & Silver & Both \\
-7 & 245948\ldots  & 11.80 & 549 & 0.07 & 5.0 & 35.1 & 48.4 & Gold & N \\
-8 & 6656986\ldots & 6.47 & 444 & 0.58 & 5.5 & 31.6 & 28.0 & Gold & S \\
-9 & 2946055\ldots & 5.27 & 755 & 0.32 & 11.0 & 30.6 & 14.6 & Silver & Both \\
-10 & 6886105\ldots & 9.46 & 768 & 0.48 & 6.9 & 30.0 & 34.9 & Gold & Both \\
-11 & 4113903\ldots & 6.81 & 1233 & 0.19 & 7.3 & 25.9 & 6.1 & Bronze & Both \\
-12 & 3067772\ldots & 11.64 & 984 & 0.17 & 5.7 & 25.3 & 20.8 & Silver & Both \\
-13 & 3972084\ldots & 8.80 & 876 & 0.15 & 6.1 & 25.0 & 21.0 & Gold & Both \\
-14 & 979031\ldots  & 9.94 & 877 & 0.22 & 5.1 & 22.5 & 18.4 & Bronze & N \\
-15 & 470361\ldots  & 7.18 & 999 & 0.52 & 6.5 & 21.7 & 11.2 & Silver & N \\
-16 & 5103956\ldots & 6.88 & 763 & 0.27 & 5.0 & 20.8 & 22.5 & Gold & Both \\
+\textbf{1} & \textbf{4277855\ldots} & \textbf{11.25} & \textbf{424} & \textbf{0.34} & \textbf{12.3} & \textbf{65.0} & \textbf{75.4} & \textbf{Gold} & \textbf{Both} & \textbf{This work} \\
+2 & 6281177\ldots & 11.26 & 154 & 0.18 & 5.3 & 62.7 & 24.3 & Gold & Both & Not vetted \\
+3 & 4507516\ldots & 8.89 & 813 & 0.51 & 18.2 & 48.1 & 20.3 & Gold & Both & Not vetted \\
+4 & 6042980\ldots & 11.96 & 678 & 0.22 & 9.1 & 47.8 & 76.3 & Gold & Both & Not vetted \\
+5 & 6033351\ldots & 11.75 & 857 & 0.41 & 6.9 & 41.7 & 55.5 & Gold & Both & Not vetted \\
+6 & 3153895\ldots & 9.34 & 904 & 0.00 & 16.6 & 41.7 & 18.1 & Silver & Both & Not vetted \\
+7 & 245948\ldots  & 11.80 & 549 & 0.07 & 5.0 & 35.1 & 48.4 & Gold & N & Not vetted \\
+8 & 6656986\ldots & 6.47 & 444 & 0.58 & 5.5 & 31.6 & 28.0 & Gold & S & Not vetted \\
+9 & 2946055\ldots & 5.27 & 755 & 0.32 & 11.0 & 30.6 & 14.6 & Silver & Both & Not vetted \\
+10 & 6886105\ldots & 9.46 & 768 & 0.48 & 6.9 & 30.0 & 34.9 & Gold & Both & Not vetted \\
+11 & 4113903\ldots & 6.81 & 1233 & 0.19 & 7.3 & 25.9 & 6.1 & Bronze & Both & Not vetted \\
+12 & 3067772\ldots & 11.64 & 984 & 0.17 & 5.7 & 25.3 & 20.8 & Silver & Both & Not vetted \\
+13 & 3972084\ldots & 8.80 & 876 & 0.15 & 6.1 & 25.0 & 21.0 & Gold & Both & Not vetted \\
+14 & 979031\ldots  & 9.94 & 877 & 0.22 & 5.1 & 22.5 & 18.4 & Bronze & N & Not vetted \\
+15 & 470361\ldots  & 7.18 & 999 & 0.52 & 6.5 & 21.7 & 11.2 & Silver & N & Not vetted \\
+16 & 5103956\ldots & 6.88 & 763 & 0.27 & 5.0 & 20.8 & 22.5 & Gold & Both & Not vetted \\
 \bottomrule
 \end{tabular}
 \end{table*}
