@@ -82,8 +82,8 @@ quiescent system ($\log L_X < 30.7$\,erg\,s$^{-1}$).
 eROSITA data are unavailable for this sky position
 ($l = 32.1\degr$, eastern Galactic hemisphere).
 We conclude that this source is a promising BH candidate that
-merits high-priority multi-epoch radial-velocity follow-up;
-independent spectroscopic confirmation is required before any BH
+merits spectroscopic follow-up;
+independent confirmation is required before any BH
 classification can be considered secure.
 \end{abstract}
 
@@ -138,8 +138,8 @@ fail independent RV checks, underscoring the need for spectroscopic
 confirmation of each individual candidate.
 
 In this paper we focus on Gaia DR3 4277855016732107520, a candidate
-identified in a systematic search of the Gaia DR3 NSS catalogue
-(Ayala-Baez 2026, in prep.).  The system is a wide binary
+identified in a systematic search of the Gaia DR3 NSS catalogue.
+The system is a wide binary
 ($P = 424$\,d) comprising a likely evolved primary
 ($M_1 = 1.34\,\Msun$ from GSP-Phot) and a dark companion whose
 mass from the astrometric orbit is $M_2 \simeq 12.3\,\Msun$
@@ -206,7 +206,7 @@ significant.
 The Gaia DR3 GSP-Phot pipeline provides stellar parameters:
 $T_{\rm eff} = 5922$\,K and $\log g = 2.93$.  We caution that at
 RUWE~$= 9.31$, GSP-Phot parameters may be systematically biased
-by the unresolved orbital motion; the RGB classification should
+by the unresolved orbital motion; the photometric evolved-star classification should
 therefore be regarded as a \emph{working assumption} pending
 independent spectroscopic confirmation
 (Section~\ref{sec:data:simbad}).
@@ -233,12 +233,12 @@ We query the ROSAT All-Sky Survey (2RXS; \citealt{Boller2016}) and
 XMM-Newton serendipitous catalogue (4XMM-DR13;
 \citealt{Webb2020}) within $30\arcsec$ and $15\arcsec$
 respectively, finding no counterpart.  The ROSAT non-detection
-constrains the 0.1--2.4\,keV X-ray luminosity to
-$L_X \lesssim 5 \times 10^{30}$\,erg\,s$^{-1}$ (assuming
-the RASS typical sensitivity of
-$\sim$\,$10^{-13}$\,erg\,s$^{-1}$\,cm$^{-2}$ at the
-source distance of 657\,pc), consistent with a non-accreting
-system.
+implies an order-of-magnitude archival upper limit of
+$L_X \lesssim 5 \times 10^{30}$\,erg\,s$^{-1}$,
+based on the typical RASS sensitivity at the source position and
+distance, assuming a representative soft X-ray spectrum and
+negligible additional absorption correction.  This limit is
+consistent with a non-accreting system.
 
 At radio wavelengths, we find no counterpart in the VLA Sky Survey
 \citep[VLASS;][]{Lacy2020} within $5\arcsec$ ($3\sigma <
@@ -335,7 +335,7 @@ systematic uncertainties of $\sim$100--200\,K
 \citep{Andrae2023}, and that at RUWE~$= 9.31$ the parameters
 may be additionally biased by unresolved orbital motion.
 No independent spectroscopic classification exists
-(Section~\ref{sec:data:simbad}), so the RGB identification
+(Section~\ref{sec:data:simbad}), so the evolved-star identification
 rests entirely on pipeline photometric parameters.  We adopt
 $M_1 = 1.34 \pm 0.40\,\Msun$, assigning a 30~per~cent
 fractional uncertainty to encompass age, metallicity,
@@ -424,7 +424,12 @@ M_{\rm tot} \propto \varpi^{-3}\,P^{-2}\,,
 so the parallax uncertainty dominates.  We emphasise that the
 $\times 1.7$ inflation is an \emph{approximate} correction;
 the true external-to-internal error ratio for this specific
-source is unknown.  We report posteriors both with and without
+source is unknown.  We adopt $\times 1.7$ as the fiducial external-to-internal
+parallax inflation following published validation work for
+\texttt{Orbital} solutions in this magnitude regime
+\citep{ElBadry2024}, while Table~\ref{tab:sensitivity} shows
+that our conclusions remain sensitive to the exact inflation
+factor assumed.  We report posteriors both with and without
 inflation (Section~\ref{sec:results:posterior}).
 
 Because $M_2$ is derived from the full astrometric orbit (not a
@@ -463,14 +468,15 @@ range.
 \label{sec:results:orbit}
 
 Table~\ref{tab:observed} summarises the observed and derived
-properties.  The orbital solution significance ($75.4\sigma$)
-and astrometric excess noise significance ($3753\sigma$) are
-consistent with genuine orbital photo-centre motion.  We note
-that such extreme excess-noise values can in principle arise
-from poorly resolved blends or pipeline failures; the coherent
-Keplerian fit and well-constrained period precision
-(0.27~per~cent) argue against but do not exclude an instrumental
-origin.  \emph{Independent RV confirmation is essential.}
+properties.  The orbital-solution significance ($75.4\sigma$)
+and astrometric excess-noise significance ($3753\sigma$) are
+consistent with, but do not by themselves demonstrate, genuine
+orbital photo-centre motion.  Extreme excess-noise values can in
+principle arise from poorly resolved blends or pipeline failures;
+the coherent Keplerian fit and well-constrained period precision
+(0.27~per~cent) argue against, but do not exclude, such
+explanations.  \emph{Independent RV confirmation is therefore
+essential.}
 
 The semi-major axis $a = 2.64$\,AU places the companion well
 outside the primary's Roche lobe ($R_L \approx 0.56$\,AU; filling
@@ -563,7 +569,10 @@ companion mass drops to $M_2 \approx 8.9\,\Msun$; at
 $\varpi - 1\sigma$ (1.368\,mas, $d = 731$\,pc), it rises to
 $M_2 \approx 17.5\,\Msun$.
 
-We emphasise that these posteriors propagate only the
+We interpret this posterior as a conditional mass distribution
+under the Gaia DR3 orbital solution and adopted stellar-model
+assumptions, rather than as a fully independent dynamical mass
+measurement.  These posteriors propagate only the
 \emph{published parameter uncertainties} with an approximate
 external inflation; they do \emph{not} account for systematic
 errors in the orbital model itself (e.g.\ an incorrectly
@@ -800,7 +809,11 @@ prevent this system from being classified as a confirmed BH:
 
 \item \textbf{Single-temperature SED.}  Our blackbody SED check
   establishes consistency with a single luminous source but does
-  not substitute for a full atmospheric model fit.
+  not substitute for a full atmospheric model fit.  The exclusion
+  of a normal main-sequence companion is robust at the
+  order-of-magnitude level, but a full atmosphere-model treatment
+  would be preferable for publication-quality stellar
+  characterisation.
 \end{enumerate}
 
 % ====================================================================
@@ -842,12 +855,12 @@ catalogue.  Our principal findings are:
 \end{enumerate}
 
 We conclude that Gaia DR3 4277855016732107520 is a \emph{promising
-dormant black hole candidate} that merits high-priority multi-epoch
-radial-velocity follow-up.  The large predicted RV semi-amplitude
-and bright apparent magnitude make spectroscopic confirmation
+dormant black hole candidate} under the Gaia DR3 NSS modelling
+assumptions.  The large predicted RV semi-amplitude
+and bright apparent magnitude make spectroscopic follow-up
 feasible with existing ground-based facilities.  However, because
-the orbital solution is purely astrometric with no independent RV
-data, the companion mass remains contingent on the Gaia pipeline
+the orbital solution is purely astrometric and lacks an independent
+RV orbit, the companion mass remains contingent on the Gaia pipeline
 assumptions, and the system must be regarded as a \emph{candidate}
 until spectroscopic confirmation is obtained.
 
@@ -875,7 +888,10 @@ All observational data are publicly available from the Gaia Archive
 The analysis scripts and machine-readable results are available at
 \url{https://github.com/jayalabaez/dr3-4277855-black-hole-candidate}.
 Modular analysis scripts (\texttt{scripts/02}--\texttt{08}) produce
-all figures and numerical results.  All numerical results are in
+all figures and numerical results.  The repository includes the
+exact scripts used to generate all figures, tables, and
+machine-readable posterior summaries from the public catalogue
+inputs.  All numerical results are in
 JSON format under \texttt{results/}.
 
 % ====================================================================
@@ -1080,10 +1096,10 @@ model itself.}
 \includegraphics[width=\textwidth]{figures/fig_cmd_hrd.pdf}
 \caption{Placement of the primary star in the colour--magnitude
 diagram (\textit{left}) and Hertzsprung--Russell diagram
-(\textit{right}).  The dereddened photometry places the star on the
-red giant branch, consistent with the GSP-Phot parameters.  These
-loci are approximate; formal isochrone fitting is deferred to future
-work with independent spectroscopy.}
+(\textit{right}).  The dereddened photometry is consistent with an
+evolved-star locus and broadly compatible with the GSP-Phot
+parameters.  These loci are approximate; formal isochrone fitting is
+deferred to future work with independent spectroscopy.}
 \label{fig:cmd}
 \end{figure*}
 
