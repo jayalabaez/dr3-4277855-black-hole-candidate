@@ -1,0 +1,15 @@
+{
+  "source_id": 4277855016732107520,
+  "E_BV": 0.175,
+  "A_V": 0.543,
+  "DM": 9.09,
+  "M_G_dered": 1.68,
+  "M_bol": 1.38,
+  "L_photometric": 22.0,
+  "R_photometric": 4.5,
+  "L_logg": 47.3,
+  "R_logg": 6.5,
+  "R_discrepancy_factor": 1.47,
+  "L_discrepancy_factor": 2.15,
+  "note": "GSP-Phot logg unreliable for RUWE=9.31 binary; photometric values fiducial."
+}

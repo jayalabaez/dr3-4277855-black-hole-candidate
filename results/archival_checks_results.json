@@ -1,0 +1,90 @@
+{
+  "summary": {
+    "source_id": 4277855016732107520,
+    "RA_deg": 274.2238,
+    "Dec_deg": 3.4975,
+    "l_deg": 32.117,
+    "b_deg": 9.278,
+    "distance_pc": 656.7,
+    "n_xray_radio_nondetections": 4,
+    "Lx_upper_ROSAT_log": 30.71,
+    "consistent_with_quiescence": true,
+    "eROSITA_unavailable_reason": "eastern Galactic hemisphere (eROSITA-RU)"
+  },
+  "catalogues": {
+    "ROSAT_2RXS": {
+      "catalogue": "ROSAT All-Sky Survey Faint Source Catalogue (2RXS)",
+      "search_radius_arcsec": 30,
+      "detection": false,
+      "sensitivity_erg_s_cm2": 1e-13,
+      "Lx_upper_erg_s": "5.16e+30",
+      "log_Lx_upper": 30.71,
+      "band_keV": "0.1-2.4",
+      "note": "No ROSAT source within 30 arcsec of target position."
+    },
+    "XMM_4XMM_DR13": {
+      "catalogue": "4XMM-DR13 Serendipitous Source Catalogue",
+      "search_radius_arcsec": 15,
+      "detection": false,
+      "sensitivity_erg_s_cm2": 1e-14,
+      "Lx_upper_erg_s": "5.16e+29",
+      "log_Lx_upper": 29.71,
+      "band_keV": "0.2-12",
+      "note": "Source likely not in any XMM pointed observation field. Upper limit conditional on sky coverage."
+    },
+    "eROSITA_eRASS1": {
+      "catalogue": "eROSITA-DE eRASS1 (Merloni et al. 2024)",
+      "Galactic_l": 32.117,
+      "in_eROSITA_DE_footprint": false,
+      "note": "Source at l=32.1\u00b0 is in the eastern Galactic hemisphere (l < 180\u00b0), assigned to the eROSITA-RU consortium. eRASS1 data from Merloni et al. (2024) covers only the western hemisphere (l = 180-360\u00b0). No public eROSITA data available for this sky position as of 2024.",
+      "detection": null
+    },
+    "VLASS": {
+      "catalogue": "VLA Sky Survey (VLASS, Lacy et al. 2020)",
+      "search_radius_arcsec": 5,
+      "frequency_GHz": 3.0,
+      "rms_uJy_beam": 120,
+      "detection": false,
+      "note": "Source at Dec = +3.5\u00b0 is within the VLASS footprint (Dec > -40\u00b0). No counterpart found within 5 arcsec. 3\u03c3 upper limit: 360 \u03bcJy at 3 GHz."
+    },
+    "RACS": {
+      "catalogue": "Rapid ASKAP Continuum Survey (RACS-low, McConnell et al. 2020)",
+      "search_radius_arcsec": 10,
+      "frequency_MHz": 887.5,
+      "rms_uJy_beam": 250,
+      "detection": false,
+      "note": "Source at Dec = +3.5\u00b0 is within the RACS footprint (Dec < +49\u00b0). No counterpart within 10 arcsec. 3\u03c3 upper limit: 750 \u03bcJy at 887.5 MHz."
+    },
+    "GALEX": {
+      "catalogue": "GALEX GR6/7",
+      "NUV_mag": 17.52,
+      "FUV_mag": null,
+      "detection_NUV": true,
+      "detection_FUV": false,
+      "note": "NUV = 17.52 mag detected. FUV non-detection. NUV flux consistent with G-K giant chromospheric emission; no UV excess suggesting accretion."
+    },
+    "2MASS": {
+      "catalogue": "2MASS Point Source Catalogue (Skrutskie et al. 2006)",
+      "J": 9.837,
+      "H": 9.419,
+      "K": 9.327,
+      "detection": true,
+      "note": "Normal near-IR colours consistent with G8 giant."
+    },
+    "WISE": {
+      "catalogue": "AllWISE (Cutri et al. 2014)",
+      "W1": 9.232,
+      "W2": 9.269,
+      "W3": 9.183,
+      "W4": 8.774,
+      "detection": true,
+      "note": "No mid-IR excess. W1-W2 = -0.04 consistent with stellar photosphere."
+    },
+    "SIMBAD": {
+      "search_radius_arcsec": 5,
+      "main_id": "TYC 456-894-1",
+      "object_type": "Star",
+      "note": "Cross-match returns a single Tycho-2 star. No known binarity or variability flags in literature prior to Gaia DR3."
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "source_id": 4277855016732107520,
+  "companion_MS": {
+    "M2": 12.313,
+    "L": 6550.0,
+    "R": 4.2,
+    "Teff": 25415.0
+  },
+  "flux_ratios_photometric": {
+    "G": 28.3,
+    "BP": 49.0,
+    "RP": 17.6,
+    "J": 9.1,
+    "H": 7.1,
+    "K": 6.0
+  },
+  "flux_ratios_logg": {
+    "G": 13.2,
+    "BP": 22.8,
+    "RP": 8.2,
+    "J": 4.2,
+    "H": 3.3,
+    "K": 2.8
+  },
+  "bolometric_ratio_phot": 298.0,
+  "bolometric_ratio_logg": 138.0
+}

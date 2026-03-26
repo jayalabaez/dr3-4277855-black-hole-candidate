@@ -1,0 +1,47 @@
+{
+  "source_id": 4277855016732107520,
+  "solution_type": "Orbital",
+  "scenarios": [
+    {
+      "scenario": "Main-sequence companion",
+      "verdict": "RULED OUT",
+      "reason": "A 12.3 M\u2609 MS star would have L \u2248 6550 L\u2609 (Teff \u2248 24,000 K), dominating the SED in all optical/IR bands. No secondary component detected. SED is consistent with single evolved star."
+    },
+    {
+      "scenario": "White dwarf",
+      "verdict": "RULED OUT",
+      "reason": "M2 = 12.3 M\u2609 exceeds the Chandrasekhar limit (1.44 M\u2609) by 9\u00d7."
+    },
+    {
+      "scenario": "Neutron star",
+      "verdict": "RULED OUT",
+      "reason": "M2 = 12.3 M\u2609 exceeds the TOV limit (2.3 M\u2609) by 5\u00d7."
+    },
+    {
+      "scenario": "Hierarchical triple",
+      "verdict": "STRONGLY DISFAVOURED",
+      "reason": "Two 6.2 M\u2609 MS stars: combined L \u2248 1158 L\u2609 vs. primary L \u2248 22 L\u2609. Would dominate SED. Stability requires P_inner < 42 d. No composite spectrum detected. However, a triple with two compact objects (e.g. NS+NS) cannot be excluded by photometry alone."
+    },
+    {
+      "scenario": "Stripped helium star / hot subdwarf",
+      "verdict": "NOT FAVOURED",
+      "reason": "A 12.3 M\u2609 stripped He star would have Teff > 50,000 K and L > 10,000 L\u2609. Expected strong UV excess: predicted NUV \u2248 9 vs observed 17.5 (>2000\u00d7 fainter). Not favoured but requires UV spectroscopy for firm exclusion."
+    },
+    {
+      "scenario": "Astrometric artefact (spurious Gaia solution)",
+      "verdict": "REQUIRES FOLLOW-UP",
+      "reason": "Solution type is Orbital (astrometry only, no independent spectroscopic confirmation). Recent RV follow-up studies show many Gaia DR3 Orbital BH candidates fail spectroscopic checks. NSS significance (75.4\u03c3) and RUWE (9.31) are supportive but not sufficient to exclude scan-angle biases or marginally resolved companion effects. Requires independent multi-epoch RV orbit."
+    },
+    {
+      "scenario": "Chance alignment / blend-driven spurious solution",
+      "verdict": "REQUIRES FOLLOW-UP",
+      "reason": "At G = 11.25, source confusion is low but at b = 9.3\u00b0 blending is not negligible. A coherent 424-d Keplerian signal at 75\u03c3 argues against pure noise, but the absence of independent RV confirmation means this cannot be fully excluded. Requires spectroscopic follow-up."
+    }
+  ],
+  "summary": {
+    "ruled_out": 3,
+    "strongly_disfavoured": 1,
+    "not_favoured": 1,
+    "requires_followup": 2
+  }
+}

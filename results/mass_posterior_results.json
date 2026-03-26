@@ -1,0 +1,36 @@
+{
+  "source_id": 4277855016732107520,
+  "N_MC": 500000,
+  "nominal": {
+    "M2_median": 12.3,
+    "CI_68": [
+      8.8,
+      17.5
+    ],
+    "CI_90": [
+      7.1,
+      22.4
+    ],
+    "P_gt_5": 99.7,
+    "P_gt_10": 73.0
+  },
+  "inflated": {
+    "plx_inflation": 1.7,
+    "M2_median": 12.3,
+    "CI_68": [
+      7.1,
+      22.7
+    ],
+    "CI_90": [
+      5.0,
+      35.9
+    ],
+    "P_gt_5": 95.1,
+    "P_gt_10": 64.3
+  },
+  "parallax_stress": {
+    "plx_plus_1sig_M2": 8.9,
+    "plx_minus_1sig_M2": 17.5
+  },
+  "note_posterior": "Approximate stress test, not formal Bayesian posterior. Full NSS covariance matrix not publicly available. Parallax dominates the error budget (M_total \u221d plx^-3)."
+}
