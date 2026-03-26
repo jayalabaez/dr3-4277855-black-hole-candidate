@@ -65,7 +65,7 @@ $1$--$15\,\Msun$ finds no photometrically hidden solution.
 
 The predicted $K_1 \approx 65\,\kms$ makes ground-based RV
 confirmation efficient; the source ranks among the top
-bright ($G < 12$) \texttt{Orbital} BH candidates by $K_1$.
+bright ($G < 12$) \texttt{Orbital} high-mass candidates by $K_1$.
 Until RV confirmation is obtained, the companion mass and
 nature remain entirely provisional.
 \end{abstract}
@@ -139,7 +139,7 @@ both hemispheres.
 This source is a particularly attractive follow-up target for
 three reasons.  First, the predicted RV semi-amplitude
 ($K_1 \approx 65\,\kms$) ranks 7th out of 47 \texttt{Orbital}
-BH candidates and 1st among those brighter than $G = 12$
+high-mass dark-companion candidates and 1st among those brighter than $G = 12$
 (Section~\ref{sec:why_target}), making
 confirmation efficient with 2--4\,m class echelle spectrographs.
 Second, the bright apparent magnitude ($G = 11.25$) and moderate
@@ -161,7 +161,7 @@ seven non-BH scenarios with conditional verdicts; and (iv)
 quantitative follow-up predictions (RV semi-amplitude, epoch
 count, telescope class) usable for proposal planning.
 We also provide a quantitative comparison against the broader
-\texttt{Orbital} BH-candidate population
+\texttt{Orbital} dark-companion candidate population
 (Section~\ref{sec:why_target}) to justify highlighting this
 particular source.
 
@@ -1034,26 +1034,6 @@ unverified.  This assessment underlies our framing of the entire
 analysis as conditional and our emphasis on spectroscopic
 confirmation as the essential next step.
 
-\paragraph*{Effective BH probability.}
-Folding the false-positive rate into the mass posterior gives an
-order-of-magnitude ``effective'' BH probability:
-\begin{align}
-P_{\rm eff}(\mathrm{BH}) &\;\approx\;
-  P(\mathrm{genuine}) \;\times\;
-  P(M_2 > 5\,\Msun \mid \mathrm{genuine}) \nonumber\\
-  &\;\approx\; 0.5\text{--}0.7 \;\times\; 0.95
-  \;\approx\; 48\text{--}67~\text{per~cent}\,.
-\label{eq:peff}
-\end{align}
-This should be interpreted as an informal Bayesian estimate, not a
-rigorous posterior: $P(\mathrm{genuine}) \approx 0.5$--$0.7$ is the
-complement of the population-level false-positive rate and is not
-calibrated for this individual source.  The estimate makes explicit
-that, even under the most favourable reading of the archival data,
-the probability that this source genuinely hosts a BH companion is
-of order one-in-two --- underscoring the necessity of RV
-confirmation.
-
 \subsection{Why this target}
 \label{sec:why_target}
 
@@ -1062,7 +1042,7 @@ solutions with formally high companion masses, the majority of
 which are expected to be spurious \citep{ElBadry2024}.
 To justify highlighting a single source for follow-up, we
 quantitatively compare it against the broader \texttt{Orbital}
-BH-candidate population.
+dark-companion candidate population.
 
 The 47-source working catalogue is constructed by querying
 \texttt{gaiadr3.nss\_two\_body\_orbit} for all entries with
@@ -1073,8 +1053,9 @@ $M_2 > 5\,\Msun$.  Quality tiers (Gold/Silver/Bronze) are assigned
 following the vetting flags of \citet{GaiaNSS2023}: Gold requires
 GOF~$< 25$, significance~$> 20\sigma$, and eccentricity error
 $\sigma_e < 0.1$; Silver relaxes one of these; Bronze relaxes two
-or more.  The full machine-readable table is provided in the
-repository (Section~\ref{sec:conclusions}).
+or more.  The full machine-readable table is provided as
+supplementary material (Table~\ref{tab:population_full},
+available online).
 
 For each of these 47 sources we compute the predicted
 \emph{edge-on} RV semi-amplitude
@@ -1096,7 +1077,7 @@ Table~\ref{tab:population} ranks the 16 brightest ($G < 12$)
 among these 47 candidates by $K_{1,{\rm edge}}$.
 
 This source ranks \textbf{1st among 16 bright ($G < 12$)
-Orbital BH candidates} and 7th overall (out of 47) by
+\texttt{Orbital} high-mass candidates} and 7th overall (out of 47) by
 $K_{1,{\rm edge}}$.  The candidates with higher
 $K_{1,{\rm edge}}$ are all $\geq 1.2$\,mag fainter, requiring
 significantly longer integration times for the same RV precision.
@@ -1330,22 +1311,23 @@ findings are:
   RV confirmation feasible with 2--4\,m class facilities
   over $\sim$\,8--10 epochs spanning one orbital period
   (Section~\ref{sec:why_target}).  Among the 16 bright
-  ($G < 12$) \texttt{Orbital} BH candidates in our working
+  ($G < 12$) \texttt{Orbital} high-mass candidates in our working
   catalogue, this source ranks first by predicted $K_1$
   (Table~\ref{tab:population}).  The ranking reflects
   observational accessibility within an unvetted catalogue,
   not evidence for the reality of any solution.
 
 \item \textbf{Overall assessment.}
-  As a rough guide, the population-level false-positive rate
-  ($\sim 30$--$50$~per~cent; Section~\ref{sec:gaia_vetting})
-  means that even the most favourable reading of the archival data
-  leaves the probability of a genuine BH companion at
-  approximately even odds (Equation~\ref{eq:peff}).  This
-  order-of-magnitude estimate should not be interpreted as a
-  calibrated posterior; it folds an informal population prior into
-  a conditional mass posterior and serves only to underscore the
-  necessity of RV confirmation.
+  The posterior is best understood as a two-component mixture
+  (Section~\ref{sec:results:posterior}): the conditional mass analysis
+  is meaningful only under the genuine-solution component, while
+  a $\sim 30$--$50$~per~cent probability remains that the
+  \texttt{Orbital} solution is itself spurious
+  (Section~\ref{sec:gaia_vetting}).  No single-number
+  ``effective BH probability'' can adequately capture this
+  structure; the key conclusion is that RV confirmation is
+  essential before any astrophysical inference about the
+  companion nature can be drawn.
 \end{enumerate}
 
 We conclude that Gaia DR3 4277855016732107520 is a
@@ -1391,7 +1373,8 @@ sensitivity tests (script~11), synthetic-photometry SED analysis
 the $T_{\rm eff}$ chain-dependency sensitivity (script~14),
 the source-ID recovery cross-match (script~15),
 and the population-level
-comparison (script~10; Table~\ref{tab:population}).  The repository includes the
+comparison (script~10; Tables~\ref{tab:population}
+and~\ref{tab:population_full}).  The repository includes the
 exact scripts used to generate all figures, tables, and
 machine-readable posterior summaries from the public catalogue
 inputs.  All numerical results are in
@@ -1594,10 +1577,11 @@ Inflation $= 1.7$ & Inflation $= 2.0$ \\
 
 \begin{table*}
 \centering
-\caption{Bright ($G < 12$) Gaia DR3 \texttt{Orbital} BH candidates
-ranked by predicted edge-on radial-velocity semi-amplitude
-$K_{1,\rm edge}$ (Equation~\ref{eq:K1}).  Sixteen of the 47
-\texttt{Orbital} BH candidates in the working catalogue satisfy the
+\caption{Bright ($G < 12$) Gaia DR3 \texttt{Orbital} high-mass
+dark-companion candidates ranked by predicted edge-on
+radial-velocity semi-amplitude $K_{1,\rm edge}$
+(Equation~\ref{eq:K1}).  Sixteen of the 47 \texttt{Orbital}
+high-mass candidates in the working catalogue satisfy the
 brightness cut.  $M_2$ is the pipeline-reported companion mass;
 $\sigma_{\rm NSS}$ the Gaia significance; ``Tier'' the catalogue
 quality flag; ``Status'' the published vetting state.
@@ -1705,6 +1689,23 @@ inflation factor.  At the fiducial values ($M_1 = 1.34\,\Msun$,
 inflation $= 1.7$), $P(M_2 > 5\,\Msun) \approx 95$~per~cent.}
 \label{fig:sensitivity}
 \end{figure*}
+
+% ====================================================================
+%  APPENDIX B: Full 47-source catalogue (supplementary material)
+% ====================================================================
+\section{Full high-mass dark-companion candidate catalogue}
+\label{app:full_catalogue}
+
+Table~\ref{tab:population_full} lists all 47 \texttt{Orbital}
+sources with pipeline-reported companion mass
+$M_2 > 5\,\Msun$, ranked by predicted edge-on radial-velocity
+semi-amplitude $K_{1,\rm edge}$.  The bright ($G < 12$) subset is
+presented in the main text (Table~\ref{tab:population}).
+This table is intended as a machine-readable supplementary
+catalogue for follow-up prioritization; it does not constitute
+evidence for the reality of any individual orbital solution.
+
+\input{table_population_full}
 
 % ====================================================================
 
