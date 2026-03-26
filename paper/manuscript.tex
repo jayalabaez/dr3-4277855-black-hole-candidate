@@ -51,22 +51,21 @@ Gaia pipeline model, and $\gtrsim 30$--$50$~per~cent of comparable
 solutions fail independent RV validation.
 
 Adopting $M_1 = 1.34 \pm 0.40\,\Msun$ (GSP-Phot isochrone
-matching; RUWE~$= 9.31$) and a $\times 1.7$ parallax-error
+matching, cross-checked against a PARSEC grid;
+RUWE~$= 9.31$) and a $\times 1.7$ parallax-error
 inflation, a Monte~Carlo posterior yields median
 $M_2 = 12.3\,\Msun$ (90~per~cent CI $[5.0,\,35.9]\,\Msun$;
-$P(M_2 > 5\,\Msun) \approx 95$~per~cent).  Synthetic-photometry
+$P(M_2 > 5\,\Msun) \approx 95$~per~cent conditional on the
+solution being genuine).  Synthetic-photometry
 companion exclusion rules out a main-sequence star at the
 inferred mass, while a stripped-helium-star scan over
 $1$--$15\,\Msun$ finds no photometrically hidden solution.
-Folding in the population-level
-false-positive rate gives an effective BH probability of
-$\approx 48$--$67$~per~cent.
 
 The predicted $K_1 \approx 65\,\kms$ makes ground-based RV
-confirmation efficient; the source ranks first among 16 bright
-($G < 12$) \texttt{Orbital} BH candidates by $K_1$.  Until RV
-confirmation is obtained, the companion mass and nature remain
-entirely provisional.
+confirmation efficient; the source ranks among the top
+bright ($G < 12$) \texttt{Orbital} BH candidates by $K_1$.
+Until RV confirmation is obtained, the companion mass and
+nature remain entirely provisional.
 \end{abstract}
 
 \begin{keywords}
@@ -376,14 +375,24 @@ fractional uncertainty to encompass age, metallicity,
 and systematic errors; the sensitivity of our results to this
 choice is explored in Section~\ref{sec:results:sensitivity}.
 
-As a cross-check, the SED-derived luminosity
-$L_\star = 22\,\Lsun$ at $T_{\rm eff} = 5922$\,K yields a
-photometric radius $R = 4.5\,\Rsun$
-(Section~\ref{sec:methods:extinction}).  Placing this
-luminosity--temperature pair on PARSEC evolutionary tracks
-\citep{Bressan2012} gives $M_1 \approx 1.0$--$1.8\,\Msun$
-depending on metallicity and age, consistent with the adopted
-range.  A full SED-based mass determination is not warranted given
+As a cross-check, we construct a PARSEC-calibrated RGB mass grid
+\citep{Bressan2012} spanning
+$[\mathrm{Fe/H}] \in [-0.5,\,+0.3]$ and age
+$\tau \in [1,\,12]\,$Gyr at the catalogue
+$T_{\rm eff} = 5922\,$K and $\log g = 2.93$.  The grid returns
+$M_1 \approx 0.76$--$2.26\,\Msun$, with higher masses at lower
+metallicity and younger age
+(script~13; Table~\ref{tab:parsec_grid}).  A Monte~Carlo
+experiment drawing $T_{\rm eff}$, $\log g$, $[\mathrm{Fe/H}]$
+and age from broad priors ($\sigma_{T_{\rm eff}} = 300\,$K,
+$\sigma_{\log g} = 0.4$, uniform metallicity and flat age)
+yields a median $M_1 = 1.09\,\Msun$ with 68~per~cent CI
+$[0.77,\,1.62]\,\Msun$ and 90~per~cent CI
+$[0.63,\,2.12]\,\Msun$.  The adopted
+$M_1 = 1.34 \pm 0.40\,\Msun$ falls within the central
+body of this distribution, confirming that it is a reasonable
+working estimate rather than an ad~hoc choice.
+A full SED-based mass determination is not warranted given
 the RUWE-induced parameter uncertainty, but the independent route
 confirms that $M_1 = 1.34 \pm 0.40\,\Msun$ is a reasonable
 working estimate.
@@ -466,6 +475,21 @@ $E(B-V)$, the distance modulus, the luminosity, the radius, and
 the companion-exclusion limits are all affected downstream.
 This chain dependency cannot be broken without independent
 spectroscopic $T_{\rm eff}$.
+
+To quantify the impact, we propagate $T_{\rm eff}$ offsets of
+$\pm 250$ and $\pm 500\,$K through the full chain
+$T_{\rm eff} \to E(B-V) \to A_V \to L_\star \to R_\star \to
+\text{max hidden MS mass}$ (script~14).
+At $T_{\rm eff} = 5422\,$K ($-500$\,K), the primary radius
+swells to $R \approx 4.8\,\Rsun$ and the maximum hidden MS
+companion rises to $\sim 0.96\,\Msun$; at
+$T_{\rm eff} = 6422\,$K ($+500$\,K), $R$ shrinks to
+$\sim 3.5\,\Rsun$ and the limit tightens to
+$\sim 0.88\,\Msun$.  In all cases the MS companion at the
+catalogue mass ($12.3\,\Msun$) remains excluded by a factor
+$\gtrsim 5\times$ in every photometric band.  The companion
+exclusion is therefore robust across the plausible range of
+GSP-Phot $T_{\rm eff}$ bias.
 
 \subsection{Monte Carlo mass posterior}
 \label{sec:methods:mc}
@@ -569,6 +593,16 @@ These tests confirm that the independent-sampling assumption is
 either conservative or has negligible impact, and that the
 posterior is robust to reasonable variations in the systematic
 bracket.
+
+We note that negative $\varpi$--$a_{\rm ang}$ correlations are
+not physically expected for \texttt{Orbital} solutions (both
+parameters respond in the same direction to the astrometric
+signal), but if present they would \emph{broaden} the posterior
+and lower $P(M_2 > 5\,\Msun)$.  At $\rho = -0.3$ the BH
+probability drops by $\sim 2$~percentage points; the qualitative
+conclusion is unchanged, but we flag this as an additional source
+of systematic uncertainty that can only be resolved with the full
+NSS covariance matrix.
 
 \subsection{Companion-light exclusion}
 \label{sec:methods:companion}
@@ -709,6 +743,22 @@ lower 5th-percentile above $5\,\Msun$; with inflation,
 $\sim$\,5~per~cent of draws fall below the canonical BH
 threshold.
 
+More fundamentally, the Monte~Carlo posterior is best understood
+as a mixture of two components: (i) a ``genuine-solution''
+component, under which the smooth posterior around
+$M_2 \sim 12\,\Msun$ is meaningful, and (ii) a ``spurious''
+component (probability $\sim 30$--$50$~per~cent;
+Section~\ref{sec:gaia_vetting}), under which the orbital
+parameters are not physically reliable and the companion mass is
+effectively unconstrained.  Marginalising over both components,
+the credible intervals reported above describe only the first
+mode.  Readers should therefore interpret the CIs as conditional
+on the solution being genuine; the overall probability assigned to
+the BH hypothesis must also account for the non-trivial
+probability that the orbital solution is spurious.  This two-component
+framing replaces any single-number ``effective BH probability'' and
+makes explicit the dominant source of uncertainty.
+
 A parallax stress test illustrates the sensitivity directly:
 at $\varpi + 1\sigma$ (1.678\,mas, $d = 596$\,pc), the
 companion mass drops to $M_2 \approx 8.9\,\Msun$; at
@@ -797,6 +847,18 @@ solar metallicity; at sub- or super-solar metallicity the
 envelope-stripping efficiency and residual hydrogen content shift
 modestly, potentially altering the predicted optical flux by
 tens of per~cent without qualitatively changing the exclusion.
+Specifically, at $[\mathrm{Fe/H}] = -0.5$ the opacity-driven
+change in envelope-stripping efficiency shifts
+$\log(L/\Lsun)$ by $\sim +0.1$--$0.2$\,dex and
+$T_{\rm eff}$ by $\sim +2000$--$3000\,$K relative to the solar
+calibration \citep{Gotberg2018}, increasing the predicted optical
+flux ratio by a factor of $\sim 1.5$--$2$ --- i.e.\ the
+stripped-star scenario becomes \emph{easier} to exclude at
+sub-solar metallicity.  At super-solar metallicity
+($[\mathrm{Fe/H}] \approx +0.3$) the effect reverses but more
+modestly ($\sim 20$--$30$~per~cent lower flux ratio), still
+leaving the stripped star well above the 5~per~cent detectability
+threshold for masses $\gtrsim 1\,\Msun$.
 
 \paragraph*{Astrometric artefact (spurious orbital solution).}
 Because the solution type is \texttt{Orbital} (astrometry only),
@@ -931,6 +993,20 @@ the orbital fit is driven by a limited range of position angles.
 This remains an unresolved systematic that can only be addressed
 with the epoch-level data expected in Gaia DR4.
 
+Gaia DR4 is expected to release per-transit astrometric
+measurements and the full NSS covariance matrices currently
+withheld.  These data would enable three critical diagnostics:
+(i)~direct visualisation of the scan-angle distribution, revealing
+whether the orbital signal arises from a well-sampled range of
+position angles or is driven by a few clustered transits;
+(ii)~epoch-level residual analysis, testing whether the orbital
+fit is dominated by outliers; and (iii)~access to the
+$\varpi$--$a_{\rm ang}$ correlation coefficient, removing the
+need for the assumed correlation structures explored in
+Section~\ref{sec:methods:correlation}.  Together, these would
+either substantially strengthen the candidacy or reveal the
+solution as an artefact of the scanning geometry.
+
 \paragraph*{Blend probability.}
 At $G = 11.25$ and Galactic latitude $b = 9.3\degr$, the local
 stellar density is moderate.  The Gaia archive reports no resolved
@@ -1018,23 +1094,24 @@ among these 47 candidates by $K_{1,{\rm edge}}$.
 
 This source ranks \textbf{1st among 16 bright ($G < 12$)
 Orbital BH candidates} and 7th overall (out of 47) by
-$K_{1,{\rm edge}}$.  The six candidates with higher
+$K_{1,{\rm edge}}$.  The candidates with higher
 $K_{1,{\rm edge}}$ are all $\geq 1.2$\,mag fainter, requiring
 significantly longer integration times for the same RV precision.
-Moreover, this source has the highest NSS solution significance
+This source also has the highest NSS solution significance
 ($75.4\sigma$) among the top ten ranked candidates, and its
 equatorial declination (Dec~$= +3.5\degr$) makes it accessible
-from both hemispheres.  To our knowledge, none of the remaining
-15 bright candidates in Table~\ref{tab:population} has been
-subjected to published RV vetting, so the relative ranking among
-unvetted sources is the relevant comparison.
+from both hemispheres.  None of the 16 bright candidates in
+Table~\ref{tab:population} has been subjected to published RV
+vetting, so the relative ranking is among unvalidated sources.
 
 We emphasise that \emph{none} of these ranking criteria validate
-the orbital solution.  They establish only that, under the adopted
-assumptions, this source would be among the most efficiently
-confirmable BH candidates in the current catalogue.
-The ranking itself should be treated as a follow-up
-\emph{prioritization metric}, not as evidence for a genuine BH.
+the orbital solution.  They quantify observational accessibility
+and predicted signal strength under the adopted model; the
+catalogue itself is unvetted, and individual rankings could
+change substantially if, for example, the orbital solution for
+any source is subsequently found to be spurious.  The ranking
+should be treated as a follow-up \emph{prioritization metric},
+not as evidence for a genuine BH.
 
 \subsection{Context among Gaia BH discoveries}
 
@@ -1252,15 +1329,20 @@ findings are:
   (Section~\ref{sec:why_target}).  Among the 16 bright
   ($G < 12$) \texttt{Orbital} BH candidates in our working
   catalogue, this source ranks first by predicted $K_1$
-  (Table~\ref{tab:population}).
+  (Table~\ref{tab:population}).  The ranking reflects
+  observational accessibility within an unvetted catalogue,
+  not evidence for the reality of any solution.
 
-\item \textbf{Effective BH probability.}
-  Folding the population-level false-positive rate
-  ($\sim 30$--$50$~per~cent) into the mass posterior gives
-  $P_{\rm eff}(\mathrm{BH}) \approx 48$--$67$~per~cent
-  (Equation~\ref{eq:peff}), underscoring that even the most
-  favourable reading of the archival data leaves the BH
-  hypothesis at roughly even odds.
+\item \textbf{Overall assessment.}
+  As a rough guide, the population-level false-positive rate
+  ($\sim 30$--$50$~per~cent; Section~\ref{sec:gaia_vetting})
+  means that even the most favourable reading of the archival data
+  leaves the probability of a genuine BH companion at
+  approximately even odds (Equation~\ref{eq:peff}).  This
+  order-of-magnitude estimate should not be interpreted as a
+  calibrated posterior; it folds an informal population prior into
+  a conditional mass posterior and serves only to underscore the
+  necessity of RV confirmation.
 \end{enumerate}
 
 We conclude that Gaia DR3 4277855016732107520 is a
@@ -1299,10 +1381,13 @@ All observational data are publicly available from the Gaia Archive
 (\url{https://gea.esac.esa.int/archive/}), VizieR, and SIMBAD.
 The analysis scripts and machine-readable results are available at
 \url{https://github.com/jayalabaez/dr3-4277855-black-hole-candidate}.
-Modular analysis scripts (\texttt{scripts/02}--\texttt{12}) produce
+Modular analysis scripts (\texttt{scripts/02}--\texttt{15}) produce
 all figures and numerical results, including the correlation
 sensitivity tests (script~11), synthetic-photometry SED analysis
-(script~12), and the population-level
+(script~12), the PARSEC isochrone grid (script~13),
+the $T_{\rm eff}$ chain-dependency sensitivity (script~14),
+the source-ID recovery cross-match (script~15),
+and the population-level
 comparison (script~10; Table~\ref{tab:population}).  The repository includes the
 exact scripts used to generate all figures, tables, and
 machine-readable posterior summaries from the public catalogue
@@ -1433,6 +1518,29 @@ $K$              & $5.8\times$ (6.0)  & $2.7\times$ (2.8) & $10\times$  & $4.7\t
 
 \begin{table}
 \centering
+\caption{PARSEC-calibrated primary mass $M_1$ at the catalogue
+$T_{\rm eff} = 5922\,$K and $\log g = 2.93$ for selected
+metallicities and ages (script~13).  A Monte~Carlo draw over
+the full parameter space gives median
+$M_1 = 1.09\,\Msun$ (68\% CI $[0.77,\,1.62]$; 90\%
+CI $[0.63,\,2.12]$).}
+\label{tab:parsec_grid}
+\begin{tabular}{rrrrrr}
+\toprule
+$[\mathrm{Fe/H}]$ & \multicolumn{5}{c}{$M_1$ ($\Msun$) at age (Gyr)} \\
+\cmidrule(lr){2-6}
+ & 1 & 3 & 5 & 7 & 12 \\
+\midrule
+$-0.5$ & 2.26 & 1.40 & 1.22 & 1.10 & 1.00 \\
+$-0.1$ & 1.97 & 1.22 & 1.06 & 0.96 & 0.87 \\
+$ 0.0$ & 1.90 & 1.18 & 1.03 & 0.92 & 0.84 \\
+$+0.3$ & 1.71 & 1.06 & 0.93 & 0.83 & 0.76 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
 \caption{Alternative scenario assessment. Verdicts follow a
 four-tier system (Section~\ref{sec:alternatives}).
 \emph{All verdicts are conditional on the Gaia \texttt{Orbital}
@@ -1496,22 +1604,22 @@ Rank & Gaia DR3 source ID & $G$ & $P$ & $e$ & $M_2$ & $K_{1,\rm edge}$ &
 $\sigma_{\rm NSS}$ & Tier & Hem.\ & Status \\
  & & (mag) & (d) & & ($\Msun$) & (km\,s$^{-1}$) & & & & \\
 \midrule
-\textbf{1} & \textbf{4277855\ldots} & \textbf{11.25} & \textbf{424} & \textbf{0.34} & \textbf{12.3} & \textbf{65.0} & \textbf{75.4} & \textbf{Gold} & \textbf{Both} & \textbf{This work} \\
-2 & 6281177\ldots & 11.26 & 154 & 0.18 & 5.3 & 62.7 & 24.3 & Gold & Both & Not vetted \\
-3 & 4507516\ldots & 8.89 & 813 & 0.51 & 18.2 & 48.1 & 20.3 & Gold & Both & Not vetted \\
-4 & 6042980\ldots & 11.96 & 678 & 0.22 & 9.1 & 47.8 & 76.3 & Gold & Both & Not vetted \\
-5 & 6033351\ldots & 11.75 & 857 & 0.41 & 6.9 & 41.7 & 55.5 & Gold & Both & Not vetted \\
-6 & 3153895\ldots & 9.34 & 904 & 0.00 & 16.6 & 41.7 & 18.1 & Silver & Both & Not vetted \\
-7 & 245948\ldots  & 11.80 & 549 & 0.07 & 5.0 & 35.1 & 48.4 & Gold & N & Not vetted \\
-8 & 6656986\ldots & 6.47 & 444 & 0.58 & 5.5 & 31.6 & 28.0 & Gold & S & Not vetted \\
-9 & 2946055\ldots & 5.27 & 755 & 0.32 & 11.0 & 30.6 & 14.6 & Silver & Both & Not vetted \\
-10 & 6886105\ldots & 9.46 & 768 & 0.48 & 6.9 & 30.0 & 34.9 & Gold & Both & Not vetted \\
-11 & 4113903\ldots & 6.81 & 1233 & 0.19 & 7.3 & 25.9 & 6.1 & Bronze & Both & Not vetted \\
-12 & 3067772\ldots & 11.64 & 984 & 0.17 & 5.7 & 25.3 & 20.8 & Silver & Both & Not vetted \\
-13 & 3972084\ldots & 8.80 & 876 & 0.15 & 6.1 & 25.0 & 21.0 & Gold & Both & Not vetted \\
-14 & 979031\ldots  & 9.94 & 877 & 0.22 & 5.1 & 22.5 & 18.4 & Bronze & N & Not vetted \\
-15 & 470361\ldots  & 7.18 & 999 & 0.52 & 6.5 & 21.7 & 11.2 & Silver & N & Not vetted \\
-16 & 5103956\ldots & 6.88 & 763 & 0.27 & 5.0 & 20.8 & 22.5 & Gold & Both & Not vetted \\
+\textbf{1} & \textbf{4277855016732107520} & \textbf{11.25} & \textbf{424} & \textbf{0.34} & \textbf{12.3} & \textbf{65.0} & \textbf{75.4} & \textbf{Gold} & \textbf{Both} & \textbf{This work} \\
+2 & 6281177228434199296 & 11.26 & 154 & 0.18 & 5.3 & 62.7 & 24.3 & Gold & Both & Not vetted \\
+3 & 4507516366984668032 & 8.89 & 813 & 0.51 & 18.2 & 48.1 & 20.3 & Gold & Both & Not vetted \\
+4 & 6042980300715906176 & 11.96 & 678 & 0.22 & 9.1 & 47.8 & 76.3 & Gold & Both & Not vetted \\
+5 & 6033350812290616448 & 11.75 & 857 & 0.41 & 6.9 & 41.7 & 55.5 & Gold & Both & Not vetted \\
+6 & 3153895060707668608 & 9.34 & 904 & 0.00 & 16.6 & 41.7 & 18.1 & Silver & Both & Not vetted \\
+7 & 245948793944575360  & 11.80 & 549 & 0.07 & 5.0 & 35.1 & 48.4 & Gold & N & Not vetted \\
+8 & 6656986282721029120 & 6.47 & 444 & 0.58 & 5.5 & 31.6 & 28.0 & Gold & S & Not vetted \\
+9 & 2946055236704251520 & 5.27 & 755 & 0.32 & 11.0 & 30.6 & 14.6 & Silver & Both & Not vetted \\
+10 & 6886104886536410368 & 9.46 & 768 & 0.48 & 6.9 & 30.0 & 34.9 & Gold & Both & Not vetted \\
+11 & 4113903195790495232 & 6.81 & 1233 & 0.19 & 7.3 & 25.9 & 6.1 & Bronze & Both & Not vetted \\
+12 & 3067772475266826624 & 11.64 & 984 & 0.17 & 5.7 & 25.3 & 20.8 & Silver & Both & Not vetted \\
+13 & 3972084092912522496 & 8.80 & 876 & 0.15 & 6.1 & 25.0 & 21.0 & Gold & Both & Not vetted \\
+14 & 979031266772932736  & 9.94 & 877 & 0.22 & 5.1 & 22.5 & 18.4 & Bronze & N & Not vetted \\
+15 & 470361114339849472  & 7.18 & 999 & 0.52 & 6.5 & 21.7 & 11.2 & Silver & N & Not vetted \\
+16 & 5103955898378211456 & 6.88 & 763 & 0.27 & 5.0 & 20.8 & 22.5 & Gold & Both & Not vetted \\
 \bottomrule
 \end{tabular}
 \end{table*}

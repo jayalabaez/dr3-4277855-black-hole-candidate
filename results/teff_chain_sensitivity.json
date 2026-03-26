@@ -1,0 +1,55 @@
+{
+  "description": "Chain-dependency sensitivity: Teff -> E(B-V) -> L -> R -> companion exclusion",
+  "gsp_phot_teff": 5922.0,
+  "observed_bprp": 0.993,
+  "parallax_mas": 1.5228,
+  "detection_threshold": "5% in any band",
+  "chain_results": [
+    {
+      "teff_K": 5422,
+      "delta_teff": -500,
+      "ebv_mag": 0.089,
+      "av_mag": 0.277,
+      "luminosity_lsun": 17.8,
+      "radius_rsun": 4.79,
+      "max_hidden_ms_msun": 0.96
+    },
+    {
+      "teff_K": 5672,
+      "delta_teff": -250,
+      "ebv_mag": 0.133,
+      "av_mag": 0.411,
+      "luminosity_lsun": 18.4,
+      "radius_rsun": 4.45,
+      "max_hidden_ms_msun": 0.97
+    },
+    {
+      "teff_K": 5922,
+      "delta_teff": 0,
+      "ebv_mag": 0.172,
+      "av_mag": 0.534,
+      "luminosity_lsun": 18.7,
+      "radius_rsun": 4.12,
+      "max_hidden_ms_msun": 0.94
+    },
+    {
+      "teff_K": 6172,
+      "delta_teff": 250,
+      "ebv_mag": 0.209,
+      "av_mag": 0.647,
+      "luminosity_lsun": 19.0,
+      "radius_rsun": 3.82,
+      "max_hidden_ms_msun": 0.91
+    },
+    {
+      "teff_K": 6422,
+      "delta_teff": 500,
+      "ebv_mag": 0.242,
+      "av_mag": 0.751,
+      "luminosity_lsun": 19.0,
+      "radius_rsun": 3.53,
+      "max_hidden_ms_msun": 0.88
+    }
+  ],
+  "conclusion": "A Teff shift of +/-500 K changes the maximum hidden companion mass by the amounts shown. The MS companion exclusion at the catalogue mass (12.3 Msun) remains robust across the full range because even the weakest exclusion (largest primary radius at coolest Teff) still yields flux ratios >> 5%."
+}
