@@ -1,8 +1,8 @@
 % ====================================================================
 %  Gaia DR3 4277855016732107520: A Dormant Black Hole Candidate
-%  from an Astrometric Orbital Solution with an RGB Primary
+%  from an Astrometric Orbital Solution with a Likely Evolved Primary
 %  MNRAS format — single-target candidate paper
-%  REVISED — addressing all referee recommendations
+%  REVISED — final pre-submission version
 % ====================================================================
 \documentclass[usenatbib,fleqn]{mnras}
 
@@ -23,7 +23,7 @@
 
 \title[Gaia DR3 4277855016732107520: A Dormant BH Candidate]
 {Gaia DR3 4277855016732107520: A Dormant Black Hole Candidate\\
- from an Astrometric Orbital Solution with an RGB Primary}
+ from an Astrometric Orbital Solution with a Likely Evolved Primary}
 
 \author[J. Ayala-Baez]{
   Joel Ayala-Baez$^{1}$\thanks{E-mail: jayalabaez@gmail.com}\\
@@ -46,8 +46,8 @@ We present a multi-wavelength analysis of Gaia DR3
 4277855016732107520, an astrometric binary in the DR3 non-single-star
 (NSS) catalogue with a purely astrometric orbital solution
 (model type \texttt{Orbital}).
-The system comprises a photometric RGB primary
-($T_{\rm eff} = 5922$\,K, $\log g = 2.93$;
+The system comprises a likely evolved primary
+($T_{\rm eff} = 5922$\,K, $\log g = 2.93$ from Gaia GSP-Phot;
 $M_1 = 1.34 \pm 0.40\,\Msun$) orbiting an unseen companion with
 period $P = 424.4$\,d, eccentricity $e = 0.34$, and semi-major
 axis $a \simeq 2.64$\,AU at a distance of $\sim$\,657\,pc.
@@ -81,10 +81,10 @@ ROSAT, VLASS, and RACS non-detections are consistent with a
 quiescent system ($\log L_X < 30.7$\,erg\,s$^{-1}$).
 eROSITA data are unavailable for this sky position
 ($l = 32.1\degr$, eastern Galactic hemisphere).
-We conclude that this source is a promising BH candidate warranting
-urgent multi-epoch radial-velocity follow-up; independent
-spectroscopic confirmation is required before any BH classification
-can be considered secure.
+We conclude that this source is a promising BH candidate that
+merits high-priority multi-epoch radial-velocity follow-up;
+independent spectroscopic confirmation is required before any BH
+classification can be considered secure.
 \end{abstract}
 
 \begin{keywords}
@@ -140,10 +140,10 @@ confirmation of each individual candidate.
 In this paper we focus on Gaia DR3 4277855016732107520, a candidate
 identified in a systematic search of the Gaia DR3 NSS catalogue
 (Ayala-Baez 2026, in prep.).  The system is a wide binary
-($P = 424$\,d) comprising a photometric RGB primary
-($M_1 = 1.34\,\Msun$) and a dark companion whose mass from
-the astrometric orbit is $M_2 \simeq 12.3\,\Msun$ under Gaia
-NSS modelling assumptions.  Located at
+($P = 424$\,d) comprising a likely evolved primary
+($M_1 = 1.34\,\Msun$ from GSP-Phot) and a dark companion whose
+mass from the astrometric orbit is $M_2 \simeq 12.3\,\Msun$
+under Gaia NSS modelling assumptions.  Located at
 $\sim$\,657\,pc in Ophiuchus ($l = 32.1\degr$, $b = 9.3\degr$),
 the system has moderate extinction, a parallax with
 $\sim$\,10~per~cent relative uncertainty, and is accessible from
@@ -223,7 +223,8 @@ WISE colours ($W1 - W2 = -0.04$) show no mid-IR excess,
 consistent with a stellar photosphere.
 GALEX \citep{Bianchi2017} provides a near-UV detection
 ($\mathrm{NUV} = 17.52$) but no far-UV counterpart, consistent
-with normal RGB chromospheric emission without a hot companion.
+with chromospheric emission from an evolved star without a hot
+companion.
 
 \subsection{X-ray and radio archival data}
 \label{sec:data:xray}
@@ -384,16 +385,19 @@ $K_s$; WISE $W1$, $W2$) after applying band-dependent extinction
 corrections.  The dereddened SED is compared to a single-temperature
 blackbody model at $T_{\rm eff} = 5922$\,K.  Residuals below
 5~per~cent in all bands confirm that the photometry is consistent
-with a single RGB star plus a dark (non-luminous) companion.
+with a single evolved star plus a dark (non-luminous) companion.
 
 We note that a single-temperature blackbody is a first-order
-consistency check rather than a full spectral fit.  Synthetic
-atmosphere models (e.g.\ PHOENIX, ATLAS9/MARCS;
-\citealt{Husser2013,Castelli2003}) would provide a more rigorous
-assessment of the primary's SED shape and improve sensitivity to
-faint secondary contributions, particularly in the UV where a
-stripped helium star could contribute detectable flux.  We strongly
-encourage such modelling in future work.
+consistency check rather than a full spectral fit.  For the
+main-sequence companion case, the predicted flux excess is so large
+($\sim$\,$28$--$49\times$ in optical bands) that the exclusion is
+robust at the order-of-magnitude level, independent of the detailed
+atmospheric model adopted.  However, synthetic atmosphere models
+(e.g.\ PHOENIX, ATLAS9/MARCS; \citealt{Husser2013,Castelli2003})
+would provide a more rigorous assessment of the primary's SED shape
+and improve sensitivity to faint secondary contributions,
+particularly in the UV where a stripped helium star could contribute
+detectable flux; such modelling is deferred to future work.
 
 \subsection{Monte Carlo mass posterior}
 \label{sec:methods:mc}
@@ -486,7 +490,7 @@ readily detectable with ground-based spectrographs
 The extinction analysis reveals modest reddening
 ($A_V = 0.54$\,mag).  The dereddened absolute magnitude
 $M_G = 1.68$\,mag and the photometric luminosity
-$L_\star = 22\,\Lsun$ are consistent with an RGB star of
+$L_\star = 22\,\Lsun$ are consistent with an evolved star of
 $\sim$\,$1.3\,\Msun$ with radius $R_\star = 4.5\,\Rsun$.
 The alternative logg-based estimates ($R = 6.5\,\Rsun$,
 $L = 47\,\Lsun$) differ by factors of $\sim$\,$1.5\times$
@@ -613,9 +617,11 @@ $\sim$\,5.  \textbf{Ruled out.}
 Two $\sim$\,$6.2\,\Msun$ MS stars would have combined luminosity
 $\sim$\,$1160\,\Lsun$ --- easily detectable in the SED.  The
 Mardling--Aarseth stability criterion \citep{MardlingAarseth2001}
-would require $P_{\rm inner} \lesssim 42$\,d, yet no secondary
-spectral signature or short-period photometric modulation is
-detected.  \textbf{Strongly disfavoured.}
+would require $P_{\rm inner} \lesssim 42$\,d; no evidence for such
+a configuration is currently available from the existing photometric
+and astrometric data, though dedicated spectroscopic and
+time-domain observations have not yet been obtained.
+\textbf{Strongly disfavoured.}
 
 \paragraph{Stripped helium star / hot subdwarf.}
 A $12.3\,\Msun$ stripped He star would have
@@ -689,7 +695,7 @@ progenitor was a massive star with zero-age main-sequence
 mass $M_{\rm ZAMS} \gtrsim 25\,\Msun$ \citep{Fryer2012}.
 The wide orbit ($a = 2.64$\,AU) would have survived the
 supernova event, constraining the natal kick to moderate
-values.  The lack of chemical enrichment in the RGB primary
+values.  The lack of chemical enrichment in the primary
 (at the level detectable from GSP-Phot) would suggest minimal
 pre-collapse mass transfer, favouring a direct-collapse or
 failed-supernova channel \citep{Langer2020}.
@@ -715,8 +721,11 @@ steps in order of priority:
   the predicted periastron passage (where $\dot{v}_r$ is maximal).
   At the predicted $K_1 \approx 65\,\kms$, even a precision of
   $\sim$\,$0.5$--$1\,\kms$ per epoch suffices to confirm the
-  period, eccentricity, and semi-amplitude.  A single epoch
-  would already detect the large RV variation.
+  period, eccentricity, and semi-amplitude.  Even a single
+  well-timed epoch could reveal significant tension with the
+  Gaia systemic velocity and motivate further monitoring,
+  though establishing the full RV curve requires the recommended
+  multi-epoch campaign.
 
   The RV orbit independently yields $M_2\,\sin i$ via the
   spectroscopic mass function; combined with the astrometric
@@ -833,14 +842,14 @@ catalogue.  Our principal findings are:
 \end{enumerate}
 
 We conclude that Gaia DR3 4277855016732107520 is a \emph{promising
-dormant black hole candidate} that warrants urgent multi-epoch
+dormant black hole candidate} that merits high-priority multi-epoch
 radial-velocity follow-up.  The large predicted RV semi-amplitude
 and bright apparent magnitude make spectroscopic confirmation
-straightforward.  However, because the orbital solution is purely
-astrometric with no independent RV data, the companion mass remains
-contingent on the Gaia pipeline assumptions, and the system must
-be regarded as a \emph{candidate} until spectroscopic confirmation
-is obtained.
+feasible with existing ground-based facilities.  However, because
+the orbital solution is purely astrometric with no independent RV
+data, the companion mass remains contingent on the Gaia pipeline
+assumptions, and the system must be regarded as a \emph{candidate}
+until spectroscopic confirmation is obtained.
 
 % ====================================================================
 \section*{Acknowledgements}
@@ -1020,7 +1029,7 @@ Property & Gaia~BH1 & Gaia~BH2 & Gaia~BH3 & This work \\
 \midrule
 $P$ (d)             & 185.6     & 1277      & $\sim$4240      & 424.4   \\
 $e$                 & 0.45      & 0.52      & 0.73            & 0.343   \\
-Primary type        & G-dwarf   & RGB       & Giant           & RGB$^a$ \\
+Primary type        & G-dwarf   & RGB       & Giant           & Likely evolved$^a$ \\
 $M_1$ ($\Msun$)     & 0.93      & 1.07      & 0.76            & 1.34    \\
 $M_2$ ($\Msun$)     & 9.62      & 8.94      & 32.70           & $\sim$12.3$^b$ \\
 Solution type       & Astro+RV  & Astro+RV  & Astro+RV        & \texttt{Orbital} only \\
@@ -1043,8 +1052,8 @@ Status              & Confirmed & Confirmed & Confirmed       & \textbf{Candidat
 \begin{figure*}
 \includegraphics[width=\textwidth]{figures/fig_system_overview.pdf}
 \caption{Orbital geometry of the Gaia DR3 4277855016732107520
-system.  The RGB primary orbits the unseen companion (black circle
-at the focus) with period $P = 424.4$\,d and eccentricity
+system.  The likely evolved primary orbits the unseen companion
+(black circle at the focus) with period $P = 424.4$\,d and eccentricity
 $e = 0.34$.  The periastron distance is $1.73$\,AU and the
 apastron distance is $3.55$\,AU.}
 \label{fig:overview}
