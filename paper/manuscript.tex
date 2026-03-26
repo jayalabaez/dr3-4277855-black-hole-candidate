@@ -1,8 +1,8 @@
 % ====================================================================
-%  Gaia DR3 4277855016732107520: A Dormant Black Hole Candidate
-%  from an Astrometric Orbital Solution with a Likely Evolved Primary
-%  MNRAS format — single-target candidate paper
-%  REVISED — final pre-submission version
+%  Gaia DR3 4277855016732107520: Archival Characterization of a
+%  Dark-Companion Candidate from a Gaia Astrometric Orbital Solution
+%  MNRAS format — candidate-prioritization paper
+%  REVISED — major revision addressing referee concerns
 % ====================================================================
 \documentclass[usenatbib,fleqn]{mnras}
 
@@ -21,9 +21,9 @@
 \newcommand{\kms}{{\rm km\,s}^{-1}}
 \newcommand{\fmass}{f(M)}
 
-\title[Gaia DR3 4277855016732107520: A Dormant BH Candidate]
-{Gaia DR3 4277855016732107520: A Dormant Black Hole Candidate\\
- from an Astrometric Orbital Solution with a Likely Evolved Primary}
+\title[Gaia DR3 4277855016732107520: Dark-Companion Candidate]
+{Gaia DR3 4277855016732107520: Archival Characterization of a\\
+ Dark-Companion Candidate from a Gaia Astrometric Orbital Solution}
 
 \author[J. Ayala-Baez]{
   Joel Ayala-Baez$^{1}$\thanks{E-mail: jayalabaez@gmail.com}\\
@@ -42,52 +42,59 @@
 
 % ====================================================================
 \begin{abstract}
-We present a multi-wavelength analysis of Gaia DR3
+We present an archival multi-wavelength assessment of Gaia DR3
 4277855016732107520, an astrometric binary in the DR3 non-single-star
 (NSS) catalogue with a purely astrometric orbital solution
-(model type \texttt{Orbital}).
-The system comprises a likely evolved primary
-($T_{\rm eff} = 5922$\,K, $\log g = 2.93$ from Gaia GSP-Phot;
-$M_1 = 1.34 \pm 0.40\,\Msun$) orbiting an unseen companion with
-period $P = 424.4$\,d, eccentricity $e = 0.34$, and semi-major
-axis $a \simeq 2.64$\,AU at a distance of $\sim$\,657\,pc.
-After propagating uncertainties in the parallax
-($\varpi = 1.523 \pm 0.155$\,mas; 10~per~cent relative error),
-period, primary mass, and a $\times 1.7$ parallax-error inflation
-factor appropriate for \texttt{Orbital} solutions at this magnitude,
-our Monte~Carlo posterior yields a median companion mass
-$M_2 = 12.3\,\Msun$ with 68~per~cent credible interval
-$[7.1,\,22.7]\,\Msun$ and 90~per~cent CI $[5.0,\,35.9]\,\Msun$.
-Under these assumptions, $P(M_2 > 5\,\Msun) \approx 95$~per~cent
-and $P(M_2 > 10\,\Msun) \approx 64$~per~cent.
-No luminous companion is detected: Planck-based band-by-band flux
-ratios show that a $12.3\,\Msun$ main-sequence star would exceed
-the primary flux by $\sim$\,$28\times$ in $G$ and
-$\sim$\,$49\times$ in $G_{\rm BP}$, firmly excluded by the observed
-single-star spectral energy distribution.
-Of seven non-BH scenarios evaluated, three are ruled out
-(MS companion, white dwarf, neutron star), one is strongly
-disfavoured (hierarchical triple), one is not favoured
-(stripped helium star), and two --- astrometric artefact and
-chance alignment --- \emph{cannot be excluded} without independent
-spectroscopic data.  Because the solution is \texttt{Orbital}
-(astrometry only, with no independent radial-velocity orbit), the
-companion mass depends entirely on the Gaia pipeline assumptions;
-follow-up studies have shown that a fraction of such solutions are
-spurious.  The predicted radial-velocity semi-amplitude
-$K_1 \approx 65\,\kms$ makes spectroscopic confirmation feasible
-with $2$--$4$\,m class facilities.
+(model type \texttt{Orbital}).  Because this solution class derives
+the companion mass entirely from the along-scan photo-centre
+wobble --- with no independent radial-velocity (RV) orbit --- all
+inferred companion parameters are \emph{conditional on the Gaia
+pipeline modelling assumptions} and must be validated
+spectroscopically before any astrophysical interpretation can be
+considered secure.  Follow-up studies have shown that a substantial
+fraction of such \texttt{Orbital} solutions are spurious.
+
+The visible component has Gaia GSP-Phot parameters
+$T_{\rm eff} = 5922$\,K and $\log g = 2.93$, suggesting an
+evolved star, though at RUWE$\,= 9.31$ these values may be
+systematically biased.  We adopt
+$M_1 = 1.34 \pm 0.40\,\Msun$ from isochrone matching of the
+GSP-Phot parameters.  Conditional on the Gaia orbital solution and
+adopted stellar model, our Monte~Carlo posterior yields a median
+companion mass $M_2 = 12.3\,\Msun$ with 68~per~cent credible
+interval $[7.1,\,22.7]\,\Msun$ and 90~per~cent CI
+$[5.0,\,35.9]\,\Msun$ (after applying a $\times 1.7$
+parallax-error inflation).  Under these assumptions,
+$P(M_2 > 5\,\Msun) \approx 95$~per~cent.
+
+No luminous companion is detected: a main-sequence star at the
+inferred mass would exceed the primary flux by
+$\sim$\,$28\times$ in $G$ and $\sim$\,$49\times$ in
+$G_{\rm BP}$, inconsistent with the observed single-star
+spectral energy distribution.
+Of seven non-BH scenarios, three are inconsistent with the
+photometric data under the adopted Gaia orbital solution and
+stellar model (MS companion, WD, NS), one is strongly
+disfavoured (hierarchical triple), and one is not favoured
+(stripped He star).  Critically, two scenarios ---
+astrometric artefact and chance alignment --- \emph{cannot be
+excluded} without independent spectroscopic data; if the
+\texttt{Orbital} solution is itself erroneous, these downstream
+exclusions lose their force.
+
 ROSAT non-detection implies an order-of-magnitude archival X-ray
 upper limit of
 $\log L_X \lesssim 30.7$\,erg\,s$^{-1}$, while VLASS and RACS
-show no radio counterpart; together these are consistent with a
+show no radio counterpart; together, these are consistent with a
 quiescent system.
-eROSITA data are unavailable for this sky position
-($l = 32.1\degr$, eastern Galactic hemisphere).
-We conclude that Gaia DR3 4277855016732107520 is a promising
-dormant BH candidate under the Gaia DR3 NSS modelling assumptions;
-independent spectroscopic confirmation is required before any BH
-classification can be considered secure.
+
+We conclude that this source is a \emph{high-priority
+dark-companion candidate} meriting urgent spectroscopic follow-up.
+The predicted RV semi-amplitude $K_1 \approx 65\,\kms$ makes
+confirmation feasible with $2$--$4$\,m class facilities over
+$\sim$\,8--10 epochs spanning one orbital period.  Until such
+confirmation is obtained, the companion mass and nature remain
+provisional.
 \end{abstract}
 
 \begin{keywords}
@@ -140,11 +147,12 @@ of high-significance \texttt{Orbital} solutions in the NSS catalogue
 fail independent RV checks, underscoring the need for spectroscopic
 confirmation of each individual candidate.
 
-In this paper we focus on Gaia DR3 4277855016732107520, a candidate
+In this paper we present an archival multi-wavelength
+characterization and follow-up prioritization of
+Gaia DR3 4277855016732107520, a candidate
 identified in a systematic search of the Gaia DR3 NSS catalogue.
 The system is a wide binary
-($P = 424$\,d) comprising a likely evolved primary
-($M_1 = 1.34\,\Msun$ from GSP-Phot) and a dark companion whose
+($P = 424$\,d) with a dark companion whose
 mass from the astrometric orbit is $M_2 \simeq 12.3\,\Msun$
 under Gaia NSS modelling assumptions.  Located at
 $\sim$\,657\,pc in Ophiuchus ($l = 32.1\degr$, $b = 9.3\degr$),
@@ -158,14 +166,19 @@ spectroscopic orbit exists}.  The companion mass therefore depends
 entirely on the Gaia pipeline model, the parallax, and the adopted
 primary-mass estimate.  Until independent multi-epoch radial
 velocities confirm or refute the orbital parameters, this system
-must be treated as a \emph{candidate} rather than a confirmed BH.
+must be treated as a \emph{candidate} rather than a confirmed
+compact object, and the exclusion of alternative scenarios is
+itself conditional on the validity of the underlying
+\texttt{Orbital} solution.
 
 The paper is structured as follows.  Section~\ref{sec:data}
 describes the observational data.  Section~\ref{sec:methods}
 presents the analysis methodology.  Section~\ref{sec:results}
-reports results.  Section~\ref{sec:alternatives} systematically
-tests non-BH explanations.  Section~\ref{sec:discussion} discusses
-implications and follow-up strategy, and
+reports results.  Section~\ref{sec:alternatives} evaluates
+non-BH explanations, conditioned on the adopted Gaia solution.
+Section~\ref{sec:discussion} discusses
+implications, the evidence hierarchy, the reliability of the
+Gaia \texttt{Orbital} solution, and follow-up strategy, and
 Section~\ref{sec:conclusions} summarises our findings.
 
 % ====================================================================
@@ -445,6 +458,20 @@ in the orbital model itself (e.g.\ incorrect inclination from
 scan-geometry biases) --- only for the quoted parameter
 uncertainties.
 
+We emphasise that this posterior represents a \emph{conditional
+working estimate} of the companion mass under the adopted
+assumptions, not a rigorously grounded Bayesian inference.  In
+particular: (i) the $\times 1.7$ inflation is calibrated at the
+population level, not for this individual source; (ii) the
+independent sampling of correlated parameters (necessitated by
+the unavailability of the full NSS covariance matrix) may
+underestimate the true uncertainty; and (iii) the uniform
+$[0.95, 1.05]$ multiplicative systematic is an ad hoc bracket
+whose range is not derived from first principles.  A fully
+rigorous uncertainty model would require access to the epoch-level
+astrometric data and the full parameter covariance matrix, neither
+of which is publicly available in DR3.
+
 \subsection{Companion-light exclusion}
 \label{sec:methods:companion}
 
@@ -506,12 +533,19 @@ primary under the adopted photometric interpretation,
 with radius $R_\star = 4.5\,\Rsun$.
 The alternative logg-based estimates ($R = 6.5\,\Rsun$,
 $L = 47\,\Lsun$) differ by factors of $\sim$\,$1.5\times$
-(radius) and $\sim$\,$2.1\times$ (luminosity); this tension
-likely reflects unreliable GSP-Phot parameters at the source's
-high RUWE (Section~\ref{sec:methods:extinction}).  The dereddened
+(radius) and $\sim$\,$2.1\times$ (luminosity).  This is not
+a cosmetic discrepancy: it indicates that the stellar
+characterisation feeding the companion interpretation is
+\emph{provisional}.  The tension likely reflects unreliable
+GSP-Phot parameters at the source's high RUWE
+(Section~\ref{sec:methods:extinction}), and demonstrates that
+neither estimate should be treated as a secure physical measurement
+absent independent spectroscopy.  The dereddened
 SED is well-fit by a single-temperature model with residuals
 $<$\,5~per~cent in all bands.  No secondary SED component is
-required.
+required, though we note that the blackbody SED check establishes
+consistency rather than providing a rigorous atmospheric analysis
+(Section~\ref{sec:methods:sed}).
 
 \subsection{Companion-light exclusion}
 \label{sec:results:companion}
@@ -605,10 +639,17 @@ landscape.
 \label{sec:alternatives}
 
 We systematically evaluate seven non-BH explanations for the dark
-companion.  Table~\ref{tab:scenarios} summarises the results,
-using a four-tier verdict system: \textbf{Ruled out} (physically
-impossible or overwhelmingly contradicted by data),
-\textbf{Strongly disfavoured} (requires implausible fine-tuning),
+companion.  \emph{All verdicts in this section are conditional on the
+Gaia \texttt{Orbital} solution correctly describing the system and on
+the adopted primary-star model being approximately correct.}  If the
+orbital solution is itself spurious
+(Section~\ref{sec:gaia_vetting}), these downstream exclusions lose
+their force.  Table~\ref{tab:scenarios} summarises the results,
+using a four-tier verdict system: \textbf{Excluded} (physically
+impossible or overwhelmingly contradicted by data, conditional on
+the adopted solution),
+\textbf{Strongly disfavoured} (requires implausible fine-tuning,
+conditional on the adopted solution),
 \textbf{Not favoured} (unlikely but not formally excluded),
 and \textbf{Requires follow-up} (cannot be assessed without
 additional data).
@@ -617,16 +658,16 @@ additional data).
 A $12.3\,\Msun$ MS star would have $L \sim 6550\,\Lsun$ and
 $T_{\rm eff} \sim 25\,400$\,K, contributing $\sim$\,$28\times$ the
 primary flux in $G$ and $\sim$\,$49\times$ in $G_{\rm BP}$.
-No secondary SED component is detected.  \textbf{Ruled out.}
+No secondary SED component is detected.  \textbf{Excluded under adopted solution.}
 
 \paragraph{White dwarf.}
 $M_2 = 12.3\,\Msun$ exceeds the Chandrasekhar limit
-($1.44\,\Msun$) by a factor of $\sim$\,9.  \textbf{Ruled out.}
+($1.44\,\Msun$) by a factor of $\sim$\,9.  \textbf{Excluded under adopted solution.}
 
 \paragraph{Neutron star.}
 $M_2 = 12.3\,\Msun$ exceeds the most generous NS mass ceiling
 ($\sim$\,$2.3\,\Msun$; \citealt{Rezzolla2018}) by a factor of
-$\sim$\,5.  \textbf{Ruled out.}
+$\sim$\,5.  \textbf{Excluded under adopted solution.}
 
 \paragraph{Hierarchical triple.}
 Two $\sim$\,$6.2\,\Msun$ MS stars would have combined luminosity
@@ -667,41 +708,158 @@ motion.  This scenario likewise \textbf{requires follow-up}
 via independent RV monitoring and high-resolution imaging.
 
 \medskip\noindent
-\textbf{Summary:} Three of seven alternative scenarios are ruled
-out on physical grounds; one (hierarchical triple) is strongly
+\textbf{Summary:} Conditional on the Gaia \texttt{Orbital}
+solution and adopted primary-star model, three of seven
+alternative scenarios are inconsistent with the photometric data
+(MS companion, WD, NS); one (hierarchical triple) is strongly
 disfavoured; one (stripped He star) is not favoured but remains
 formally open.  Crucially, two scenarios --- astrometric artefact
 and chance alignment --- \emph{cannot be excluded} at present
-because the solution is purely astrometric (\texttt{Orbital}).
-A black-hole companion is the preferred interpretation under the
-Gaia DR3 NSS assumptions, but remains a \emph{candidate} pending
-independent spectroscopic confirmation.
+because the solution is purely astrometric (\texttt{Orbital});
+if the solution itself is spurious, the downstream exclusions
+lose their force.  A black-hole companion is the preferred
+interpretation under the Gaia DR3 NSS assumptions, but this
+preference is entirely conditional and the system remains a
+\emph{candidate} pending independent spectroscopic confirmation.
 
 % ====================================================================
 \section{Discussion}
 \label{sec:discussion}
 
+\subsection{Evidence hierarchy}
+\label{sec:evidence_hierarchy}
+
+To clarify the epistemic status of each element of our analysis,
+we distinguish four tiers of evidence:
+
+\begin{enumerate}
+\item \textbf{Directly measured.}  Observed multi-band photometry
+  ($G$, $G_{\rm BP}$, $G_{\rm RP}$, 2MASS, WISE, GALEX~NUV),
+  parallax ($\varpi = 1.5228 \pm 0.1549$\,mas), systemic radial
+  velocity ($v_{\rm sys} = -29.49 \pm 0.57\,\kms$), and
+  ROSAT/VLASS/RACS non-detections.  These are empirical
+  observables, subject only to standard calibration uncertainties.
+
+\item \textbf{Pipeline-derived (model-dependent).}  The Gaia NSS
+  orbital parameters (period, eccentricity, angular semi-major
+  axis, inclination) from the \texttt{Orbital} pipeline fit to
+  along-scan astrometric residuals.  The GSP-Phot stellar parameters
+  ($T_{\rm eff}$, $\log g$), which are known to be unreliable at
+  RUWE~$= 9.31$ \citep{Andrae2023}.  These quantities depend on
+  the Gaia data reduction model and may not reflect the true
+  system properties.
+
+\item \textbf{Assumed.}  The primary mass
+  ($M_1 = 1.34 \pm 0.40\,\Msun$) from isochrone matching of
+  GSP-Phot parameters.  The $\times 1.7$ parallax-error inflation
+  factor, adopted from population-level validation studies
+  \citep{ElBadry2024} but not verified for this individual source.
+  The uniform $[0.95, 1.05]$ multiplicative systematic on total
+  mass.  The single-temperature blackbody SED model.
+
+\item \textbf{Conditional inference.}  The companion mass
+  posterior ($M_2 = 12.3\,\Msun$), the dark-companion
+  classification, and all alternative-scenario exclusions.  These
+  are valid \emph{only if} the Gaia \texttt{Orbital} solution
+  correctly describes the system and the adopted stellar model is
+  approximately correct.  If the orbital solution is spurious
+  (Section~\ref{sec:gaia_vetting}) or the primary mass is
+  substantially different from the adopted value, the entire
+  downstream inference changes accordingly.
+\end{enumerate}
+
+\noindent
+This hierarchy makes explicit that the paper's central result ---
+the inferred high companion mass --- sits at the fourth tier,
+conditional on pipeline-derived and assumed inputs that have not
+been independently verified for this source.
+
+\subsection{Reliability of the Gaia orbital solution}
+\label{sec:gaia_vetting}
+
+The reliability of the \texttt{Orbital} solution is the most
+consequential uncertainty in this analysis.  We assess it
+against several available diagnostics, while emphasising that
+none of these constitutes a substitute for independent RV
+confirmation.
+
+\paragraph{Solution quality metrics.}
+The solution significance ($75.4\sigma$) and astrometric
+excess-noise significance ($3753\sigma$) are consistent with
+genuine photo-centre motion.  The goodness-of-fit (GOF~$= 18.3$)
+is elevated relative to an ideal astrometric solution, indicating
+that the single-Keplerian model does not fully capture the
+residual scatter.  However, elevated GOF values are common for
+real binaries with moderately high RUWE \citep{Halbwachs2023},
+and the value is not outside the range seen in validated systems.
+
+\paragraph{Fraction of spurious \texttt{Orbital} solutions.}
+\citet{ElBadry2024} tested a sample of high-mass-ratio
+\texttt{Orbital} candidates against independent RV data and found
+that a substantial fraction ($\gtrsim 30$--$50$~per~cent, depending
+on selection criteria) showed RV semi-amplitudes inconsistent with
+the astrometric prediction.  No systematic vetting of this specific
+source has been published.  Applying the population-level
+false-positive rate as an informal prior suggests a non-trivial
+probability that the orbital solution does not reflect the true
+system dynamics.  This base-rate concern is the principal
+motivation for framing this source as a candidate requiring
+confirmation rather than a secure detection.
+
+\paragraph{Scan-angle coverage.}
+For \texttt{Orbital} solutions with periods near one year, the
+Gaia scanning law can produce near-degenerate scan-angle
+distributions that permit spurious orbital fits.  The present
+system has $P = 424.4$\,d ($\sim$\,$1.16$\,yr), which is close
+to but not identical with the annual scanning period.  Without
+access to the epoch-level astrometric data (not publicly
+available in DR3), we cannot assess the scan-angle distribution
+directly.  This remains an unresolved systematic.
+
+\paragraph{Blend probability.}
+At $G = 11.25$ and Galactic latitude $b = 9.3\degr$, the local
+stellar density is moderate.  The Gaia archive reports no resolved
+companion brighter than $G \sim 20$ within $2\arcsec$.  However,
+a faint unresolved blend at sub-arcsecond separations could
+influence the astrometric solution.  High-resolution imaging
+(Section~\ref{sec:followup}) is needed to assess this possibility
+quantitatively.
+
+\paragraph{Assessment.}
+The available diagnostics are \emph{consistent with} a genuine
+orbital solution but do not confirm it.  Given the population-level
+false-positive rate for \texttt{Orbital} solutions
+\citep{ElBadry2024}, and the system's proximity to a one-year
+period that may exacerbate scan-angle biases, we regard the
+orbital solution as plausible but unverified.  This assessment
+underlies our framing of the entire analysis as conditional and
+our emphasis on spectroscopic confirmation as the essential next
+step.
+
 \subsection{Context among Gaia BH discoveries}
 
-Table~\ref{tab:comparison} places this system alongside the three
-confirmed Gaia dormant BH systems.  At $M_2 \simeq 12.3\,\Msun$
-(under Gaia modelling assumptions), it would rank as the second most
-massive after Gaia~BH3 ($33\,\Msun$) --- if confirmed.
+Table~\ref{tab:comparison} lists the orbital and stellar parameters
+of this system alongside the three confirmed Gaia dormant BH systems
+for reference.  We include this comparison solely to provide context
+for the predicted parameter space; it should not be read as implying
+equivalent evidentiary standing.
 
-However, there is a fundamental \emph{evidentiary gap} between this
+There is a \emph{fundamental evidentiary gap} between this
 candidate and the three confirmed systems.  Gaia~BH1, BH2, and BH3
 each benefited from independent multi-epoch radial-velocity follow-up
 that validated the astrometric orbital parameters and confirmed the
 companion mass.  In contrast, the present system has only a purely
-astrometric \texttt{Orbital} solution with no RV confirmation.  The
-comparison in Table~\ref{tab:comparison} therefore reflects
-\emph{potential} rather than established properties.
+astrometric \texttt{Orbital} solution with no RV confirmation.
+All entries in the ``This work'' column of
+Table~\ref{tab:comparison} are therefore \emph{conditional} on
+the Gaia pipeline assumptions and must not be compared on equal
+footing with the dynamically confirmed values for BH1--3.
 
-The long period ($P = 424$\,d) and moderate eccentricity
-($e = 0.34$) place it in a similar orbital regime to Gaia~BH1
+If the orbital solution is confirmed, the long period
+($P = 424$\,d) and moderate eccentricity ($e = 0.34$) would place
+it in a similar orbital regime to Gaia~BH1
 ($P = 185.6$\,d, $e = 0.45$) and Gaia~BH2 ($P = 1277$\,d,
-$e = 0.52$), consistent with a formation channel involving limited
-or no mass transfer --- should the companion prove to be a BH.
+$e = 0.52$).
 
 \subsection{Binary evolution implications (contingent on confirmation)}
 
@@ -828,51 +986,81 @@ prevent this system from being classified as a confirmed BH:
 \section{Conclusions}
 \label{sec:conclusions}
 
-We have presented a multi-wavelength analysis of
+We have presented an archival multi-wavelength assessment and
+follow-up prioritization of
 Gaia DR3 4277855016732107520, an astrometric binary with a purely
 astrometric \texttt{Orbital} solution from the Gaia DR3 NSS
-catalogue.  Our principal findings are:
+catalogue.  All inferred companion properties are conditional on
+the Gaia pipeline modelling assumptions.  Our principal findings
+are:
 
 \begin{enumerate}
-\item Under the Gaia NSS modelling assumptions, the companion mass
-  posterior yields a median
+\item \textbf{Conditional companion mass.}
+  Under the Gaia NSS modelling assumptions and adopted stellar
+  model, the companion mass posterior yields a median
   $M_2 = 12.3\,\Msun$ with 68~per~cent CI
   $[7.1,\,22.7]\,\Msun$ (with $\times 1.7$ parallax-error
-  inflation) --- above the canonical BH threshold for
-  $\sim$\,95~per~cent of draws.
+  inflation).  This posterior is a conditional working estimate;
+  the adopted inflation factor, the independent parameter sampling
+  (in the absence of the full NSS covariance matrix), and the
+  blackbody SED model are pragmatic choices, not rigorously
+  grounded for this individual source
+  (Section~\ref{sec:evidence_hierarchy}).
 
-\item No luminous companion is detected.  Planck-based band-by-band
+\item \textbf{Companion-light exclusion (conditional).}
+  No luminous companion is detected.  Planck-based band-by-band
   flux ratios show that a main-sequence star of the required mass
   would exceed the primary flux by $28\times$ in $G$ and
-  $49\times$ in $G_{\rm BP}$.
+  $49\times$ in $G_{\rm BP}$.  This exclusion is robust at the
+  order-of-magnitude level but rests on the adopted primary
+  radius, which is itself uncertain
+  (Section~\ref{sec:results:stellar}).
 
-\item Of seven non-BH scenarios, three are ruled out
-  (MS companion, WD, NS), one strongly disfavoured (triple),
-  and one not favoured (stripped He star).  Crucially, two
-  scenarios --- astrometric artefact and chance alignment ---
-  \emph{cannot be excluded} because the solution is
-  \texttt{Orbital} (astrometry only).
+\item \textbf{Alternative scenarios (conditional).}
+  Of seven non-BH scenarios, three are inconsistent with the
+  photometric data under the adopted Gaia orbital solution and
+  stellar model (MS companion, WD, NS), one is strongly
+  disfavoured (triple), and one is not favoured (stripped He
+  star).  Crucially, two scenarios --- astrometric artefact and
+  chance alignment --- \emph{cannot be excluded} because the
+  solution is \texttt{Orbital} (astrometry only); if the orbital
+  solution is itself spurious, the downstream exclusions lose
+  their force (Section~\ref{sec:gaia_vetting}).
 
-\item ROSAT non-detection implies an order-of-magnitude X-ray
+\item \textbf{Multi-wavelength non-detections.}
+  ROSAT non-detection implies an order-of-magnitude X-ray
   upper limit of
   $\log L_X \lesssim 30.7$\,erg\,s$^{-1}$, while VLASS and RACS
   show no radio counterpart.  These non-detections are consistent
   with a quiescent system.  eROSITA data are unavailable for this
   sky position.
 
-\item The predicted $K_1 \approx 65\,\kms$ makes multi-epoch
-  RV confirmation feasible with 2--4\,m class facilities.
+\item \textbf{Stellar characterisation provisional.}
+  The primary's physical parameters rest on GSP-Phot values
+  obtained at RUWE~$= 9.31$, a regime where systematic biases
+  are known.  The factor-of-two luminosity tension between
+  photometric and logg-based estimates
+  (Section~\ref{sec:methods:extinction}) underscores that the
+  stellar characterisation is provisional and feeds directly into
+  the companion-mass uncertainty.
+
+\item \textbf{Follow-up feasibility.}
+  The predicted $K_1 \approx 65\,\kms$ makes multi-epoch
+  RV confirmation feasible with 2--4\,m class facilities
+  over $\sim$\,8--10 epochs spanning one orbital period.
 \end{enumerate}
 
-We conclude that Gaia DR3 4277855016732107520 is a \emph{promising
-dormant black hole candidate} under the Gaia DR3 NSS modelling
-assumptions.  The large predicted RV semi-amplitude
-and bright apparent magnitude make spectroscopic follow-up
-feasible with existing ground-based facilities.  However, because
+We conclude that Gaia DR3 4277855016732107520 is a
+\emph{high-priority dark-companion candidate} meriting urgent
+spectroscopic follow-up.  The large predicted RV semi-amplitude
+and bright apparent magnitude make confirmation feasible
+with existing ground-based facilities.  However, because
 the orbital solution is purely astrometric and lacks an independent
-RV orbit, the companion mass remains contingent on the Gaia pipeline
-assumptions, and the system must be regarded as a \emph{candidate}
-until spectroscopic confirmation is obtained.
+RV orbit, the companion mass, the alternative-scenario exclusions,
+and the BH interpretation all remain \emph{conditional} on Gaia
+pipeline assumptions.  Until spectroscopic confirmation is
+obtained, this system must be regarded as a candidate, not a
+confirmed compact-object binary.
 
 % ====================================================================
 \section*{Acknowledgements}
@@ -1002,20 +1190,24 @@ $K$              & $6.0\times$  & $2.8\times$ \\
 \begin{table}
 \centering
 \caption{Alternative scenario assessment. Verdicts follow a
-four-tier system (Section~\ref{sec:alternatives}).}
+four-tier system (Section~\ref{sec:alternatives}).
+\emph{All verdicts are conditional on the Gaia \texttt{Orbital}
+solution and adopted primary-star model.}}
 \label{tab:scenarios}
 \begin{tabular}{lll}
 \toprule
 Scenario & Verdict & Key constraint \\
 \midrule
-MS companion    & Ruled out     & $28$--$49\times$ flux excess \\
-White dwarf     & Ruled out     & $M_2 \approx 9\,M_{\rm Ch}$ \\
-Neutron star    & Ruled out     & $M_2 \approx 5\,M_{\rm TOV}$ \\
-Triple system   & Strongly disfavoured  & SED + stability \\
+MS companion    & Excluded$^*$  & $28$--$49\times$ flux excess \\
+White dwarf     & Excluded$^*$  & $M_2 \approx 9\,M_{\rm Ch}$ \\
+Neutron star    & Excluded$^*$  & $M_2 \approx 5\,M_{\rm TOV}$ \\
+Triple system   & Strongly disfavoured$^*$  & SED + stability \\
 Stripped He     & Not favoured  & NUV deficit $2700\times$ \\
 Artefact        & \textbf{Requires follow-up} & \texttt{Orbital} only \\
 Chance align.   & \textbf{Requires follow-up} & \texttt{Orbital} only \\
 \bottomrule
+\multicolumn{3}{l}{\footnotesize $^*$Conditional on the Gaia orbital
+solution being correct.}\\
 \end{tabular}
 \end{table}
 
@@ -1043,11 +1235,13 @@ Inflation $= 1.7$ & Inflation $= 2.0$ \\
 
 \begin{table*}
 \centering
-\caption{Comparison with confirmed Gaia dormant BH systems.
-Note the fundamental evidentiary gap: Gaia~BH1--3 each have
-independent multi-epoch RV orbits, whereas this source has only
-a purely astrometric \texttt{Orbital} solution with no RV
-confirmation.}
+\caption{Comparison with confirmed Gaia dormant BH systems
+(included for contextual reference only).
+Gaia~BH1--3 each have independent multi-epoch RV orbits confirming
+the companion mass; this source has only a purely astrometric
+\texttt{Orbital} solution with no RV confirmation.  The two classes
+of evidence are not comparable, and the ``This work'' column
+reflects conditional inferences under the Gaia pipeline assumptions.}
 \label{tab:comparison}
 \begin{tabular}{lcccc}
 \toprule
@@ -1105,12 +1299,19 @@ model itself.}
 
 \begin{figure*}
 \includegraphics[width=\textwidth]{figures/fig_cmd_hrd.pdf}
-\caption{Placement of the primary star in the colour--magnitude
-diagram (\textit{left}) and Hertzsprung--Russell diagram
-(\textit{right}).  The dereddened photometry is consistent with an
-evolved-star locus and broadly compatible with the GSP-Phot
-parameters.  These loci are approximate; formal isochrone fitting is
-deferred to future work with independent spectroscopy.}
+\caption{\emph{Illustrative} placement of the primary star in the
+colour--magnitude diagram (\textit{left}) and Hertzsprung--Russell
+diagram (\textit{right}).  The dereddened photometry falls in the
+region broadly occupied by evolved stars, but these loci are
+approximate and should not be interpreted as evidence for any
+particular evolutionary state.  The GSP-Phot parameters at
+RUWE~$= 9.31$ may be substantially biased
+(Section~\ref{sec:data:gaia}), and the $R$/$L$ tension documented
+in Section~\ref{sec:methods:extinction} demonstrates that the
+stellar characterisation is provisional.  A secure evolutionary
+classification requires independent spectroscopy; these panels
+serve only as a visual reference for the approximate photometric
+location.}
 \label{fig:cmd}
 \end{figure*}
 
