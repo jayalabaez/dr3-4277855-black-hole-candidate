@@ -56,9 +56,9 @@ inflation, a Monte~Carlo posterior yields median
 $M_2 = 12.3\,\Msun$ (90~per~cent CI $[5.0,\,35.9]\,\Msun$;
 $P(M_2 > 5\,\Msun) \approx 95$~per~cent).  Synthetic-photometry
 companion exclusion rules out a main-sequence star at the
-inferred mass ($100$--$247\times$ flux excess in optical bands),
-while a stripped-helium-star scan over $1$--$15\,\Msun$ finds no
-photometrically hidden solution.  Folding in the population-level
+inferred mass, while a stripped-helium-star scan over
+$1$--$15\,\Msun$ finds no photometrically hidden solution.
+Folding in the population-level
 false-positive rate gives an effective BH probability of
 $\approx 48$--$67$~per~cent.
 
@@ -712,11 +712,6 @@ companion mass drops to $M_2 \approx 8.9\,\Msun$; at
 $\varpi - 1\sigma$ (1.368\,mas, $d = 731$\,pc), it rises to
 $M_2 \approx 17.5\,\Msun$.
 
-As emphasised in the standing caveat (Section~\ref{sec:methods}),
-this posterior is conditional on the \texttt{Orbital} model being
-correct and does not account for possible systematic errors in
-the orbital fit itself.
-
 \subsection{Sensitivity to primary mass}
 \label{sec:results:sensitivity}
 
@@ -792,7 +787,12 @@ $\sim$\,$80$~per~cent of the primary flux, well above the
 This scenario is \textbf{not favoured} across the entire
 plausible mass range, but a sub-solar-mass hot subdwarf falling
 outside the \citet{Gotberg2018} calibration cannot be fully
-excluded without UV spectroscopy.
+excluded without UV spectroscopy.  We note that the
+\citet{Gotberg2018} mass--luminosity relations are calibrated at
+solar metallicity; at sub- or super-solar metallicity the
+envelope-stripping efficiency and residual hydrogen content shift
+modestly, potentially altering the predicted optical flux by
+tens of per~cent without qualitatively changing the exclusion.
 
 \paragraph*{Astrometric artefact (spurious orbital solution).}
 Because the solution type is \texttt{Orbital} (astrometry only),
@@ -937,8 +937,8 @@ influence the astrometric solution.  High-resolution imaging
 quantitatively.
 
 \paragraph*{Assessment.}
-The available diagnostics are \emph{not inconsistent with} a
-genuine orbital solution, but none provides positive confirmation.
+The available diagnostics do not validate the solution and do not
+rule it out.
 Given that \citet{ElBadry2024} find $\gtrsim 30$--$50$~per~cent
 of \texttt{Orbital} high-mass-ratio solutions fail independent RV
 tests, the prior probability that any given unvalidated
@@ -954,13 +954,14 @@ confirmation as the essential next step.
 \paragraph*{Effective BH probability.}
 Folding the false-positive rate into the mass posterior gives an
 order-of-magnitude ``effective'' BH probability:
-\begin{equation}
-P_{\rm eff}(\mathrm{BH}) \;\approx\;
-  P(\mathrm{genuine}) \;\times\; P(M_2 > 5\,\Msun \mid \mathrm{genuine})
-  \;\approx\; 0.5\text{--}0.7 \;\times\; 0.95
+\begin{align}
+P_{\rm eff}(\mathrm{BH}) &\;\approx\;
+  P(\mathrm{genuine}) \;\times\;
+  P(M_2 > 5\,\Msun \mid \mathrm{genuine}) \nonumber\\
+  &\;\approx\; 0.5\text{--}0.7 \;\times\; 0.95
   \;\approx\; 48\text{--}67~\text{per~cent}\,.
 \label{eq:peff}
-\end{equation}
+\end{align}
 This should be interpreted as an informal Bayesian estimate, not a
 rigorous posterior: $P(\mathrm{genuine}) \approx 0.5$--$0.7$ is the
 complement of the population-level false-positive rate and is not
@@ -980,32 +981,54 @@ To justify highlighting a single source for follow-up, we
 quantitatively compare it against the broader \texttt{Orbital}
 BH-candidate population.
 
-We extract all 47 \texttt{Orbital} sources in our working catalogue
-with formal companion masses $M_2 > 5\,\Msun$ and compute the
-predicted edge-on RV semi-amplitude
+The 47-source working catalogue is constructed by querying
+\texttt{gaiadr3.nss\_two\_body\_orbit} for all entries with
+\texttt{nss\_solution\_type = `Orbital'}, cross-matching with
+\texttt{gaiadr3.binary\_masses} on \texttt{source\_id}, and
+retaining sources whose pipeline-reported companion mass satisfies
+$M_2 > 5\,\Msun$.  Quality tiers (Gold/Silver/Bronze) are assigned
+following the vetting flags of \citet{GaiaNSS2023}: Gold requires
+GOF~$< 25$, significance~$> 20\sigma$, and eccentricity error
+$\sigma_e < 0.1$; Silver relaxes one of these; Bronze relaxes two
+or more.  The full machine-readable table is provided in the
+repository (Section~\ref{sec:conclusions}).
+
+For each of these 47 sources we compute the predicted
+\emph{edge-on} RV semi-amplitude
 \begin{equation}
 K_{1,{\rm edge}} = \left(\frac{2\pi G}{P}\right)^{1/3}\,
 \frac{M_2}{(M_1 + M_2)^{2/3}}\,
-\frac{1}{\sqrt{1-e^2}}
+\frac{1}{\sqrt{1-e^2}}\,,
 \label{eq:K1}
 \end{equation}
-for each.
+which assumes $\sin i = 1$ and serves as a standardised ranking
+metric independent of inclination.  For this source, the
+Gaia-derived orbital inclination implies $\sin i$ close to unity,
+so the source-specific predicted semi-amplitude
+$K_1 \approx K_{1,{\rm edge}} \approx 65\,\kms$; we use $K_1$
+(without the ``edge'' subscript) elsewhere in this paper to refer
+to this source-specific value.
+
 Table~\ref{tab:population} ranks the 16 brightest ($G < 12$)
-among these 47 candidates by predicted $K_1$.
+among these 47 candidates by $K_{1,{\rm edge}}$.
 
 This source ranks \textbf{1st among 16 bright ($G < 12$)
-Orbital BH candidates} and 7th overall (out of 47) by predicted
-$K_1$.  The six candidates with higher $K_1$ are all $\geq
-1.2$\,mag fainter, requiring significantly longer integration
-times for the same RV precision.  Moreover, this source has the
-highest NSS solution significance ($75.4\sigma$) among the top ten
-$K_1$-ranked candidates, and its equatorial declination
-(Dec~$= +3.5\degr$) makes it accessible from both hemispheres.
+Orbital BH candidates} and 7th overall (out of 47) by
+$K_{1,{\rm edge}}$.  The six candidates with higher
+$K_{1,{\rm edge}}$ are all $\geq 1.2$\,mag fainter, requiring
+significantly longer integration times for the same RV precision.
+Moreover, this source has the highest NSS solution significance
+($75.4\sigma$) among the top ten ranked candidates, and its
+equatorial declination (Dec~$= +3.5\degr$) makes it accessible
+from both hemispheres.  To our knowledge, none of the remaining
+15 bright candidates in Table~\ref{tab:population} has been
+subjected to published RV vetting, so the relative ranking among
+unvetted sources is the relevant comparison.
 
 We emphasise that \emph{none} of these ranking criteria validate
-the orbital solution.  They establish only that, under these assumptions, this source
-would be among the most efficiently confirmable BH candidates
-in the current catalogue.
+the orbital solution.  They establish only that, under the adopted
+assumptions, this source would be among the most efficiently
+confirmable BH candidates in the current catalogue.
 The ranking itself should be treated as a follow-up
 \emph{prioritization metric}, not as evidence for a genuine BH.
 
@@ -1238,7 +1261,7 @@ findings are:
 
 We conclude that Gaia DR3 4277855016732107520 is a
 high-priority spectroscopic follow-up target: the archival data
-are \emph{not inconsistent with} a massive dark companion, and
+do not rule out a massive dark companion, and
 the observational properties ($K_1$, brightness, accessibility)
 make confirmation or refutation efficient with existing
 ground-based facilities.  However, the orbital solution is
@@ -1285,6 +1308,24 @@ JSON format under \texttt{results/}.
 % ====================================================================
 \bibliographystyle{mnras}
 \bibliography{references}
+
+% ====================================================================
+%  APPENDIX
+% ====================================================================
+\appendix
+\section{Note on scope and claims}
+\label{app:scope}
+
+This paper is a single-object follow-up dossier and
+observing-proposal guide.  It does \emph{not} claim the discovery
+of a black hole.  The companion mass, the dark-companion
+classification, and all scenario exclusions presented herein are
+conditional on the unverified Gaia \texttt{Orbital} solution and
+on the adopted primary-star model (standing caveat,
+Section~\ref{sec:methods}).  Until independent multi-epoch
+radial-velocity monitoring confirms or refutes the orbital
+parameters, no astrophysical conclusion about the companion nature
+should be drawn from the conditional mass estimate alone.
 
 % ====================================================================
 %  TABLES
@@ -1355,29 +1396,36 @@ $K_1$ (predicted)      & $\sim$\,65 $\kms$   & ---      & Dynamics \\
 \end{tabular}
 \end{table*}
 
-\begin{table}
+\begin{table*}
 \centering
-\caption{Atmosphere-corrected companion-to-primary flux ratios for a
+\caption{Companion-to-primary flux ratios for a
 $12.3\,\Msun$ MS companion ($T_{\rm eff} = 25\,400$\,K,
 $R = 4.2\,\Rsun$) relative to the primary
 ($T_{\rm eff} = 5922$\,K), computed using both
-photometric and logg-based primary radii.  Planck ratios are shown
-in parentheses; atmosphere corrections differ by 2--13~per~cent
-(Section~\ref{sec:methods:sed}).}
+photometric and logg-based primary radii.  Columns labelled
+``Planck+atm'' use Planck functions with ATLAS9/PHOENIX
+atmosphere corrections (2--13~per~cent; bare Planck values
+in parentheses).  Columns labelled ``Synth.'' use the full
+parametrised synthetic-photometry model of
+Section~\ref{sec:methods:sed}.}
 \label{tab:fluxratios}
-\begin{tabular}{lcc}
+\begin{tabular}{lcccc}
 \toprule
-Band & Phot.\ ($R = 4.5\,\Rsun$) & $\log g$ ($R = 6.5\,\Rsun$) \\
+Band & \multicolumn{2}{c}{Planck+atm} &
+       \multicolumn{2}{c}{Synthetic photometry} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+     & Phot.\ ($R = 4.5\,\Rsun$) & $\log g$ ($R = 6.5\,\Rsun$)
+     & Phot.\ ($R = 4.5\,\Rsun$) & $\log g$ ($R = 6.5\,\Rsun$) \\
 \midrule
-$G_{\rm BP}$     & $55\times$ (49)   & $26\times$ (23) \\
-$G$              & $29\times$ (28)   & $14\times$ (13) \\
-$G_{\rm RP}$     & $18\times$ (18)   & $8.4\times$ (8.2) \\
-$J$              & $8.7\times$ (9.1)  & $4.1\times$ (4.2) \\
-$H$              & $6.8\times$ (7.1)  & $3.2\times$ (3.3) \\
-$K$              & $5.8\times$ (6.0)  & $2.7\times$ (2.8) \\
+$G_{\rm BP}$     & $55\times$ (49)   & $26\times$ (23)   & $247\times$ & $118\times$ \\
+$G$              & $29\times$ (28)   & $14\times$ (13)   & $100\times$ & $48\times$  \\
+$G_{\rm RP}$     & $18\times$ (18)   & $8.4\times$ (8.2) & $49\times$  & $24\times$  \\
+$J$              & $8.7\times$ (9.1)  & $4.1\times$ (4.2) & $18\times$  & $8.6\times$ \\
+$H$              & $6.8\times$ (7.1)  & $3.2\times$ (3.3) & $12\times$  & $6.0\times$ \\
+$K$              & $5.8\times$ (6.0)  & $2.7\times$ (2.8) & $10\times$  & $4.7\times$ \\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 
 \begin{table}
 \centering
@@ -1390,7 +1438,7 @@ solution and adopted primary-star model.}}
 \toprule
 Scenario & Verdict & Key constraint \\
 \midrule
-MS companion    & Excluded$^*$  & $28$--$49\times$ flux excess \\
+MS companion    & Excluded$^*$  & $100$--$247\times$ flux excess \\
 White dwarf     & Excluded$^*$  & $M_2 \approx 9\,M_{\rm Ch}$ \\
 Neutron star    & Excluded$^*$  & $M_2 \approx 5\,M_{\rm TOV}$ \\
 Triple system   & Strongly disfavoured$^*$  & SED + stability \\
