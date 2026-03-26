@@ -6,6 +6,8 @@
 % ====================================================================
 \documentclass[usenatbib,fleqn]{mnras}
 
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
 \usepackage{booktabs}
@@ -750,7 +752,8 @@ $M_2 \sim 12\,\Msun$ is meaningful, and (ii) a ``spurious''
 component (probability $\sim 30$--$50$~per~cent;
 Section~\ref{sec:gaia_vetting}), under which the orbital
 parameters are not physically reliable and the companion mass is
-effectively unconstrained.  Marginalising over both components,
+effectively unconstrained (i.e.\ the companion could range from
+non-existent to any mass).  Marginalising over both components,
 the credible intervals reported above describe only the first
 mode.  Readers should therefore interpret the CIs as conditional
 on the solution being genuine; the overall probability assigned to
@@ -1523,7 +1526,11 @@ $T_{\rm eff} = 5922\,$K and $\log g = 2.93$ for selected
 metallicities and ages (script~13).  A Monte~Carlo draw over
 the full parameter space gives median
 $M_1 = 1.09\,\Msun$ (68\% CI $[0.77,\,1.62]$; 90\%
-CI $[0.63,\,2.12]$).}
+CI $[0.63,\,2.12]$).  Note: the grid input
+$T_{\rm eff}$ and $\log g$ are the same GSP-Phot values
+used for the primary-mass estimate in
+Section~\ref{sec:methods:m1}; this cross-check therefore
+shares the same vulnerability to RUWE-induced bias.}
 \label{tab:parsec_grid}
 \begin{tabular}{rrrrrr}
 \toprule
