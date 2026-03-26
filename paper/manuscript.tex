@@ -43,8 +43,10 @@
 % ====================================================================
 \begin{abstract}
 We identify Gaia DR3 4277855016732107520 as a high-priority
-spectroscopic follow-up target from a systematic search of the
-Gaia DR3 non-single-star (NSS) catalogue.  The source carries a
+spectroscopic follow-up target, selected from the
+Gaia DR3 non-single-star (NSS) catalogue on the basis of its
+formally high companion mass, bright apparent magnitude, and
+favourable observational properties.  The source carries a
 purely astrometric orbital solution (model type \texttt{Orbital}),
 which derives the companion mass entirely from the along-scan
 photo-centre wobble with no independent radial-velocity orbit.
@@ -85,8 +87,9 @@ predicted RV semi-amplitude ($K_1 \approx 65\,\kms$) is large
 enough for efficient ground-based confirmation with $2$--$4$\,m
 class facilities; (ii) at $G = 11.25$ and
 Dec~$= +3.5\degr$, it is accessible from both hemispheres;
-and (iii) the conditional mass estimate places it in an
-astrophysically interesting regime
+and (iii) the conditional mass estimate places it in a regime
+where, if the orbital solution is genuine,
+the companion would exceed the canonical BH mass threshold
 ($P(M_2 > 5\,\Msun) \approx 95$~per~cent under the adopted
 assumptions).  Until RV confirmation is obtained, the companion
 mass and nature remain entirely provisional.
@@ -142,10 +145,13 @@ of high-significance \texttt{Orbital} solutions in the NSS catalogue
 fail independent RV checks, underscoring the need for spectroscopic
 confirmation of each individual candidate.
 
-In this paper we present an archival multi-wavelength
+In this paper we present a single-object archival
 characterization and follow-up prioritization of
-Gaia DR3 4277855016732107520, a candidate
-identified in a systematic search of the Gaia DR3 NSS catalogue.
+Gaia DR3 4277855016732107520, selected from the
+Gaia DR3 NSS catalogue on the basis of its formally
+high companion mass ($M_2 \simeq 12.3\,\Msun$ under pipeline
+assumptions), bright apparent magnitude ($G = 11.25$), and
+favourable observing geometry.
 The system is a wide binary
 ($P = 424$\,d) with a dark companion whose
 mass from the astrometric orbit is $M_2 \simeq 12.3\,\Msun$
@@ -157,8 +163,9 @@ both hemispheres.
 
 This source is a particularly attractive follow-up target for
 three reasons.  First, the predicted RV semi-amplitude
-($K_1 \approx 65\,\kms$) is among the highest for unconfirmed
-\texttt{Orbital} BH candidates in the NSS catalogue, making
+($K_1 \approx 65\,\kms$) ranks 7th out of 47 \texttt{Orbital}
+BH candidates and 1st among those brighter than $G = 12$
+(Section~\ref{sec:why_target}), making
 confirmation efficient with 2--4\,m class echelle spectrographs.
 Second, the bright apparent magnitude ($G = 11.25$) and moderate
 extinction keep the required exposure times short.  Third, the
@@ -168,16 +175,19 @@ observational advantages motivate presenting this source as a
 concrete observing-proposal target rather than waiting for Gaia
 DR4.
 
-The specific contribution of this paper is fourfold: (i) we
-assemble the first comprehensive multi-wavelength dossier for this
-source (Gaia, 2MASS, WISE, GALEX, ROSAT, VLASS, RACS); (ii) we
-propagate all identified uncertainties --- including parallax-error
-inflation and stellar-model systematics --- through a full
-Monte~Carlo framework to produce a conditional companion-mass
-posterior; (iii) we evaluate seven non-BH scenarios in a
-systematic elimination hierarchy; and (iv) we provide quantitative
-follow-up predictions (RV semi-amplitude, epoch count, telescope
-class) that can be used directly for proposal planning.
+The specific contribution of this paper is a single-object
+follow-up dossier: (i) the first comprehensive multi-wavelength
+compilation for this source (Gaia, 2MASS, WISE, GALEX, ROSAT,
+VLASS, RACS); (ii) a Monte~Carlo companion-mass posterior that
+propagates all identified uncertainties, explicitly flagged as a
+conditional working estimate; (iii) a systematic evaluation of
+seven non-BH scenarios with conditional verdicts; and (iv)
+quantitative follow-up predictions (RV semi-amplitude, epoch
+count, telescope class) usable for proposal planning.
+We also provide a quantitative comparison against the broader
+\texttt{Orbital} BH-candidate population
+(Section~\ref{sec:why_target}) to justify highlighting this
+particular source.
 
 We stress from the outset that the solution type is
 \texttt{Orbital} (astrometry only): \emph{no independent
@@ -523,12 +533,13 @@ range.
 
 Table~\ref{tab:observed} summarises the observed and derived
 properties.  The orbital-solution significance ($75.4\sigma$)
-and astrometric excess-noise significance ($3753\sigma$) are
-consistent with, but do not by themselves demonstrate, genuine
-orbital photo-centre motion.  Extreme excess-noise values can in
-principle arise from poorly resolved blends or pipeline failures;
-the coherent Keplerian fit and well-constrained period precision
-(0.27~per~cent) argue against, but do not exclude, such
+and astrometric excess-noise significance ($3753\sigma$)
+demonstrate that the single-star model is strongly rejected, but
+this does not by itself validate the Keplerian fit: similar
+significance levels can arise from poorly resolved blends or
+pipeline failures.
+The coherent Keplerian fit and well-constrained period precision
+(0.27~per~cent) do not exclude such
 explanations.  \emph{Independent RV confirmation is therefore
 essential.}
 
@@ -593,6 +604,17 @@ conditional on the adopted solution.
 \subsection{Mass posterior}
 \label{sec:results:posterior}
 
+\noindent\fbox{\parbox{0.95\columnwidth}{%
+\textbf{Caveat.}  The posteriors below are \emph{conditional
+working estimates}: they propagate published Gaia parameter
+uncertainties with an approximate external parallax-error
+inflation, but do \emph{not} account for systematic errors in the
+\texttt{Orbital} model itself (e.g.\ an incorrect inclination or
+a spurious solution).  Such errors could shift the companion mass
+arbitrarily and are only detectable through independent RV
+follow-up.}}
+
+\medskip
 The Monte~Carlo posterior (Fig.~\ref{fig:posterior}) yields:
 
 \medskip
@@ -717,8 +739,9 @@ there is no independent spectroscopic confirmation of the orbital
 parameters.  \citet{ElBadry2024} have demonstrated that a
 fraction of high-significance \texttt{Orbital} solutions fail
 independent RV tests.  While the $75.4\sigma$ significance, the
-well-constrained period, and the low GOF ($18.3$) argue against
-a spurious solution, this scenario \textbf{cannot be excluded}
+well-constrained period, and the low GOF ($18.3$) do not by
+themselves rescue the solution from this concern: this scenario
+\textbf{cannot be excluded}
 without independent RV data.  This is the single most important
 limitation of the present analysis.
 
@@ -877,35 +900,39 @@ confirmation as the essential next step.
 
 The Gaia DR3 NSS catalogue contains hundreds of \texttt{Orbital}
 solutions with formally high companion masses, the majority of
-which are expected to be spurious \citep{ElBadry2024}.  We
-highlight four properties that distinguish the present source as
-a high-priority follow-up candidate among this population:
+which are expected to be spurious \citep{ElBadry2024}.
+To justify highlighting a single source for follow-up, we
+quantitatively compare it against the broader \texttt{Orbital}
+BH-candidate population.
 
-\begin{enumerate}
-\item \textbf{Large predicted RV semi-amplitude.}  At
-  $K_1 \approx 65\,\kms$, the expected signal is well above the
-  typical precision floor of echelle spectrographs
-  ($\sim$\,$0.1$--$1\,\kms$), enabling confirmation or refutation
-  within a small number of epochs.
-\item \textbf{Bright apparent magnitude.}  $G = 11.25$ places the
-  source within reach of 2--4\,m class telescopes with short
-  exposure times ($\lesssim 30$\,min for $R \sim 40\,000$).
-\item \textbf{Both-hemisphere access.}  At Dec~$= +3.5\degr$
-  (Ophiuchus), the source is observable from northern and
-  southern facilities, maximising scheduling flexibility.
-\item \textbf{Quantitative follow-up predictions.}  This paper
-  provides a complete multi-wavelength dossier, a conditional
-  mass posterior with explicit uncertainty budget, and
-  specific observing recommendations (epoch count, phase
-  coverage, instrument class) that can be used directly
-  for proposal planning.
-\end{enumerate}
+We extract all 47 \texttt{Orbital} sources in our working catalogue
+with formal companion masses $M_2 > 5\,\Msun$ and compute the
+predicted edge-on RV semi-amplitude
+\begin{equation}
+K_{1,{\rm edge}} = \left(\frac{2\pi G}{P}\right)^{1/3}\,
+\frac{M_2}{(M_1 + M_2)^{2/3}}\,
+\frac{1}{\sqrt{1-e^2}}
+\label{eq:K1}
+\end{equation}
+for each.
+Table~\ref{tab:population} ranks the 16 brightest ($G < 12$)
+among these 47 candidates by predicted $K_1$.
 
-\noindent
-None of these properties validate the orbital solution; they
-establish only that, \emph{if} the solution is genuine, the
-source would be among the most efficiently confirmable BH
-candidates in the current NSS catalogue.
+This source ranks \textbf{1st among 16 bright ($G < 12$)
+Orbital BH candidates} and 7th overall (out of 47) by predicted
+$K_1$.  The six candidates with higher $K_1$ are all $\geq
+1.2$\,mag fainter, requiring significantly longer integration
+times for the same RV precision.  Moreover, this source has the
+highest NSS solution significance ($75.4\sigma$) among the top ten
+$K_1$-ranked candidates, and its equatorial declination
+(Dec~$= +3.5\degr$) makes it accessible from both hemispheres.
+
+We emphasise that \emph{none} of these ranking criteria validate
+the orbital solution.  They establish only that, conditional on the
+Gaia pipeline model, this source would be among the most
+efficiently confirmable BH candidates in the current catalogue.
+The ranking itself should be treated as a follow-up
+\emph{prioritization metric}, not as evidence for a genuine BH.
 
 \subsection{Context among Gaia BH discoveries}
 
@@ -1113,11 +1140,14 @@ findings are:
   (Section~\ref{sec:methods:extinction}) underscores that the
   stellar characterisation is provisional.
 
-\item \textbf{Follow-up feasibility.}
+\item \textbf{Follow-up feasibility and population ranking.}
   The predicted $K_1 \approx 65\,\kms$ makes multi-epoch
   RV confirmation feasible with 2--4\,m class facilities
   over $\sim$\,8--10 epochs spanning one orbital period
-  (Section~\ref{sec:why_target}).
+  (Section~\ref{sec:why_target}).  Among the 16 bright
+  ($G < 12$) \texttt{Orbital} BH candidates in our working
+  catalogue, this source ranks first by predicted $K_1$
+  (Table~\ref{tab:population}).
 \end{enumerate}
 
 We conclude that Gaia DR3 4277855016732107520 is a
@@ -1156,8 +1186,9 @@ All observational data are publicly available from the Gaia Archive
 (\url{https://gea.esac.esa.int/archive/}), VizieR, and SIMBAD.
 The analysis scripts and machine-readable results are available at
 \url{https://github.com/jayalabaez/dr3-4277855-black-hole-candidate}.
-Modular analysis scripts (\texttt{scripts/02}--\texttt{09}) produce
-all figures and numerical results.  The repository includes the
+Modular analysis scripts (\texttt{scripts/02}--\texttt{10}) produce
+all figures and numerical results, including the population-level
+comparison (script~10; Table~\ref{tab:population}).  The repository includes the
 exact scripts used to generate all figures, tables, and
 machine-readable posterior summaries from the public catalogue
 inputs.  All numerical results are in
@@ -1302,6 +1333,44 @@ Inflation $= 1.7$ & Inflation $= 2.0$ \\
 1.34 & 12.3 / 99.7\% & 12.3 / 97.6\% & 12.3 / 95.4\% & 12.4 / 91.7\% \\
 1.50 & 12.2 / 99.6\% & 12.1 / 97.4\% & 12.1 / 95.0\% & 12.1 / 91.0\% \\
 2.00 & 11.7 / 99.4\% & 11.6 / 96.8\% & 11.6 / 93.7\% & 11.6 / 89.3\% \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{table*}
+\centering
+\caption{Bright ($G < 12$) Gaia DR3 \texttt{Orbital} BH candidates
+ranked by predicted edge-on radial-velocity semi-amplitude
+$K_{1,\rm edge}$ (Equation~\ref{eq:K1}).  Sixteen of the 47
+\texttt{Orbital} BH candidates in the working catalogue satisfy the
+brightness cut.  $M_2$ is the pipeline-reported companion mass;
+$\sigma_{\rm NSS}$ the Gaia significance; ``Tier'' the catalogue
+quality flag.  The target of this paper is highlighted in bold.
+\emph{Rankings reflect observational accessibility and are not
+evidence for the reality of any individual solution.}}
+\label{tab:population}
+\begin{tabular}{rlrrrrrrrl}
+\toprule
+Rank & Gaia DR3 source ID & $G$ & $P$ & $e$ & $M_2$ & $K_{1,\rm edge}$ &
+$\sigma_{\rm NSS}$ & Tier & Hem.\ \\
+ & & (mag) & (d) & & ($\Msun$) & (km\,s$^{-1}$) & & & \\
+\midrule
+\textbf{1} & \textbf{4277855\ldots} & \textbf{11.25} & \textbf{424} & \textbf{0.34} & \textbf{12.3} & \textbf{65.0} & \textbf{75.4} & \textbf{Gold} & \textbf{Both} \\
+2 & 6281177\ldots & 11.26 & 154 & 0.18 & 5.3 & 62.7 & 24.3 & Gold & Both \\
+3 & 4507516\ldots & 8.89 & 813 & 0.51 & 18.2 & 48.1 & 20.3 & Gold & Both \\
+4 & 6042980\ldots & 11.96 & 678 & 0.22 & 9.1 & 47.8 & 76.3 & Gold & Both \\
+5 & 6033351\ldots & 11.75 & 857 & 0.41 & 6.9 & 41.7 & 55.5 & Gold & Both \\
+6 & 3153895\ldots & 9.34 & 904 & 0.00 & 16.6 & 41.7 & 18.1 & Silver & Both \\
+7 & 245948\ldots  & 11.80 & 549 & 0.07 & 5.0 & 35.1 & 48.4 & Gold & N \\
+8 & 6656986\ldots & 6.47 & 444 & 0.58 & 5.5 & 31.6 & 28.0 & Gold & S \\
+9 & 2946055\ldots & 5.27 & 755 & 0.32 & 11.0 & 30.6 & 14.6 & Silver & Both \\
+10 & 6886105\ldots & 9.46 & 768 & 0.48 & 6.9 & 30.0 & 34.9 & Gold & Both \\
+11 & 4113903\ldots & 6.81 & 1233 & 0.19 & 7.3 & 25.9 & 6.1 & Bronze & Both \\
+12 & 3067772\ldots & 11.64 & 984 & 0.17 & 5.7 & 25.3 & 20.8 & Silver & Both \\
+13 & 3972084\ldots & 8.80 & 876 & 0.15 & 6.1 & 25.0 & 21.0 & Gold & Both \\
+14 & 979031\ldots  & 9.94 & 877 & 0.22 & 5.1 & 22.5 & 18.4 & Bronze & N \\
+15 & 470361\ldots  & 7.18 & 999 & 0.52 & 6.5 & 21.7 & 11.2 & Silver & N \\
+16 & 5103956\ldots & 6.88 & 763 & 0.27 & 5.0 & 20.8 & 22.5 & Gold & Both \\
 \bottomrule
 \end{tabular}
 \end{table*}
